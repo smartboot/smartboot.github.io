@@ -16,6 +16,11 @@
       *  [读写回调](smart-socket/first/8-CompletionHandler.md)
     * 进阶篇
       *  [开篇概述](smart-socket/second/readme.md)
+      *  [协议解码器](smart-socket/second/2-decoder.md)
+      *  [一类消息](smart-socket/second/3-type-one.md)
+      *  [二类消息](smart-socket/second/4-type-two.md)
+      *  [三类消息](smart-socket/second/5-type-three.md)
+    * 高级篇
 
 * smart-ioc 使用手册
 * smart-boot 使用手册
