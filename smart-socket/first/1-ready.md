@@ -28,12 +28,3 @@ smart-socket为自己贴的标签是：极简、易用、高性能。文字无�
 |WriteCompletionHandler|class|package|AIO写操作CompletionHandler实现类|
 
 ---
-
-
-### smart-socket执行流程
-- 读操作    
-![输入图片说明](https://static.oschina.net/uploads/img/201709/29143826_tWuF.png "在这里输入图片标题")
-
-- 写操作    
-![输入图片说明](https://static.oschina.net/uploads/img/201709/29143838_25RX.png "在这里输入图片标题")
-
