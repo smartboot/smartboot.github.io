@@ -1,6 +1,6 @@
 # Summary
 
-* [smartboot 全集](README.md)
+* [关于smartboot](README.md)
 
 * smart-socket 使用手册
     * [前言](smart-socket/README.md)
@@ -17,3 +17,6 @@
     * 进阶篇
       *  [开篇概述](smart-socket/second/readme.md)
 
+* smart-ioc 使用手册
+* smart-boot 使用手册
+* mydalgen 使用手册
