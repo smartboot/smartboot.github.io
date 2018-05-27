@@ -1,0 +1,9 @@
+
+{
+  "title": "smartboot 中文指南",
+  "description": "本文涵盖了smartboot下所有项目的技术手册",
+  "language": "zh",
+  "plugins": [
+    "-lunr", "-search", "search-plus"
+  ]
+}
