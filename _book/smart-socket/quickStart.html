@@ -397,7 +397,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.smartboot.socket<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>aio-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.3.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.3.10<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
 </code></pre>
 <h2 id="&#x901A;&#x4FE1;&#x5F00;&#x53D1;">&#x901A;&#x4FE1;&#x5F00;&#x53D1;</h2>
@@ -477,33 +477,23 @@
 }
 </code></pre><h3 id="&#x4E09;&#x3001;&#x542F;&#x52A8;&#x670D;&#x52A1;">&#x4E09;&#x3001;&#x542F;&#x52A8;&#x670D;&#x52A1;</h3>
 <h4 id="&#x670D;&#x52A1;&#x7AEF;">&#x670D;&#x52A1;&#x7AEF;</h4>
-<pre><code>    public class IntegerServer {
-        public static void main(String[] args) {
-            AioQuickServer server = new AioQuickServer()
-                    .bind(8888)
-                    .setProtocol(new IntegerProtocol())
-                    .setProcessor(new IntegerServerProcessor());
-            try {
-                server.start();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+<pre><code>public class IntegerServer {
+    public static void main(String[] args) throws IOException {
+        AioQuickServer&lt;Integer&gt; server = new AioQuickServer&lt;Integer&gt;(8888, new IntegerProtocol(), new IntegerServerProcessor());
+        server.start();
     }
+}
 </code></pre><h4 id="&#x5BA2;&#x6237;&#x7AEF;">&#x5BA2;&#x6237;&#x7AEF;</h4>
-<pre><code>    public class IntegerClient {
-        public static void main(String[] args) throws Exception {
-            IntegerClientProcessor processor=new IntegerClientProcessor();
-            AioQuickClient aioQuickClient=new AioQuickClient()
-                    .connect(&quot;localhost&quot;,8888)
-                    .setProtocol(new IntegerProtocol())
-                    .setProcessor(processor);
-            aioQuickClient.start();
-            processor.getSession().write(1);
-            Thread.sleep(1000);
-            aioQuickClient.shutdown();
-        }
+<pre><code>public class IntegerClient {
+    public static void main(String[] args) throws Exception {
+        IntegerClientProcessor processor = new IntegerClientProcessor();
+        AioQuickClient&lt;Integer&gt; aioQuickClient = new AioQuickClient&lt;Integer&gt;(&quot;localhost&quot;, 8888, new IntegerProtocol(), processor);
+        aioQuickClient.start();
+        processor.getSession().write(1);
+        Thread.sleep(1000);
+        aioQuickClient.shutdown();
     }
+}
 </code></pre>
                                 
                                 </section>
@@ -543,7 +533,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"快速上手","level":"1.2.2","depth":2,"next":{"title":"基础篇","level":"1.2.3","depth":2,"ref":"","articles":[{"title":"准备工作","level":"1.2.3.1","depth":3,"path":"smart-socket/first/1-ready.md","ref":"smart-socket/first/1-ready.md","articles":[]},{"title":"核心接口","level":"1.2.3.2","depth":3,"path":"smart-socket/first/2-core-interface.md","ref":"smart-socket/first/2-core-interface.md","articles":[]},{"title":"枚举状态","level":"1.2.3.3","depth":3,"path":"smart-socket/first/3-enum.md","ref":"smart-socket/first/3-enum.md","articles":[]},{"title":"服务配置IoServerConfig","level":"1.2.3.4","depth":3,"path":"smart-socket/first/4-IoServerConfig.md","ref":"smart-socket/first/4-IoServerConfig.md","articles":[]},{"title":"服务端AioQuickServer","level":"1.2.3.5","depth":3,"path":"smart-socket/first/5-AioQuickServer.md","ref":"smart-socket/first/5-AioQuickServer.md","articles":[]},{"title":"客户端AioQuickClient","level":"1.2.3.6","depth":3,"path":"smart-socket/first/6-AioQuickClient.md","ref":"smart-socket/first/6-AioQuickClient.md","articles":[]},{"title":"通信会话AioSession","level":"1.2.3.7","depth":3,"path":"smart-socket/first/7-AioSession.md","ref":"smart-socket/first/7-AioSession.md","articles":[]},{"title":"读写回调","level":"1.2.3.8","depth":3,"path":"smart-socket/first/8-CompletionHandler.md","ref":"smart-socket/first/8-CompletionHandler.md","articles":[]}]},"previous":{"title":"前言","level":"1.2.1","depth":2,"path":"smart-socket/README.md","ref":"smart-socket/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","expandable-chapters-interactive"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search-plus":{},"expandable-chapters-interactive":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"smartboot 中文指南","language":"zh","gitbook":"*","description":"本文涵盖了smartboot下所有项目的技术手册"},"file":{"path":"smart-socket/quickStart.md","mtime":"2018-05-27T06:28:54.810Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-27T07:29:05.765Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"快速上手","level":"1.2.2","depth":2,"next":{"title":"基础篇","level":"1.2.3","depth":2,"ref":"","articles":[{"title":"准备工作","level":"1.2.3.1","depth":3,"path":"smart-socket/first/1-ready.md","ref":"smart-socket/first/1-ready.md","articles":[]},{"title":"核心接口","level":"1.2.3.2","depth":3,"path":"smart-socket/first/2-core-interface.md","ref":"smart-socket/first/2-core-interface.md","articles":[]},{"title":"枚举状态","level":"1.2.3.3","depth":3,"path":"smart-socket/first/3-enum.md","ref":"smart-socket/first/3-enum.md","articles":[]},{"title":"服务配置IoServerConfig","level":"1.2.3.4","depth":3,"path":"smart-socket/first/4-IoServerConfig.md","ref":"smart-socket/first/4-IoServerConfig.md","articles":[]},{"title":"服务端AioQuickServer","level":"1.2.3.5","depth":3,"path":"smart-socket/first/5-AioQuickServer.md","ref":"smart-socket/first/5-AioQuickServer.md","articles":[]},{"title":"客户端AioQuickClient","level":"1.2.3.6","depth":3,"path":"smart-socket/first/6-AioQuickClient.md","ref":"smart-socket/first/6-AioQuickClient.md","articles":[]},{"title":"通信会话AioSession","level":"1.2.3.7","depth":3,"path":"smart-socket/first/7-AioSession.md","ref":"smart-socket/first/7-AioSession.md","articles":[]},{"title":"读写回调","level":"1.2.3.8","depth":3,"path":"smart-socket/first/8-CompletionHandler.md","ref":"smart-socket/first/8-CompletionHandler.md","articles":[]}]},"previous":{"title":"前言","level":"1.2.1","depth":2,"path":"smart-socket/README.md","ref":"smart-socket/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","expandable-chapters-interactive","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search-plus":{},"expandable-chapters-interactive":{},"livereload":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"smartboot 中文指南","language":"zh","gitbook":"*","description":"本文涵盖了smartboot下所有项目的技术手册"},"file":{"path":"smart-socket/quickStart.md","mtime":"2018-05-27T07:39:07.149Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-27T07:30:45.538Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -562,6 +552,10 @@
     
         
         <script src="../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

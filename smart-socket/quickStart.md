@@ -8,7 +8,7 @@ smart-socket已上传至Maven仓库，使用前需要向其引入您的项目工
 <dependency>
     <groupId>org.smartboot.socket</groupId>
     <artifactId>aio-core</artifactId>
-    <version>1.3.2</version>
+    <version>1.3.10</version>
 </dependency>
 ```
 
@@ -97,33 +97,23 @@ public class IntegerClientProcessor implements MessageProcessor<Integer> {
 ### 三、启动服务
 #### 服务端
 ```
-	public class IntegerServer {
-	    public static void main(String[] args) {
-	        AioQuickServer server = new AioQuickServer()
-	                .bind(8888)
-	                .setProtocol(new IntegerProtocol())
-	                .setProcessor(new IntegerServerProcessor());
-	        try {
-	            server.start();
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-	    }
-	}
+public class IntegerServer {
+    public static void main(String[] args) throws IOException {
+        AioQuickServer<Integer> server = new AioQuickServer<Integer>(8888, new IntegerProtocol(), new IntegerServerProcessor());
+        server.start();
+    }
+}
 ```	
 #### 客户端
 ```
-	public class IntegerClient {
-	    public static void main(String[] args) throws Exception {
-	        IntegerClientProcessor processor=new IntegerClientProcessor();
-	        AioQuickClient aioQuickClient=new AioQuickClient()
-	                .connect("localhost",8888)
-	                .setProtocol(new IntegerProtocol())
-	                .setProcessor(processor);
-	        aioQuickClient.start();
-	        processor.getSession().write(1);
-	        Thread.sleep(1000);
-	        aioQuickClient.shutdown();
-	    }
-	}
+public class IntegerClient {
+    public static void main(String[] args) throws Exception {
+        IntegerClientProcessor processor = new IntegerClientProcessor();
+        AioQuickClient<Integer> aioQuickClient = new AioQuickClient<Integer>("localhost", 8888, new IntegerProtocol(), processor);
+        aioQuickClient.start();
+        processor.getSession().write(1);
+        Thread.sleep(1000);
+        aioQuickClient.shutdown();
+    }
+}
 ```

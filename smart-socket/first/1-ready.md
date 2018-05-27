@@ -9,7 +9,7 @@ smart-socket为自己贴的标签是：极简、易用、高性能。文字无�
 <dependency>
     <groupId>org.smartboot.socket</groupId>
     <artifactId>aio-core</artifactId>
-    <version>1.3.2</version>
+    <version>1.3.10</version>
 </dependency>
 ```
 
