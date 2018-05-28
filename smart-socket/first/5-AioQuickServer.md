@@ -14,14 +14,14 @@
 ### 配置型方法
 | 方法 | 说明 |
 |---|----|
-|public AioQuickServer<T> bind(int port)|Server服务绑定的端口号|
+|public AioQuickServer<T> setBannerEnabled(boolean bannerEnabled)|服务启动时是否打印smart-socket banner|
+|public AioQuickServer<T> setDirectBuffer(boolean directBuffer)|是否启用DirectByteBuffer|
 |public AioQuickServer<T> setThreadNum(int num)|Server服务线程数|
-|public AioQuickServer<T> setProtocol(Protocol<T> protocol)|注册协议编解码实现|
 |public AioQuickServer<T> setFilters(Filter<T>... filters)|注册服务过滤器|
-|public AioQuickServer<T> setProcessor(MessageProcessor<T> processor)|注册业务处理器|
 |public AioQuickServer<T> setWriteQueueSize(int size)|设置AioSession输出缓存区长度|
 |public AioQuickServer<T> setReadBufferSize(int size)|设置AioSession读缓存区长度|
-|public AioQuickServer<T> setBannerEnabled(boolean bannerEnabled)|服务启动时是否打印smart-socket banner|
+|public <V> AioQuickServer<T> setOption(SocketOption<V> socketOption, V value)|设置Socket的TCP参数配置|
+
 
 ### 核心方法
 #### 1、 start：启动AIO服务端
@@ -47,19 +47,19 @@ this.serverSocketChannel = AsynchronousServerSocketChannel.open(asynchronousChan
 backlog维护了连接请求队列长度，如果队列满时收到连接指示，则拒绝该连接。举个例子：backlog设置为50，当前有50连接请求过来，服务端还未执行这些连接请求的accept方法。此时再有一个连接请求过来，则会被拒绝连接。除非请求队列中的某个连接完成accept操作并释放出队列资源，服务器才可接受新的连接。
 - 片段三
 
-```java
+```
 serverSocketChannel.accept(null, new CompletionHandler<AsynchronousSocketChannel, Object>() {
-            @Override
-            public void completed(final AsynchronousSocketChannel channel, Object attachment) {
-                serverSocketChannel.accept(attachment, this);
-                createSession(channel);
-            }
+    @Override
+    public void completed(final AsynchronousSocketChannel channel, Object attachment) {
+        serverSocketChannel.accept(attachment, this);
+        createSession(channel);
+    }
 
-            @Override
-            public void failed(Throwable exc, Object attachment) {
-                LOGGER.warn(exc);
-            }
-        });
+    @Override
+    public void failed(Throwable exc, Object attachment) {
+        LOGGER.warn(exc);
+    }
+});
 
 protected void createSession(AsynchronousSocketChannel channel) {
     AioSession session = new AioSession<T>(channel, config, aioReadCompletionHandler, aioWriteCompletionHandler, true);
@@ -73,13 +73,13 @@ AIO通道服务监听客户端连接请求，一旦客户端连接上来则触�
 AIO服务停止的逻辑很简单，关闭Channel通道，停止线程组。
 ```
 public void shutdown() {
-        try {
-            serverSocketChannel.close();
-        } catch (IOException e) {
-            LOGGER.catching(e);
-        }
-        asynchronousChannelGroup.shutdown();
+    try {
+        serverSocketChannel.close();
+    } catch (IOException e) {
+        LOGGER.catching(e);
     }
+    asynchronousChannelGroup.shutdown();
+}
 ```
 
 

@@ -25,5 +25,9 @@ smart-socket中引入了状态机的概念，框架会监控每个状态事件�
 |OUTPUT_EXCEPTION|写数据过程中发生异常时触发此状态机|
 |SESSION_CLOSING|触发了AioSession.close方法，但由于当前AioSession还有未完成的事件，会进入SESSION_CLOSING状态|
 |SESSION_CLOSED|AioSesson完成close操作后触发此状态机|
+|PROCESS_EXCEPTION|业务处理异常|
+|RELEASE_FLOW_LIMIT|释放流控,仅服务端有效|
+|FLOW_LIMIT|流控,仅服务端有效|
+
 
 

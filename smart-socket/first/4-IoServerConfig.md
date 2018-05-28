@@ -6,7 +6,7 @@
 |配置项|类型|默认值|备注|
 |----|----|----|----|
 |BANNER        |String        |-|控制台打印的启动banner|
-|VERSION       |String        |v1.3.2   |当前smart-socket版本号|
+|VERSION       |String        |v1.3.10   |当前smart-socket版本号|
 |writeQueueSize|int           |4        |AioSession中的输出缓存队列长度|
 |readBufferSize|int           |512      |AioSession进行数据读操作是ByteBuffer大小,单位：byte|
 |host          |String        |null     |客户端连接远程服务器的地址|
