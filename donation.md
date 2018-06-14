@@ -7,11 +7,6 @@
 - 如果您的公司认可我们的开源项目，欢迎各种形式的支持。
 
 
-#### 捐赠入口
-
-<img src="images/wx.jpg" width="238" height="280"/>
-<img src="images/alipay.jpg" width="238" height="280"/>
-
 #### 捐赠清单
 
 | 姓名 | 金额 | 时间 |备注 |
@@ -24,3 +19,8 @@
 |zhengwen6300|10|2018||
 |刀锋剑雨|20|2018||
 |小仙女|10|2017||
+
+#### 捐赠入口
+
+<img src="images/wx.jpg" width="238" height="280"/>
+<img src="images/alipay.jpg" width="238" height="280"/>
