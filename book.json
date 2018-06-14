@@ -5,7 +5,7 @@
   "language": "en",
   "plugins": [
     "-lunr", "-search","-sharing", "search-plus","expandable-chapters-interactive","tbfed-pagefooter"
-    ,"github","github-buttons"
+    ,"github","github-buttons","edit-link"
   ],
   "pluginsConfig": {
     "tbfed-pagefooter": {
@@ -24,6 +24,10 @@
         "size": "small",
         "count": true
       }]
+    },
+    "edit-link": {
+      "base": "https://gitee.com/smartboot/docs/edit/master",
+      "label": "Edit This Page"
     }
   }
 }
