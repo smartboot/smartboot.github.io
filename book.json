@@ -4,6 +4,26 @@
   "description": "本文涵盖了smartboot下所有项目的技术手册",
   "language": "en",
   "plugins": [
-    "-lunr", "-search", "search-plus","expandable-chapters-interactive"
-  ]
+    "-lunr", "-search", "search-plus","expandable-chapters-interactive","tbfed-pagefooter"
+    ,"github","github-buttons"
+  ],
+  "pluginsConfig": {
+    "tbfed-pagefooter": {
+      "copyright":"Copyright &copy smartboot.org 2018",
+      "modify_label": "该文件修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "github": {
+      "url": "https://github.com/smartboot/smart-socket"
+    },
+    "github-buttons": {
+      "buttons": [{
+        "user": "smartboot",
+        "repo": "smart-socket",
+        "type": "star",
+        "size": "small",
+        "count": true
+      }]
+    }
+  }
 }
