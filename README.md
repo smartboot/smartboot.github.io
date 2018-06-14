@@ -4,7 +4,7 @@
 
 ### 作品
 - smart-socket   
-    不到600行代码实现极简、易用、高性能的java AIO通信框架，也许是IM、RPC、IoT开发的最佳选择
+    仅800多行代码实现极简、易用、高性能的java AIO通信框架，也许是IM、RPC、IoT开发的最佳选择
     
 - smart-boot    
     基于springboot封装的微服务框架
@@ -22,7 +22,7 @@
 - 三刀
 
 > 加入方式：  
-- 方式一：捐赠smartboot 100W。
+- 方式一：捐赠smartboot ￥1,000,000。
 - 方式二：
     - 发表smartboot任一项目文章并获得1W以上的阅读量，不限平台。
     - 开源作者或为开源作出过贡献。

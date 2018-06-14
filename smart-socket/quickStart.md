@@ -8,7 +8,7 @@ smart-socket已上传至Maven仓库，使用前需要向其引入您的项目工
 <dependency>
     <groupId>org.smartboot.socket</groupId>
     <artifactId>aio-core</artifactId>
-    <version>1.3.10</version>
+    <version>1.3.11</version>
 </dependency>
 ```
 
@@ -21,7 +21,7 @@ smart-socket已上传至Maven仓库，使用前需要向其引入您的项目工
 
 接下来我们会通过一个简单例子来演示如何通过smart-socket开发服务端与客户端程序。为简化操作，服务端与客户端交互的数据为一个整型数据。
 ### 一、协议编解码
-正常情况下服务端与客户端通信共用同一套协议规则，因此我们只需编写一份协议编解码实现即可。如下所示，协议编解码的需要实现接口Protocol。
+通常情况下服务端与客户端通信遵循同一套协议规则，因此我们只需编写一份协议编解码实现即可（如果是跨语言则需要各自实现）。如下所示，协议编解码的需要实现接口Protocol。
 ```
 public class IntegerProtocol implements Protocol<Integer> {
 
@@ -44,6 +44,7 @@ public class IntegerProtocol implements Protocol<Integer> {
 }
 ```
 上述代码很简单，一个整数的长度为4byte，所以只要长度大于等于4，我们就能解析到一个整数。
+> 值得注意的是，通过Protocol实现编码encode算法后，开发人员需要确保返回的ByteBuffer是出于可读状态。正如例子所示，完成编码后执行了`flip()`方法。
 
 ### 二、消息处理
 业务消息的处理需要实现接口`MessageProcessor`，该接口只有两个方法：`process`,`stateEvent `。其中 **stateEvent**用于定义AioSession状态机的监控与处理。**process**则会处理每一个接收到的业务消息。

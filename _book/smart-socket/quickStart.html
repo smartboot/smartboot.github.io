@@ -408,6 +408,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="../donation.html">
+            
+                <a href="../donation.html">
+            
+                    
+                    关于捐赠
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -462,7 +475,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.smartboot.socket<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>aio-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.3.10<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.3.11<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
 </code></pre>
 <h2 id="&#x901A;&#x4FE1;&#x5F00;&#x53D1;">&#x901A;&#x4FE1;&#x5F00;&#x53D1;</h2>
@@ -474,7 +487,7 @@
 </ol>
 <p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x4F1A;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x4F8B;&#x5B50;&#x6765;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x901A;&#x8FC7;smart-socket&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;&#x3002;&#x4E3A;&#x7B80;&#x5316;&#x64CD;&#x4F5C;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x4EA4;&#x4E92;&#x7684;&#x6570;&#x636E;&#x4E3A;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x6570;&#x636E;&#x3002;</p>
 <h3 id="&#x4E00;&#x3001;&#x534F;&#x8BAE;&#x7F16;&#x89E3;&#x7801;">&#x4E00;&#x3001;&#x534F;&#x8BAE;&#x7F16;&#x89E3;&#x7801;</h3>
-<p>&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x4FE1;&#x5171;&#x7528;&#x540C;&#x4E00;&#x5957;&#x534F;&#x8BAE;&#x89C4;&#x5219;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x7F16;&#x5199;&#x4E00;&#x4EFD;&#x534F;&#x8BAE;&#x7F16;&#x89E3;&#x7801;&#x5B9E;&#x73B0;&#x5373;&#x53EF;&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x534F;&#x8BAE;&#x7F16;&#x89E3;&#x7801;&#x7684;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;Protocol&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x4FE1;&#x9075;&#x5FAA;&#x540C;&#x4E00;&#x5957;&#x534F;&#x8BAE;&#x89C4;&#x5219;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x7F16;&#x5199;&#x4E00;&#x4EFD;&#x534F;&#x8BAE;&#x7F16;&#x89E3;&#x7801;&#x5B9E;&#x73B0;&#x5373;&#x53EF;&#xFF08;&#x5982;&#x679C;&#x662F;&#x8DE8;&#x8BED;&#x8A00;&#x5219;&#x9700;&#x8981;&#x5404;&#x81EA;&#x5B9E;&#x73B0;&#xFF09;&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x534F;&#x8BAE;&#x7F16;&#x89E3;&#x7801;&#x7684;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;Protocol&#x3002;</p>
 <pre><code>public class IntegerProtocol implements Protocol&lt;Integer&gt; {
 
     private static final int INT_LENGTH = 4;
@@ -495,6 +508,9 @@
     }
 }
 </code></pre><p>&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x7684;&#x957F;&#x5EA6;&#x4E3A;4byte&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x8981;&#x957F;&#x5EA6;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;4&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x80FD;&#x89E3;&#x6790;&#x5230;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x3002;</p>
+<blockquote>
+<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x901A;&#x8FC7;Protocol&#x5B9E;&#x73B0;&#x7F16;&#x7801;encode&#x7B97;&#x6CD5;&#x540E;&#xFF0C;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x9700;&#x8981;&#x786E;&#x4FDD;&#x8FD4;&#x56DE;&#x7684;ByteBuffer&#x662F;&#x51FA;&#x4E8E;&#x53EF;&#x8BFB;&#x72B6;&#x6001;&#x3002;&#x6B63;&#x5982;&#x4F8B;&#x5B50;&#x6240;&#x793A;&#xFF0C;&#x5B8C;&#x6210;&#x7F16;&#x7801;&#x540E;&#x6267;&#x884C;&#x4E86;<code>flip()</code>&#x65B9;&#x6CD5;&#x3002;</p>
+</blockquote>
 <h3 id="&#x4E8C;&#x3001;&#x6D88;&#x606F;&#x5904;&#x7406;">&#x4E8C;&#x3001;&#x6D88;&#x606F;&#x5904;&#x7406;</h3>
 <p>&#x4E1A;&#x52A1;&#x6D88;&#x606F;&#x7684;&#x5904;&#x7406;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;<code>MessageProcessor</code>&#xFF0C;&#x8BE5;&#x63A5;&#x53E3;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;<code>process</code>,<code>stateEvent</code>&#x3002;&#x5176;&#x4E2D; <strong>stateEvent</strong>&#x7528;&#x4E8E;&#x5B9A;&#x4E49;AioSession&#x72B6;&#x6001;&#x673A;&#x7684;&#x76D1;&#x63A7;&#x4E0E;&#x5904;&#x7406;&#x3002;<strong>process</strong>&#x5219;&#x4F1A;&#x5904;&#x7406;&#x6BCF;&#x4E00;&#x4E2A;&#x63A5;&#x6536;&#x5230;&#x7684;&#x4E1A;&#x52A1;&#x6D88;&#x606F;&#x3002;</p>
 <h4 id="&#x670D;&#x52A1;&#x7AEF;">&#x670D;&#x52A1;&#x7AEF;</h4>
@@ -598,7 +614,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"快速上手","level":"1.2.2","depth":2,"next":{"title":"基础篇","level":"1.2.3","depth":2,"ref":"","articles":[{"title":"准备工作","level":"1.2.3.1","depth":3,"path":"smart-socket/first/1-ready.md","ref":"smart-socket/first/1-ready.md","articles":[]},{"title":"核心接口","level":"1.2.3.2","depth":3,"path":"smart-socket/first/2-core-interface.md","ref":"smart-socket/first/2-core-interface.md","articles":[]},{"title":"枚举状态","level":"1.2.3.3","depth":3,"path":"smart-socket/first/3-enum.md","ref":"smart-socket/first/3-enum.md","articles":[]},{"title":"服务配置IoServerConfig","level":"1.2.3.4","depth":3,"path":"smart-socket/first/4-IoServerConfig.md","ref":"smart-socket/first/4-IoServerConfig.md","articles":[]},{"title":"服务端AioQuickServer","level":"1.2.3.5","depth":3,"path":"smart-socket/first/5-AioQuickServer.md","ref":"smart-socket/first/5-AioQuickServer.md","articles":[]},{"title":"客户端AioQuickClient","level":"1.2.3.6","depth":3,"path":"smart-socket/first/6-AioQuickClient.md","ref":"smart-socket/first/6-AioQuickClient.md","articles":[]},{"title":"通信会话AioSession","level":"1.2.3.7","depth":3,"path":"smart-socket/first/7-AioSession.md","ref":"smart-socket/first/7-AioSession.md","articles":[]},{"title":"读写回调","level":"1.2.3.8","depth":3,"path":"smart-socket/first/8-CompletionHandler.md","ref":"smart-socket/first/8-CompletionHandler.md","articles":[]}]},"previous":{"title":"前言","level":"1.2.1","depth":2,"path":"smart-socket/README.md","ref":"smart-socket/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","expandable-chapters-interactive","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search-plus":{},"expandable-chapters-interactive":{},"livereload":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"smartboot 中文指南","language":"en","gitbook":"*","description":"本文涵盖了smartboot下所有项目的技术手册"},"file":{"path":"smart-socket/quickStart.md","mtime":"2018-05-27T07:39:07.149Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-27T07:30:45.538Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"快速上手","level":"1.2.2","depth":2,"next":{"title":"基础篇","level":"1.2.3","depth":2,"ref":"","articles":[{"title":"准备工作","level":"1.2.3.1","depth":3,"path":"smart-socket/first/1-ready.md","ref":"smart-socket/first/1-ready.md","articles":[]},{"title":"核心接口","level":"1.2.3.2","depth":3,"path":"smart-socket/first/2-core-interface.md","ref":"smart-socket/first/2-core-interface.md","articles":[]},{"title":"枚举状态","level":"1.2.3.3","depth":3,"path":"smart-socket/first/3-enum.md","ref":"smart-socket/first/3-enum.md","articles":[]},{"title":"服务配置IoServerConfig","level":"1.2.3.4","depth":3,"path":"smart-socket/first/4-IoServerConfig.md","ref":"smart-socket/first/4-IoServerConfig.md","articles":[]},{"title":"服务端AioQuickServer","level":"1.2.3.5","depth":3,"path":"smart-socket/first/5-AioQuickServer.md","ref":"smart-socket/first/5-AioQuickServer.md","articles":[]},{"title":"客户端AioQuickClient","level":"1.2.3.6","depth":3,"path":"smart-socket/first/6-AioQuickClient.md","ref":"smart-socket/first/6-AioQuickClient.md","articles":[]},{"title":"通信会话AioSession","level":"1.2.3.7","depth":3,"path":"smart-socket/first/7-AioSession.md","ref":"smart-socket/first/7-AioSession.md","articles":[]},{"title":"读写回调","level":"1.2.3.8","depth":3,"path":"smart-socket/first/8-CompletionHandler.md","ref":"smart-socket/first/8-CompletionHandler.md","articles":[]}]},"previous":{"title":"前言","level":"1.2.1","depth":2,"path":"smart-socket/README.md","ref":"smart-socket/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","expandable-chapters-interactive","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search-plus":{},"expandable-chapters-interactive":{},"livereload":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"smartboot 中文指南","language":"en","gitbook":"*","description":"本文涵盖了smartboot下所有项目的技术手册"},"file":{"path":"smart-socket/quickStart.md","mtime":"2018-06-14T12:00:26.096Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-14T11:48:37.127Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

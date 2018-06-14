@@ -25,3 +25,4 @@
 * smart-ioc 使用手册
 * smart-boot 使用手册
 * mydalgen 使用手册
+* [关于捐赠](donation.md)
