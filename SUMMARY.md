@@ -3,9 +3,9 @@
 * [关于smartboot](README.md)
 
 * smart-socket 使用手册
-    * [前言](smart-socket/readme.md)
+    * [前言](smart-socket/README.md)
     * [快速上手](smart-socket/quickStart.md)
-    * 基础篇
+    * 源码篇
       *  [准备工作](smart-socket/first/1-ready.md)
       *  [核心接口](smart-socket/first/2-core-interface.md)
       *  [枚举状态](smart-socket/first/3-enum.md)
