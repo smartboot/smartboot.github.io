@@ -20,7 +20,6 @@
       *  [一类消息](smart-socket/second/3-type-one.md)
       *  [二类消息](smart-socket/second/4-type-two.md)
       *  [三类消息](smart-socket/second/5-type-three.md)
-    * 高级篇
 
 * smart-ioc 使用手册
 * smart-boot 使用手册
