@@ -2,7 +2,7 @@
 ===
 
 ### 状态机StateMachineEnum
-smart-socket中引入了状态机的概念，框架会监控每个状态事件的发生并通知消息处理器`MessageProcessor`的实现类。因此在必要的情况下，用户需要在`stateEvent`实现自己所要关注的状态处理，例如：
+smart-socket中引入了状态机的概念，状态机的存在不会决策smart-socket对于通信的事件处理，但会在特定事件发生之时通知消息处理器`MessageProcessor`的实现类。因此在必要的情况下，用户需要在`stateEvent`实现自己所要关注的状态处理，例如：
 ```
     public void stateEvent(AioSession<BaseMessage> session, StateMachineEnum stateMachineEnum, Throwable throwable) {
         switch (stateMachineEnum) {

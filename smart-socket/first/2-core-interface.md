@@ -1,30 +1,13 @@
-二、核心接口
-===
+# 二、核心接口
 
 作为一款框架，需要具备支持各类业务场景的能力，但框架本身又无法知晓实际业务场景如何，因此需要设计一套扩展性强且优雅的接口。smart-socket中核心的接口仅3个，用户在使用smart-socket进行二次开发时，也只需熟练掌握这三个接口的运用即可。
-> 剧透：在基础篇中可无需关注Filter，您对smart-socket的使用不受其影响，在进阶篇中另有讲解。
 
-#### Protocol
+## Protocol
 ```
 public interface Protocol<T> {
-    /**
-     * 对于从Socket流中获取到的数据采用当前Protocol的实现类协议进行解析
-     *
-     * @param data
-     * @param session
-     * @param eof     是否EOF
-     * @return 本次解码所成功解析的消息实例集合, 返回null则表示解码未完成
-     */
+
     public T decode(final ByteBuffer data, AioSession<T> session, boolean eof);
 
-    /**
-     * 将业务消息实体编码成ByteBuffer用于输出至对端。
-     * <b>切勿在encode中直接调用session.write,编码后的byteuffer需交由框架本身来输出</b>
-     *
-     * @param msg
-     * @param session
-     * @return
-     */
     public ByteBuffer encode(T msg, AioSession<T> session);
 }
 ```
@@ -40,21 +23,8 @@ Protocol实现类从ByteBuffer中读取字节并按其协议规则进行消息�
 ```
 public interface MessageProcessor<T> {
 
-    /**
-     * 处理接收到的消息
-     *
-     * @param session
-     * @throws Exception
-     */
     public void process(AioSession<T> session, T msg);
 
-    /**
-     * 状态机事件,当枚举事件发生时由框架触发该方法
-     *
-     * @param session
-     * @param stateMachineEnum 状态枚举
-     * @param throwable        异常对象，如果存在的话
-     */
     void stateEvent(AioSession<T> session, StateMachineEnum stateMachineEnum, Throwable throwable);
 }
 ```
@@ -71,39 +41,12 @@ MessageProcessor定义了消息处理器接口，smart-socket在通过Protocol�
 ```
 public interface Filter<T> {
 
-    /**
-     * 数据读取过滤,可用于统计流量
-     *
-     * @param session
-     * @param readSize  本次解码读取的数据长度
-     */
     public void readFilter(AioSession<T> session, int readSize);
 
-
-    /**
-     * 消息处理前置预处理
-     *
-     * @param session
-     * @param msg 编解码后的消息实体
-     */
     public void processFilter(AioSession<T> session, T msg);
 
-
-    /**
-     * 消息接受失败处理
-     *
-     * @param session
-     * @param msg 编解码后的消息实体
-     * @param e         本次处理异常对象
-     */
     public void processFailHandler(AioSession<T> session, T msg, Throwable e);
 
-    /**
-     * 数据输出过滤,可用于统计流量
-     *
-     * @param session
-     * @param writeSize  本次输出的数据长度
-     */
     public void writeFilter(AioSession<T> session, int writeSize);
 
 }

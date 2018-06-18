@@ -1,6 +1,10 @@
 技术手册的厚度，体现了框架的学习难度。smart-socket的学习成本止于本章节，之后各篇为对smart-socket的源码解读，各位看官可酌情选读。
+下图即为用户的学习图谱，掌握图中几个接口便可运用smart-socket完成通信开发。
+![uml](images/uml.png)
 
 运用smart-socket进行通信开发，**我们唯一要求的技术门槛为：熟练掌握ByteBuffer**。至于JDK提供的通信相关的API，smart-socket已经完全封装好了，近一步降低了AIO通信的使用复杂度，如果您对其感兴趣可阅读smart-socket源码借鉴一下。
+
+
 
 ## Maven依赖
 smart-socket已上传至Maven仓库，使用前需要向其引入您的项目工程中。

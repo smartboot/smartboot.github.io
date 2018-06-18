@@ -1,7 +1,8 @@
-五、服务端AioQuickServer
-===
+#五、服务端AioQuickServer
+异步非阻塞通信的服务端实现。
 
-### 成员属性
+
+## 成员属性
 
 | 属性名  | 类型 | 说明 |
 |  ----  | ----| -----|
@@ -11,7 +12,7 @@
 |aioReadCompletionHandler|ReadCompletionHandler|smart-socket提供的IO读回调处理类|
 |aioWriteCompletionHandler|WriteCompletionHandler|smart-socket提供的IO写回调处理类|
 
-### 配置型方法
+## 配置型方法
 | 方法 | 说明 |
 |---|----|
 |public AioQuickServer<T> setBannerEnabled(boolean bannerEnabled)|服务启动时是否打印smart-socket banner|
@@ -23,8 +24,8 @@
 |public <V> AioQuickServer<T> setOption(SocketOption<V> socketOption, V value)|设置Socket的TCP参数配置|
 
 
-### 核心方法
-#### 1、 start：启动AIO服务端
+## 核心方法
+### 1、 start：启动AIO服务端
 - 片段一
 ```
 asynchronousChannelGroup = AsynchronousChannelGroup.withFixedThreadPool(config.getThreadNum(), new ThreadFactory() {
@@ -69,16 +70,23 @@ protected void createSession(AsynchronousSocketChannel channel) {
 AIO通道服务监听客户端连接请求，一旦客户端连接上来则触发`CompletionHandler`回调。CompletionHandler首先要做的便是继续下一个请求的监听`serverSocketChannel.accept(attachment, this); `，然后构建本次连接的会话对象AioSession。
 所有的AioSession共用aioReadCompletionHandler、aioWriteCompletionHandler对象，这样可以减少服务端产生的对象数。
 之所以定义createSession来实现AIOSession初始化，是为了预留扩展接口。后续进行TLS/SSL通讯时，createSession会有不同的实现。
-#### 2、 shutdown：停止AIO服务端
+### 2、 shutdown：停止AIO服务端
 AIO服务停止的逻辑很简单，关闭Channel通道，停止线程组。
 ```
-public void shutdown() {
-    try {
-        serverSocketChannel.close();
-    } catch (IOException e) {
-        LOGGER.catching(e);
+public final void shutdown() {
+        try {
+            if (serverSocketChannel != null) {
+                serverSocketChannel.close();
+                serverSocketChannel = null;
+            }
+        } catch (IOException e) {
+            LOGGER.warn(e.getMessage(), e);
+        }
+        if (asynchronousChannelGroup != null) {
+            asynchronousChannelGroup.shutdown();
+            asynchronousChannelGroup = null;
+        }
     }
-    asynchronousChannelGroup.shutdown();
 }
 ```
 
