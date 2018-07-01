@@ -25,4 +25,6 @@
 * smart-ioc 使用手册
 * smart-boot 使用手册
 * mydalgen 使用手册
+* 技术分享
+    *   [smart-socket实现RPC](share/rpc/smart-socket-rpc.md)
 * [关于捐赠](donation.md)
