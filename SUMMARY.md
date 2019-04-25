@@ -21,7 +21,20 @@
       *  [二类消息](smart-socket/second/4-type-two.md)
       *  [三类消息](smart-socket/second/5-type-three.md)
     * [API Docs](https://smartboot.github.io/smart-socket/apidocs/index.html)
-
+* smart-smart v1.4使用手册
+    * [前言](smart-socket-v1.4/README.md)
+    * 第一章 简介
+        * [1.1 常见误区](smart-socket-v1.4/chapter-1/1.1-常见误区.md)
+        * [1.2 总结](smart-socket-v1.4/chapter-1/SUMMARY.md)
+    * [第二章 smart-socket开发指南](smart-socket-v1.4/chapter-2/2.2-Spring集成/README.md)
+        * [2.1 smart-socket基础应用](smart-socket-v1.4/chapter-2/2.1-基础应用/README.md)
+        * [2.2 Spring集成smart-socket](smart-socket-v1.4/chapter-2/2.2-Spring集成/README.md)
+        * [小结](smart-socket-v1.4/chapter-2/SUMMARY.md)
+    * [第三章 源码解析](smart-socket-v1.4/chapter-3/README.md)
+    * [第四章 通信协议](smart-socket-v1.4/chapter-4/README.md)
+    * [第五章 内存池](smart-socket-v1.4/chapter-5/README.md)
+    * [第六章 未来规划](smart-socket-v1.4/chapter-6/README.md)
+    * [附录](smart-socket-v1.4/end/README.md)
 * smart-ioc 使用手册
 * smart-boot 使用手册
 * mydalgen 使用手册
