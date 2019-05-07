@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<xsd:schema xmlns="http://smartboot.oschina.io/schema/mydalgen/table"
-            xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://smartboot.oschina.io/schema/mydalgen/table">
+<xsd:schema xmlns="https://smartboot.gitee.io/docs/mydalgen/table"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://smartboot.gitee.io/docs/mydalgen/table">
 
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
 
