@@ -1,11 +1,12 @@
+## 快速上手
 
-# 第二章 smart-socket开发指南
+JDK1.7是采用smart-socket进行开发的最低版本要求，如果您还在用JDK1.6或者更低的版本，请先升级您的JDK。
+如果您从事的是Android通信开发，可能会面临低版本系统而无法使用smart-socket的问题，为此我们专为采用NIO技术开发了Android版本通信框架smart-ioc，因其不属于本章主角故暂不多做介绍。
+除了JDK，建议事先准备一款顺手的IDE，并搭建好Maven环境，会有更高的开发效率。
 
-## 2.1 smart-socket基础应用
-
-​	JDK1.7是采用smart-socket进行开发的最低版本要求，如果您还在用JDK1.6或者更低的版本，请先升级您的JDK。如果您从事的是Android通信开发，可能会面临低版本系统而无法使用smart-socket的问题，为此我们专为采用NIO技术开发了Android版本通信框架smart-ioc，因其不属于本章主角故暂不多做介绍。除了JDK，建议事先准备一款顺手的IDE，并搭建好Maven环境，会有更高的开发效率。
-
-​	除了`slf4j-api`，smart-socket不依赖其他第三方jar包。所以你可以很轻松的将它集成到你的项目中，无需担心会发生jar包冲突的问题。得益于smart-socket代码量极少的特性，你甚至可以选择直接将源码拷贝到自己的项目中，维护一个专属于你的私有版smart-socket。不过我们更推荐的是采用mavne方式引入smart-socket，这样便可享受由原作者提供后续的版本升级服务。
+smart-socket并不依赖除`slf4j-api`之外的其他第三方jar包，所以你可以很轻松的将它集成到你的项目中，无需担心会发生jar包冲突的问题。
+得益于smart-socket代码量极少的特性，你甚至可以选择直接将源码拷贝到自己的项目中，维护一个专属于你的私有版smart-socket。
+不过我们更推荐的是采用maven方式引入smart-socket，这样便可享受由原作者提供后续的版本升级服务。
 
 - 码云 https://gitee.com/smartboot/smart-socket
 
