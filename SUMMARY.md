@@ -18,7 +18,7 @@
         * [3.2 半包/粘包](smart-socket-v1.4/BLANK.md)
         * [3.3 Http消息解析](smart-socket-v1.4/BLANK.md)
         * [3.4 RPC消息解析](smart-socket-v1.4/BLANK.md)
-    * [第是章 内存池](smart-socket-v1.4/chapter-5/README.md)
+    * [第四章 内存池](smart-socket-v1.4/chapter-5/README.md)
     * [第五章 未来规划](smart-socket-v1.4/chapter-6/README.md)
     * [附录](smart-socket-v1.4/end/README.md)
 * 技术分享

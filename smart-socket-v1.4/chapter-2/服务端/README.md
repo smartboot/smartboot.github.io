@@ -1,5 +1,5 @@
 
-### 3.3 服务端AioQuickServer
+## 服务端AioQuickServer
 
 异步非阻塞通信的服务端实现。这个类主要是对JDK提供的AIO通信类AsynchronousServerSocketChannel、AsynchronousChannelGroup进行封装。AioQuickServer是服务端通信的调度中心，在完成协议、消息处理器的定义后，需要通过AioQuickServer来启动我们的通信服务。AioQuickServer提供了一些必要的参数配置接口，方便开发人员进行资源分配以达到最优效果。
 
@@ -13,6 +13,7 @@
 | aioReadCompletionHandler  | ReadCompletionHandler           | smart-socket提供的IO读回调处理类 |
 | aioWriteCompletionHandler | WriteCompletionHandler          | smart-socket提供的IO写回调处理类 |
 | bufferPool                | BufferPagePool                  | 内存池对象                       |
+| workerExecutorService     | ThreadPoolExecutor              | Worker线程池                   |
 
 2.5.2 配置接口
 
@@ -55,18 +56,35 @@
 - 片段三
 
 ```java
-serverSocketChannel.accept(null, new CompletionHandler<AsynchronousSocketChannel, Object>() {
-    @Override
-    public void completed(final AsynchronousSocketChannel channel, Object attachment) {
-        serverSocketChannel.accept(attachment, this);
-        createSession(channel);
-    }
+acceptThread = new Thread(new Runnable() {
+    NetMonitor<T> monitor = config.getMonitor();
 
     @Override
-    public void failed(Throwable exc, Object attachment) {
-        LOGGER.warn(exc);
+    public void run() {
+        while (running) {
+            Future<AsynchronousSocketChannel> future = serverSocketChannel.accept();
+            try {
+                final AsynchronousSocketChannel channel = future.get();
+                workerExecutorService.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (monitor == null || monitor.acceptMonitor(channel)) {
+                            createSession(channel);
+                        } else {
+                            config.getProcessor().stateEvent(null, StateMachineEnum.REJECT_ACCEPT, null);
+                            LOGGER.warn("reject accept channel:{}", channel);
+                            closeChannel(channel);
+                        }
+                    }
+                });
+            } catch (Exception e) {
+                LOGGER.error("AcceptThread Exception", e);
+            }
+
+        }
     }
-});
+}, "smart-socket:AcceptThread");
+acceptThread.start();
 
 protected void createSession(AsynchronousSocketChannel channel) {
 	//连接成功则构造AIOSession对象
@@ -99,7 +117,9 @@ protected void createSession(AsynchronousSocketChannel channel) {
 }
 ```
 
-AIO通道服务监听客户端连接请求，一旦客户端连接上来则触发`CompletionHandler`回调。CompletionHandler首先要做的便是继续下一个请求的监听`serverSocketChannel.accept(attachment, this);`，然后构建本次连接的会话对象AioSession。 所有的AioSession共用aioReadCompletionHandler、aioWriteCompletionHandler对象，这样可以减少服务端产生的对象数。
+smart-socket通过启动AcceptThread线程同步监听客户端连接请求，
+一旦客户端连接上来便生成异步任务由WorkerThread线程池来初始化AioSession。
+所有的AioSession共用aioReadCompletionHandler、aioWriteCompletionHandler对象，这样可以减少服务端产生的对象数。
 
 **2.5.3.2 shutdown：停止AIO服务端**
 
@@ -107,25 +127,33 @@ AIO服务停止的逻辑很简单，关闭Channel通道，停止线程组。
 
 ```java
 public final void shutdown() {
-	try {
-    	if (serverSocketChannel != null) {
-        	serverSocketChannel.close();
-            serverSocketChannel = null;
-		}
-	} catch (IOException e) {
-    	LOGGER.warn(e.getMessage(), e);
-	}
-    if (!asynchronousChannelGroup.isTerminated()) {
-    	try {
-        	asynchronousChannelGroup.shutdownNow();
-		} catch (IOException e) {
-        	LOGGER.error("shutdown exception", e);
-		}
-	}
+    running = false;
     try {
-    	asynchronousChannelGroup.awaitTermination(3, TimeUnit.SECONDS);
-	} catch (InterruptedException e) {
-    	LOGGER.error("shutdown exception", e);
-	}
+        if (serverSocketChannel != null) {
+            serverSocketChannel.close();
+            serverSocketChannel = null;
+        }
+    } catch (IOException e) {
+        LOGGER.warn(e.getMessage(), e);
+    }
+    if (!workerExecutorService.isTerminated()) {
+        try {
+            workerExecutorService.shutdownNow();
+        } catch (Exception e) {
+            LOGGER.error("shutdown exception", e);
+        }
+    }
+    if (!asynchronousChannelGroup.isTerminated()) {
+        try {
+            asynchronousChannelGroup.shutdownNow();
+        } catch (IOException e) {
+            LOGGER.error("shutdown exception", e);
+        }
+    }
+    try {
+        asynchronousChannelGroup.awaitTermination(3, TimeUnit.SECONDS);
+    } catch (InterruptedException e) {
+        LOGGER.error("shutdown exception", e);
+    }
 }
 ```

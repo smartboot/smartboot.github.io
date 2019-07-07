@@ -1,5 +1,5 @@
 
-### 3.5 通信会话AioSession
+### 通信会话AioSession
 
 ​	AioQuickServer和AioQuickClient在smart-socket中负责的是服务的配置、启动、停止，所以代码逻辑较简单。AioSession才是smart-socket真正的灵魂，它是衔接网络传输与业务应用的纽带。在AioSession的协调控制下，用户无需再去关心并发所带来的复杂IO场景，只需专注于数据编解码与业务处理。
 
@@ -64,7 +64,7 @@ void readFromChannel(boolean eof) {
 }
 ```
 
-​	写操作的回调代码实现相对简单很多，但事实上却是处理难度最大的。因为写操作是个主动行为，我们不可预知用户在何时会写入数据，而写缓冲区中积压的数据又要依靠smart-socket将其输出到网络对端，故此处就存在并发的情况。如果出现多个线程同时触发write操作会导致WritePendingException，在AioSession中使用了信号量Semaphore完成了同步控制，实现了数据有序的输出。smart-socket的写回调会执行`writeToChannel`方法，而这信号量在之前已经通过其他途径被锁定，此处暂且不提。回调的处理逻辑为：
+写操作的回调代码实现相对简单很多，但事实上却是处理难度最大的。因为写操作是个主动行为，我们不可预知用户在何时会写入数据，而写缓冲区中积压的数据又要依靠smart-socket将其输出到网络对端，故此处就存在并发的情况。如果出现多个线程同时触发write操作会导致WritePendingException，在AioSession中使用了信号量Semaphore完成了同步控制，实现了数据有序的输出。smart-socket的写回调会执行`writeToChannel`方法，而这信号量在之前已经通过其他途径被锁定，此处暂且不提。回调的处理逻辑为：
 
 1. 识别writeBuffer或缓冲集合bufList中是否存在待输出的数据，若有则继续执行写操作`continueWrite()`。
 2. 如果数据已经输出完毕，则释放信号量。
