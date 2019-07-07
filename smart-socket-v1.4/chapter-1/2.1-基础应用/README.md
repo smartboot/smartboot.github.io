@@ -19,23 +19,31 @@ smart-socket并不依赖除`slf4j-api`之外的其他第三方jar包，所以你
   <dependency>
       <groupId>org.smartboot.socket</groupId>
       <artifactId>aio-core</artifactId>
-      <version>1.4.0</version>
+      <version>1.4.2</version>
   </dependency>
   ```
+ 
+用户使用smart-socket更多的是用于服务端通信开发，因此可以先通过下图大致了解一下它的运行机制。
+![线程模型](thread_model.png)
+smart-socket服务端内部设有三类线程：
+ - AcceptThread线程，接受客户端的连接请求，并将读回调的处理事件注册至Worker线程组。
+ - WorkerThread线程池，用于处理各个连接会话的数据读回调。
+ - BossThread线程池，该线程池中部分线程只处理写回调，部分线程可处理读/写回调。
+ 
+smart-socket触发读回调后需要开发人员去处理消息解码与业务处理两个环节，也正是本章节要给大家介绍的内容。
 
-### 2.1.1 工程搭建
+### 1.1.1 工程搭建
 
-​	本章以Maven工程为例为大家演示基于smart-socket实现socket开发，如果您已经有现成的工程仅需引入pom.xml依赖即可，否则请先建立一个项目工程。
+本章以Maven工程为例为大家演示基于smart-socket实现socket开发，如果您已经有现成的工程仅需引入pom.xml依赖即可，否则请先建立一个项目工程。
 
 <img src='2.1.1_1.png' width='80%'/>
 
-​	从上图可以看到，我们在pom.xml中引入了smart-socket的核心包aio-core 1.4.0，最终工程衍生出来的依赖包仅slf4j-api。工程搭建完毕后，我们正式开始smart-socket的开发之旅。
+从上图可以看到，我们在pom.xml中引入了smart-socket的核心包aio-core 1.4.2，最终工程衍生出来的依赖包仅slf4j-api。工程搭建完毕后，我们正式开始smart-socket的开发之旅。
 
-### 2.1.2 协议约定
+### 1.1.2 协议约定
 
-​	通信中所说的协议是指双方实体完成通信或服务所必须遵循的规则和约定。协议定义了数据单元使用的格式，信息单元应该包含的信息与含义，连接方式，信息发送和接收的时序，从而确保网络中数据顺利地传送到确定的地方。
-
-​	此前我们也提及过数据通信过程中采用的是字节流，服务端与客户端之间传递的一系列数值具体代表什么含义？依靠的是通信双方事先约定好的协议规范，双方根据约定的协议进行消息的编码、传输、解码，就能进行可靠的消息通信。
+通信中所说的协议是指双方实体完成通信或服务所必须遵循的规则和约定。
+协议定义了数据单元使用的格式，信息单元应该包含的信息与含义，连接方式，信息发送和接收的时序，从而确保网络中数据顺利地传送到确定的地方。
 
 协议的制定，需要满足三要素：
 
@@ -50,7 +58,7 @@ smart-socket并不依赖除`slf4j-api`之外的其他第三方jar包，所以你
 
 <img src='2.1.2_1.png' width='40%'/>
 
-​	按照上述规则，我们可以得出一个公式：消息长度=消息头长度+消息体长度，而消息体的长度取决于消息头中的数值。这就是所谓的协议，那根据这个协议，我们如何实现传输呢？
+按照上述规则，我们可以得出一个公式：消息长度=消息头长度+消息体长度，而消息体的长度取决于消息头中的数值。这就是所谓的协议，那根据这个协议，我们如何实现传输呢？
 
 以字符串“socket”为例，按照上述协议进行编码后的结果为：
 
@@ -85,12 +93,10 @@ public class StringProtocol implements Protocol<String> {
 
 同样的协议可以有不同的解析算法，不同算法的优劣各不相同。依旧以此协议为例，解析算法还能这样写：
 
- 	1. 采用绝对定位的方式识别消息长度，该读取方式不会改变readBuffer的position值；
- 	2. 判断当前readBuffer中待读取的数据长度是否满足消息体长度；不满足条件说明存在半包情况，返回null；
- 	3. 若消息数据完整，构建用于存放数据的byte数组，通过执行readBuffer.get()设置数组长度。此get方法会对readBuffer的position作加1操作。
-
-4. 再次执行readBuffer.get方法，以byte数组为入参接受消息体数据，此操作也会影响readBuffer的position；
-
+1. 采用绝对定位的方式识别消息长度，该读取方式不会改变buffer的position值；
+2. 判断当前buffer中待读取的数据长度是否满足消息体长度；不满足条件说明存在半包情况，返回null；
+3. 若消息数据完整，构建用于存放数据的byte数组，通过执行buffer.get()设置数组长度。此get方法会对buffer的position作加1操作。
+4. 再次执行buffer.get方法，以byte数组为入参接受消息体数据，此操作也会影响buffer的position；
 5. 构建字符串对象，解码成功。
 
 ```java
@@ -108,11 +114,12 @@ public class StringProtocol implements Protocol<String> {
 }
 ```
 
-​	协议编解码是通信编程中非常重要的一个环节，如果读者朋友目前还不是特别能理解，那就谨记一件事：掌握协议编解码，通信就学会了80%，剩下的20%就是业务处理。根据作者以往的经验，很多初学者都被困扰在这个环节，一旦闯过这一关就柳暗花明了。
+协议编解码是通信编程中非常重要的一个环节，如果读者朋友目前还不是特别能理解，那就谨记一件事：掌握协议编解码，通信就学会了80%，剩下的20%就是业务处理。根据作者以往的经验，很多初学者都被困扰在这个环节，一旦闯过这一关就柳暗花明了。
 
-### 2.1.3 服务端
+### 1.1.3 服务端
 
-​	我们努力缩短大家对smart-socket的学习路径，故在接口设计上力求简洁，有助于您快速将服务搭建起来。启动步骤如下：
+​启动服务端需要依赖AioQuickServer，实际应用中的运行参数调优也都是对AioQuickServer的接口进行操作，
+此处先展示一下它的基本应用。
 
 1. 构造服务端对象AioQuickServer。该类的构造方法有以下几个入参：
    - port，服务端监听端口号，客户度要请求该端口号才可连上服务端。
@@ -131,8 +138,8 @@ public class Server {
                 byte[] response = "Hi Client!".getBytes();
                 byte[] head = {(byte) response.length};
                 try {
-                    session.getOutputStream().write(head);
-                    session.getOutputStream().write(response);
+                    session.writeBuffer().write(head);
+                    session.writeBuffer().write(response);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -147,11 +154,11 @@ public class Server {
 }
 ```
 
-​	上述代码中启动了端口号8080的服务端应用，当接收到客户端发送过来的数据时，服务端以StringProtocol进行协议解码，识别出客户度传递的字符串，而后将该消息转交给消息处理器MessageProcessor进行业务处理。
+上述代码中启动了端口号8080的服务端应用，当接收到客户端发送过来的数据时，服务端以StringProtocol进行协议解码，识别出客户度传递的字符串，随后将该消息转交给消息处理器MessageProcessor进行业务处理。
 
-### 2.1.4 客户端
+### 1.1.4 客户端
 
-​	客户度的开发相较于服务端就简单很多，仅需操作一个连接会话（AioSession）即可，而服务端面向的是众多连接会话，在实际运用中还得具备并发思维与会话资源管理策略。客户端的开发步骤通常如下：
+客户端的开发相较于服务端就简单很多，仅需操作一个连接会话（AioSession）即可，而服务端面向的是众多连接会话，在实际运用中还得具备并发思维与会话资源管理策略。客户端的开发步骤通常如下：
 
 1. 连接服务端，取得连接会话（AioSession）
 2. 发送请求消息
@@ -174,9 +181,9 @@ public class Client {
         byte[] msgBody = "Hello Server!".getBytes();
         byte[] msgHead = {(byte) msgBody.length};
         try {
-            session.getOutputStream().write(msgHead);
-            session.getOutputStream().write(msgBody);
-            session.getOutputStream().flush();
+            session.writeBuffer().write(msgHead);
+            session.writeBuffer().write(msgBody);
+            session.writeBuffer().flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -184,9 +191,9 @@ public class Client {
 }
 ```
 
-### 2.1.5 启动运行
+### 1.1.5 启动运行
 
-​	完成代码的编写后我们便可先后启动服务端、客户端程序，观察通信服务的运行结果。服务端启动成功后，会在控制台打印如下信息，如启动失败请检查是否存在端口被占用的情况。
+完成代码的编写后我们便可先后启动服务端、客户端程序，观察通信服务的运行结果。服务端启动成功后，会在控制台打印如下信息，如启动失败请检查是否存在端口被占用的情况。
 
 <img src='2.1.5_1.png' width='80%'/>
 

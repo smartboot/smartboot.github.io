@@ -1,13 +1,13 @@
 
-## 2.2 Spring集成smart-socket
+## Spring集成smart-socket
 
-​	smart-socket为我们的通信服务提供了良好的解决方案，但更多时候我们的系统工程并不仅仅只有通信，而是一系列服务类型的混合体。比如我们将一个Web工程放置于Tomcat为用户提供Http服务的同时，在后台还开放了RPC服务供第三方应用调用，而且整个工程采用的是Spring框架进行开发。此时就会涉及到smart-socket与Spring的集成问题，需要将通信服务实例交由Spring进行管理。
+现今的企业系统开发通常会使用Spring，smart-socket与Spring的集成就是一个基本的通信服务Bean实例托管的过程。
 
-​	此处以xml配置和注解两种方式为大家介绍smart-socket于spring的集成方案，前期需要做的准备工作就是先搭建一个spring工程，并引入smart-socket依赖，pom.xml配置如下图。
+此处以xml配置和注解两种方式为大家介绍smart-socket于spring的集成方案，前期需要做的准备工作就是先搭建一个spring工程，并引入smart-socket依赖，pom.xml配置如下图。
 
 <img src='spring-example-1.png' width='80%'/>
 
-### 2.2.1 xml配置化启动服务
+### 1. xml配置化启动服务
 
 ​	通过2.1章节我们了解到smart-socket启用通信服务依赖两个关键的要素：Protocol、MessageProcessor，在spring的集成应用中我们依旧需要定义它们的实现类。接下来我们会以服务端场景为例给大家演示，如果您是要进行客户端通信服务与Spring的集成，请按同样的操作方式替换一下相应的配置即可。
 
@@ -38,23 +38,24 @@
 - 定义处理器
 
   ```java
-  public class ServerProcessor implements MessageProcessor<String> {
-      @Override
-      public void process(AioSession<String> session, String msg) {
-          BufferOutputStream outputStream = session.getOutputStream();
-          byte[] bytes = msg.getBytes();
-          outputStream.writeInt(bytes.length);
-          try {
-              outputStream.write(bytes);
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
-      }
-  
-      @Override
-      public void stateEvent(AioSession<String> session, StateMachineEnum stateMachineEnum, Throwable throwable) {
-      }
-  }
+ public class ServerProcessor implements MessageProcessor<String> {
+       @Override
+       public void process(AioSession<String> session, String msg) {
+           WriteBuffer writeBuffer = session.writeBuffer();
+           byte[] bytes = msg.getBytes();
+           
+           try {
+               writeBuffer.writeInt(bytes.length);
+               writeBuffer.write(bytes);
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+       }
+   
+       @Override
+       public void stateEvent(AioSession<String> session, StateMachineEnum stateMachineEnum, Throwable throwable) {
+       }
+}
   ```
 
 准备工作就绪后，我们需要在application.xml配置它们的实例bean，并将其引用至AioQuickServer的bean配置。因为`AioQuickServer`的构造方法都是带参数的，所以配置bean的时候需要用到标签`constructor-arg`。
@@ -78,7 +79,8 @@
 </beans>
 ```
 
-如此一来只需启动spring容器，我们的通信服务便开始运行。接下来我们来验证一下集成后的效果，如果将其配置到真正的web服务中演示过程稍显琐碎，故我们直接通过main函数来调用。
+当启动spring容器时，我们的通信服务便开始运行。
+接下来我们来验证一下集成后的效果，如果将其配置到真正的web服务中演示过程稍显琐碎，故我们直接通过main函数来调用。
 
 ```java
 public class SpringDemo {
@@ -94,7 +96,7 @@ public class SpringDemo {
 
 执行上述代码后控制台会打印服务的启动与关闭日志，如果出现异常，请检查端口号是否被占用。
 
-### 2.2.2 注解方式启动服务
+### 2. 注解方式启动服务
 
 如果读者习惯用注解的方式使用Spring，那我们需要对原有的代码稍加改动。Protocol和MessageProcessor实现类需要加上注解`@Component`。
 
@@ -128,22 +130,23 @@ public class SpringDemo {
   ```java
   @Component("messageProcessor")
   public class ServerProcessor implements MessageProcessor<String> {
-      @Override
-      public void process(AioSession<String> session, String msg) {
-          BufferOutputStream outputStream = session.getOutputStream();
-          byte[] bytes = msg.getBytes();
-          outputStream.writeInt(bytes.length);
-          try {
-              outputStream.write(bytes);
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
-      }
-  
-      @Override
-      public void stateEvent(AioSession<String> session, StateMachineEnum stateMachineEnum, Throwable throwable) {
-      }
-  }
+        @Override
+        public void process(AioSession<String> session, String msg) {
+            WriteBuffer writeBuffer = session.writeBuffer();
+            byte[] bytes = msg.getBytes();
+            
+            try {
+                writeBuffer.writeInt(bytes.length);
+                writeBuffer.write(bytes);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    
+        @Override
+        public void stateEvent(AioSession<String> session, StateMachineEnum stateMachineEnum, Throwable throwable) {
+        }
+    }
   ```
 
 接下来我们修改application.xml配置，`default-autowire="byName"`表示优先按bean名称注入，而注解的扫描扫描包路径为`org.smartboot.example.spring`。
