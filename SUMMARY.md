@@ -24,4 +24,5 @@
 * 技术分享
     *   [smart-socket实现RPC](share/rpc/smart-socket-rpc.md)
     *   [内存管理-首次适应算法](share/firstfit/readme.md)
+    *   [Thread知多少](share/thread/readme.md)
 * [关于捐赠](donation.md)
