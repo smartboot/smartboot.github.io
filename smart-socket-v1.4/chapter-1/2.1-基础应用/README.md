@@ -1,46 +1,93 @@
 ## 快速上手
 
-JDK1.7是采用smart-socket进行开发的最低版本要求，如果您还在用JDK1.6或者更低的版本，请先升级您的JDK。
-如果您从事的是Android通信开发，可能会面临低版本系统而无法使用smart-socket的问题，为此我们专为采用NIO技术开发了Android版本通信框架smart-ioc，因其不属于本章主角故暂不多做介绍。
+JDK1.7 是采用 smart-socket 进行开发的最低版本要求，如果您还在用 JDK1.6 或者更低的版本，请先升级您的 JDK。
+如果您从事的是 Android 通信开发，可能会面临低版本系统而无法使用 smart-socket 的问题，为此我们专为采用 NIO 技术开发了 Android 版本通信框架 smart-ioc，因其不属于本章主角故暂不多做介绍。
 除了JDK，建议事先准备一款顺手的IDE，并搭建好Maven环境，会有更高的开发效率。
 
-smart-socket并不依赖除`slf4j-api`之外的其他第三方jar包，所以你可以很轻松的将它集成到你的项目中，无需担心会发生jar包冲突的问题。
-得益于smart-socket代码量极少的特性，你甚至可以选择直接将源码拷贝到自己的项目中，维护一个专属于你的私有版smart-socket。
-不过我们更推荐的是采用maven方式引入smart-socket，这样便可享受由原作者提供后续的版本升级服务。
+smart-socket 并不依赖除 `slf4j-api` 之外的其他第三方 jar 包，所以你可以很轻易的将它集成到你的项目中，无需担心会发生 jar 包冲突的问题。
+得益于 smart-socket 代码量极少的特性，你甚至可以选择直接将源码拷贝到自己的项目中，维护一个专属于你的私有版 smart-socket。
+
+目前 smart-socket 托管在码云和Github，有需要的可前往下载项目源码。
 
 - 码云 https://gitee.com/smartboot/smart-socket
 
 - GITHUB https://github.com/smartboot/smart-socket
 
-- Maven 
+不过我们更推荐的是采用 maven 方式引用 smart-socket ，这样便可享受由作者提供后续的版本升级服务。
 
   ```xml
-  <!-- 本书中的版本号可能不是最新的，以实际maven仓库中的版本号为准(https://mvnrepository.com/artifact/org.smartboot.socket/aio-core) -->
+  <!-- 本书中的版本号可能不是最新的，以实际maven仓库中的版本号为准 -->
   <dependency>
       <groupId>org.smartboot.socket</groupId>
       <artifactId>aio-core</artifactId>
-      <version>1.4.2</version>
+      <version>1.4.5</version>
   </dependency>
   ```
  
-用户使用smart-socket更多的是用于服务端通信开发，因此可以先通过下图大致了解一下它的运行机制。
+### 线程模型
+用户选择通信框架通常是为了满足服务端的开发，毕竟客户端通信比较简单，即便是传统的BIO都是个性价比较高的选项。所以本书会更侧重于分享 smart-socket 在服务端通信方面的实践，在动手编码之前希望读者朋友先仔细理解下图描绘的 smart-socket 服务端线程模型，对于之后的学习、应用有很大的帮助。
+
 ![线程模型](thread_model.png)
-smart-socket服务端内部设有三类线程：
- - AcceptThread线程，接受客户端的连接请求，并将读回调的处理事件注册至Worker线程组。
- - WorkerThread线程池，用于处理各个连接会话的数据读回调。
- - BossThread线程池，该线程池中部分线程只处理写回调，部分线程可处理读/写回调。
+
+smart-socket 服务端内部设有三类线程：
+ - Accept线程     
+    接受客户端的连接请求，完成连接会话（AioSession）实例化后便开始监听客户端的数据请求。
+ - Worker线程组    
+    Worker线程是一组线程池，该线程的职责主要是处理服务端的读写事件。其中读事件的处理会相对复杂，涉及到已读数据的解码（decode）、业务处理（process）和响应数据输出（write）操作。
+ - Watchman线程   
+    顾名思义，该线程充当监工的角色，监视的对象是Worker线程组待处理的任务。该线程只能处理读回调（read callback）事件，它的存在意义在于激活可能正处于休眠状态的 Worker 线程继续工作。
  
-smart-socket触发读回调后需要开发人员去处理消息解码与业务处理两个环节，也正是本章节要给大家介绍的内容。
+### 内存池
+内存池大家应该并不陌生，在 smart-socket 中维护了一套内存池为通信服务提供性能与稳定性的支撑。关于 smart-socket 内存池在后文有详细的介绍，此处先为读者阐述内存池中的几个基本概念以及它们之间的关系，见下图。
+
+![内存池](buffer_pool.png)
+
+- 内存池：BufferPool   
+    一个内存池中包含了多个内存页`BufferPage`，为内存申请源提供内存页的分配策略，并且运行着低优先级异步任务将未使用的内存块`chunk`回收至内存页`BufferPage`。
+- 内存页：BufferPage    
+   其本质就是一个由用户指定大小的 ByteBuffer 对象，DirectByteBuffer 和 HeapByteBuffer 皆可。通过事先初始化足够大小的内存页，服务运行期间可快速响应内存需求。
+- 内存块：chunk     
+   从 BufferPage 中划分出来的小块内存以满足通信所需，内存块的的申请尽量遵循按需申请，用完即还原则。当内存页中剩余空间不足以满足申请源需求大小时，smart-socket 将向 JVM 申请临时内存块。
+ 
+
+**线程模型和内存池两者相辅相成，构建出了一个完成的通信内核。熟练掌握并加以合理的应用，所编写的通信服务便会有着非常出色的表现。**
+
+接下里我们正式为大家演示如果运用 smart-socket 进行基本的通信开发。
 
 ### 1.1.1 工程搭建
 
 本章以Maven工程为例为大家演示基于smart-socket实现socket开发，如果您已经有现成的工程仅需引入pom.xml依赖即可，否则请先建立一个项目工程。
 
-<img src='2.1.1_1.png' width='80%'/>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.smartboot.socket</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.smartboot.socket</groupId>
+            <artifactId>aio-core</artifactId>
+            <version>1.4.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+    </dependencies>
+</project>
+```
 
-从上图可以看到，我们在pom.xml中引入了smart-socket的核心包aio-core 1.4.2，最终工程衍生出来的依赖包仅slf4j-api。工程搭建完毕后，我们正式开始smart-socket的开发之旅。
+此处我们选用了 smart-socket 目前的最新包：aio-core 1.4.5。出于精简 pom 依赖和不绑架用户对日志框架选择权考虑，smart-socket 非常贴心的仅依赖 slf4j-api，所以开发人员可以自由选择任意的日志框架集成到项目中。例如本次的示例工程我们引入 `slf4j-simple` 依赖以便观察运行时日志。
+
 
 ### 1.1.2 协议约定
+工程搭建完毕后，还需适当了解一下通信开发的基础知识：协议。作者接触不少刚开始写通信程序的开发，他们普遍存在的问题是没有正确理解"协议"的概念，以及"协议"在整个通信过程中所扮演的"信息翻译官"这个非常重要的角色。
 
 通信中所说的协议是指双方实体完成通信或服务所必须遵循的规则和约定。
 协议定义了数据单元使用的格式，信息单元应该包含的信息与含义，连接方式，信息发送和接收的时序，从而确保网络中数据顺利地传送到确定的地方。
@@ -114,7 +161,7 @@ public class StringProtocol implements Protocol<String> {
 }
 ```
 
-协议编解码是通信编程中非常重要的一个环节，如果读者朋友目前还不是特别能理解，那就谨记一件事：掌握协议编解码，通信就学会了80%，剩下的20%就是业务处理。根据作者以往的经验，很多初学者都被困扰在这个环节，一旦闯过这一关就柳暗花明了。
+
 
 ### 1.1.3 服务端
 
@@ -202,3 +249,6 @@ public class Client {
 <img src='2.1.5_2.png' width='80%'/>
 
 <img src='2.1.5_3.png' width='80%'/>
+
+
+至此，我们采用 smart-socket 顺利完成了简易的通信服务。如果对本章节某个知识点还不甚清楚，建议反复阅读加深理解或者上网搜索同类信息。当然，跟着示例动手敲一遍代码也是个不错的学习方式。
