@@ -8,7 +8,7 @@
         * [1.2 Spring集成smart-socket](smart-socket-v1.4/chapter-1/2.2-Spring集成/README.md)
         * [小结](smart-socket-v1.4/chapter-1/SUMMARY.md)
     * [第二章 源码解析](smart-socket-v1.4/chapter-2/README.md)
-        * [2.1 核心接口](smart-socket-v1.4/chapter-2/核心接口/README.md)
+        * [2.1 核心接口与状态机](smart-socket-v1.4/chapter-2/核心接口/README.md)
         * [2.2 服务端](smart-socket-v1.4/chapter-2/服务端/README.md)
         * [2.3 客户端](smart-socket-v1.4/chapter-2/客户端/README.md)
         * [2.4 会话AioSession](smart-socket-v1.4/chapter-2/AioSession/README.md)
