@@ -25,6 +25,8 @@
     * [关于smart-http](smart-http/README.md)
     * 第一章 smart-socket开发指南
         * [1.1 快速上手](smart-http/chapter-1/README.md)
+        * [1.2 请求路由](smart-http/chapter-1/http_route.md)
+        * [1.3 文件上传/下载](smart-http/chapter-1/file_upload.md)
 * 技术分享
     *   [smart-socket实现RPC](share/rpc/smart-socket-rpc.md)
     *   [内存管理-首次适应算法](share/firstfit/readme.md)

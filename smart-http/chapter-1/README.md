@@ -10,7 +10,13 @@ JDK1.7 是采用 smart-http 进行开发的最低版本要求，并且我们推�
 </dependency>
 ```
 
-我们对 smart-http 的接口进行了精心的设计，所以启动一个 Http 服务只需极少的代码，如下所示。
+下图为 smart-http 的工程架构，我们基于 smart-socket 实现了 Http 协议的解析和请求的处理逻辑。
+HttpRequest 和 HttpResponse 定义了 http 请求/响应的操作接口，HttpBootstrap 提供了配置、启动 http 服务的能力，
+而用户只需要在 HttpHandler 中实现自身业务逻辑，并将其注册至 HttpBootStrap 便可。
+ 
+![](smart-http.png)
+
+通过对 smart-http 的精心设计，我们只需要极少的代码就能完成 http 服务开发，如下所示。
 ```java
 public class SimpleSmartHttp {
     public static void main(String[] args) {
@@ -27,6 +33,8 @@ public class SimpleSmartHttp {
 ```
 
 启动程序后打开浏览器访问：`http://127.0.0.1`，便会在页面输出：**Hello World**
+
+
 
 ### 小结
 通过以上描述我们看到通过 smart-http 进行 http 服务开发是非常简单的。
