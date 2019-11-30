@@ -16,7 +16,8 @@ HttpRequest 和 HttpResponse 定义了 http 请求/响应的操作接口，HttpB
  
 ![](smart-http.png)
 
-通过对 smart-http 的精心设计，我们只需要极少的代码就能完成 http 服务开发，如下所示。
+
+用实际代码演示 http 服务的开发如下所示。
 ```java
 public class SimpleSmartHttp {
     public static void main(String[] args) {
@@ -32,11 +33,11 @@ public class SimpleSmartHttp {
 }
 ```
 
-启动程序后打开浏览器访问：`http://127.0.0.1`，便会在页面输出：**Hello World**
+启动程序后打开浏览器访问：`http://127.0.0.1`，页面中会输出：**Hello World**
 
 
 
 ### 小结
-通过以上描述我们看到通过 smart-http 进行 http 服务开发是非常简单的。
+通过以上描述我们看到用 smart-http 进行 http 服务开发是非常简单的。
 当然在实际场景下我们面临的情况会更为复杂，例如：请求路由、静态资源服务、文件上传/下载等。
 我们会尽可能的为大家整理这些场景的处理方案，无所谓教程，分享交流而已。

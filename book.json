@@ -26,7 +26,7 @@
       }]
     },
     "edit-link": {
-      "base": "https://gitee.com/smartboot/docs/edit/master",
+      "base": "https://gitee.com/smartboot/book/edit/master",
       "label": "Edit This Page"
     }
   }
