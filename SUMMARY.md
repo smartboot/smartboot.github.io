@@ -21,6 +21,10 @@
     * [第四章 内存池](smart-socket-v1.4/chapter-5/README.md)
     * [第五章 未来规划](smart-socket-v1.4/chapter-6/README.md)
     * [附录](smart-socket-v1.4/end/README.md)
+* smart-http 实战手册
+    * [关于smart-http](smart-http/README.md)
+    * 第一章 smart-socket开发指南
+        * [1.1 快速上手](smart-http/chapter-1/README.md)
 * 技术分享
     *   [smart-socket实现RPC](share/rpc/smart-socket-rpc.md)
     *   [内存管理-首次适应算法](share/firstfit/readme.md)
