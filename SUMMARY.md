@@ -23,7 +23,7 @@
     * [附录](smart-socket-v1.4/end/README.md)
 * smart-http 实战手册
     * [关于smart-http](smart-http/README.md)
-    * 第一章 smart-socket开发指南
+    * 第一章 smart-http开发指南
         * [1.1 快速上手](smart-http/chapter-1/README.md)
         * [1.2 请求路由](smart-http/chapter-1/http_route.md)
         * [1.3 文件上传/下载](smart-http/chapter-1/file_upload.md)
