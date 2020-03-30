@@ -22,20 +22,20 @@
       *  [三类消息](smart-socket/second/5-type-three.md)
     * [API Docs](https://smartboot.github.io/smart-socket/apidocs/index.html)
 * smart-smart v1.4使用手册
-    * [前言](smart-socket-v1.4/README.md)
+    * [前言](smart-socket/README.md)
     * 第一章 smart-socket开发指南
-        * [1.1 快速上手](smart-socket-v1.4/chapter-1/2.1-基础应用/README.md)
-        * [2.2 Spring集成smart-socket](smart-socket-v1.4/chapter-1/2.2-Spring集成/README.md)
-        * [小结](smart-socket-v1.4/chapter-1/SUMMARY.md)
+        * [1.1 快速上手](smart-socket/chapter-1/2.1-基础应用/README.md)
+        * [2.2 Spring集成smart-socket](smart-socket/chapter-1/2.2-Spring集成/README.md)
+        * [小结](smart-socket/chapter-1/SUMMARY.md)
     * 第二章 源码解析
-    * [第三章 通信协议](smart-socket-v1.4/chapter-3/README.md)
-        * [3.1 消息归类](smart-socket-v1.4/chapter-3/1-消息归类/README.md)
-        * [3.2 半包/粘包](smart-socket-v1.4/BLANK.md)
-        * [3.3 Http消息解析](smart-socket-v1.4/BLANK.md)
-        * [3.4 RPC消息解析](smart-socket-v1.4/BLANK.md)
-    * [第是章 内存池](smart-socket-v1.4/chapter-5/README.md)
-    * [第五章 未来规划](smart-socket-v1.4/chapter-6/README.md)
-    * [附录](smart-socket-v1.4/end/README.md)
+    * [第三章 通信协议](smart-socket/chapter-3/README.md)
+        * [3.1 消息归类](smart-socket/chapter-3/1-消息归类/README.md)
+        * [3.2 半包/粘包](smart-socket/BLANK.md)
+        * [3.3 Http消息解析](smart-socket/BLANK.md)
+        * [3.4 RPC消息解析](smart-socket/BLANK.md)
+    * [第是章 内存池](smart-socket/chapter-5/README.md)
+    * [第五章 未来规划](smart-socket/chapter-6/README.md)
+    * [附录](smart-socket/end/README.md)
 * smart-ioc 使用手册
 * smart-boot 使用手册
 * mydalgen 使用手册
