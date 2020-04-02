@@ -6,7 +6,7 @@ JDK1.7 是采用 smart-http 进行开发的最低版本要求，并且我们推�
 <dependency>
     <groupId>org.smartboot.http</groupId>
     <artifactId>smart-http-server</artifactId>
-    <version>1.0.12</version>
+    <version>1.0.13</version>
 </dependency>
 ```
 
