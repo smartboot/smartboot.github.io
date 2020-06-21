@@ -4,7 +4,6 @@
 业界有句话叫“一流的卖标准、二流的卖技术、三流的卖产品”，如果说 smart-socket 的技术价值仅算二流水准的话，那么我们为其精心设计的接口期望能稍微提升一下它的档次。
 
 smart-socket的学习成本主要集中在两个接口`Protocol`、`MessageProcessor`和一个状态机`StateMachineEnum`。
-
 接口定义了数据处理规则，而状态机则是事件一种通知机制。
 
 ###一、核心接口
@@ -26,7 +25,7 @@ public interface Protocol<T> {
 }
 ```
 
-Protocol 是一个泛型接口，`<T>`指的是业务消息实体类，smart-socket 中不少地方都运用了泛型设计，其含义都代表数据解码后封装的消息类型。Protocol 中只定义了一个方法`decode`。
+Protocol 是一个泛型接口，`<T>`指的是业务消息实体类，smart-socket 中不少地方都运用了泛型设计，其含义都代表数据解码后封装的消息类型。
 
 decode（消息解码），AIO 的数据传输是以 ByteBuffer 为媒介的。所有读取到的字节数据都会填充在 ByteBuffer 中并以事件回调的形式触发 Protocol#decode() 方法。所以我们实现的 decode 算法就是 ByteBuffer 对象转化为业务消息`<T>`的过程。
 
@@ -36,9 +35,8 @@ decode（消息解码），AIO 的数据传输是以 ByteBuffer 为媒介的。�
 1. 你所需的协议是由该框架提供的，它的解码算法确实能兼容了半包/粘包情况。
 2. 框架提供了一种宽松内存策略，确保你能接受到一个完整的包。
 
-无论何种情况，对个人而言都不是一件好事。在你没有理解半包/粘包的出现场景和应对策略之前，过渡依赖框架的只会限制你能力的成长。
-
-如果从事了多年通信开发，对协议编解码的理解依旧是云里雾里的话，请尽快放弃原先的通信框架，拥抱 smart-socket 吧，这才是你的最佳选择。
+无论何种情况，对个人而言都不是一件好事。
+在你没有理解半包/粘包的出现场景和应对策略之前，过渡依赖框架的只会限制你对通信的认知，也会增加与内行人士的沟通难道。
 
 #### MessageProcessor
 
@@ -66,7 +64,7 @@ public interface MessageProcessor<T> {
 }
 ```
 
-Protocol 侧重于通信层的数据解析，而 MessageProcessor 则负责应用层的消息业务处理。定义了消息处理器接口，smart-socket 在通过 Protocol 完成消息解码后，会将消息对象交由 MessageProcessor 实现类进行业务处理。
+smart-socket 在通过 Protocol 完成消息解码后，会将消息对象交由 MessageProcessor 实现类进行业务处理。
 
 - process
   消息处理器，smart-socket 每接收到一个完整的业务消息，都会交由该处理器执行。
