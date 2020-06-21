@@ -8,7 +8,7 @@
         * [1.2 Spring集成smart-socket](smart-socket/chapter-1/2.2-SpringIntegrated/README.md)
         * [小结](smart-socket/chapter-1/SUMMARY.md)
     * [第二章 源码解析](smart-socket/chapter-2/README.md)
-        * [2.1 核心接口与状态机](smart-socket/chapter-2/核心接口/README.md)
+        * [2.1 核心接口与状态机](smart-socket/chapter-2/Interface/README.md)
         * [2.2 服务端](smart-socket/chapter-2/服务端/README.md)
         * [2.3 客户端](smart-socket/chapter-2/客户端/README.md)
         * [2.4 会话AioSession](smart-socket/chapter-2/AioSession/README.md)
@@ -20,7 +20,6 @@
         * [3.4 RPC消息解析](smart-socket/BLANK.md)
     * [第四章 内存池](smart-socket/chapter-5/README.md)
     * [第五章 未来规划](smart-socket/chapter-6/README.md)
-    * [附录](smart-socket/end/README.md)
 * smart-http 实战手册
     * [关于smart-http](smart-http/README.md)
     * 第一章 smart-http开发指南
