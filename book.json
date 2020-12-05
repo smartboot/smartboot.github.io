@@ -5,7 +5,7 @@
   "language": "en",
   "plugins": [
     "-lunr", "-search","-sharing", "search-plus","expandable-chapters-interactive","tbfed-pagefooter"
-    ,"github","github-buttons","edit-link"
+    ,"github","github-buttons","edit-link","advanced-emoji"
   ],
   "pluginsConfig": {
     "tbfed-pagefooter": {

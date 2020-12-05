@@ -11,6 +11,9 @@
 - smart-http    
     采用smart-socket作为通信内核实现的Http服务器。
     
+- smart-servlet    
+    smart-servlet 是一款实现了Servlet 3.1规范，支持多应用隔离部署的的 Web 容器。 除此之外，smart-servlet还是一款插件化容器，基于内置的沙箱环境确保 smart-servlet 拥有最精简的运行能力， 用户还可以通过自定义插件扩展容器的服务能力。
+    
 - smart-boot    
     基于springboot封装的微服务框架。（目前工作中无使用机会，基本已成僵尸项目）
 

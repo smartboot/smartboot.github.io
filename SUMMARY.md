@@ -27,6 +27,12 @@
         * [1.2 请求路由](smart-http/chapter-1/http_route.md)
         * [1.3 文件上传/下载](smart-http/chapter-1/file_upload.md)
         * [1.4 WebSocket](smart-http/chapter-1/websocket.md)
+        
+* smart-servlet 使用手册
+    * [关于smart-servlet](smart-servlet/README.md)
+    * [快速上手](smart-servlet/use_guide.md)
+    * [插件清单](smart-servlet/plugins.md)
+    * [评测数据](smart-servlet/test-data.md)
 * 技术分享
     *   [smart-socket实现RPC](share/rpc/smart-socket-rpc.md)
     *   [内存管理-首次适应算法](share/firstfit/readme.md)
