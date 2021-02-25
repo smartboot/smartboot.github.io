@@ -37,5 +37,6 @@
 
 ## 捐赠入口
 
+![](./images/wx.jpg)
 <img src="images/wx.jpg" width="238" height="280"/>
 <img src="images/alipay.jpg" width="238" height="280"/>

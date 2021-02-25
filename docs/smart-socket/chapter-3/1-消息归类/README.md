@@ -40,7 +40,7 @@
 | length | 消息头，其值表示消息体长度 | 1字节    |
 | data   | 消息体                     | length值 |
 
-<img src="protocol_1.png" width="60%"/>
+<img src="docs/smart-socket/chapter-3/1-消息归类/protocol_1.png" width="60%"/>
 
 根据上述协议，假设客户端发送的消息为：9abcdefjhi，第一位消息头”9“为byte类型，占用了1字节，后续的消息体“abcdefjhi”占用了9字节，所以服务端本次收到的消息长度为：10字节。由于读缓冲区的长度限制为8，则“9abcdefg”便填满了缓冲区，需要先将其读取完后再去读“hi”。编解码算法如下所示：
 
@@ -85,7 +85,7 @@ public class FixedLengthProtocol implements Protocol<String> {
 | data    | 消息体 | 未知              |
 | endFlag | 结束符 | endFlag的字节长度 |
 
-<img src="protocol_2.png" width="60%"/>
+<img src="docs/smart-socket/chapter-3/1-消息归类/protocol_2.png" width="60%"/>
 
 相较于定长协议，此类协议在解码结束之前都无法知晓消息的长度，直到读取到结束符标志，则此前所有已读的数据方可组成一个完整的消息或消息字段。例如按行发送的字符串数据：`abc\r\n123\r\n`，以`\r\n`作为结束符发送了两个消息：`abc`，`123`。
 
@@ -133,7 +133,7 @@ public class DelimiterProtocol implements Protocol<String> {
 
 100MB=104857600byte，转换成4字节的内存存储如下所示，后面的”?“代表文件的字节码。在识别出文件长度后，通过`AioSession.getInputStream`封装流对象并返回消息对象，之后在消息处理器中再获取BigObject的流对象便可将整个文件内容读取出来。需要注意的事，一旦使用了`AioSession.getInputStream`接口，则当前连接的数据读取便切换为同步阻塞模式，所以在完成读取或异常之前会占用当前线程资源，但优点以极低的内存消耗实现超大消息的解析。
 
-<img src="protocol_3.png" width="60%"/>
+<img src="docs/smart-socket/chapter-3/1-消息归类/protocol_3.png" width="60%"/>
 
 ```java
 public class BigObject {

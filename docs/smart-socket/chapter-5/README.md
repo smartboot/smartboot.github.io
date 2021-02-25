@@ -55,7 +55,7 @@ smart-socket引入内存池设计，主要为了解决两个问题：零拷贝�
 
 ​	smart-socket内存池的设计原理比较简单，事先在堆外内存中申请一个大的DirectByteBuffer，后续使用时通过DirectByteBuffer映射出实际所需大小的虚拟Buffer于堆内空间中。所以这VirtualBuffer其实就是堆外内存在堆内内存中创建的一个索引，smart-socket在堆内空间中对VirtualBuffer的一切数据读写操作都会同步反应至堆外的DirectByteBuffer中。
 
-<img src='bufferpool_1.png' width='60%'/>
+<img src='docs/smart-socket/chapter-5/bufferpool_1.png' width='60%'/>
 
 <center>图4-1-1</center>
 
@@ -65,19 +65,19 @@ smart-socket引入内存池设计，主要为了解决两个问题：零拷贝�
 
 2. 之后我们还需要一块长度为4的ByteBuffer，那就只能申请下标3至6的空间。
 
-   <img src='bufferpool_2.png' width="60%"/>
+   <img src='docs/smart-socket/chapter-5/bufferpool_2.png' width="60%"/>
 
    <center>图4-1-2</center>
 
 3. 当虚拟内存使用完毕后，要及时释放占用的堆外内存。
 
-   <img src="bufferpool_3.png" width="60%"/>
+   <img src="docs/smart-socket/chapter-5/bufferpool_3.png" width="60%"/>
 
    <center>图4-1-3</center>
 
 4. 下一次再需要空间时继续从可用空间中申请。
 
-   <img src="bufferpool_4.png" width="60%"/>
+   <img src="docs/smart-socket/chapter-5/bufferpool_4.png" width="60%"/>
 
 <center>图4-1-4</center>
 
@@ -87,7 +87,7 @@ smart-socket引入内存池设计，主要为了解决两个问题：零拷贝�
 
 ​	前文讲完了smart-socket内存池的设计原理，但在实践中还会面临一个情况，便是内存分配、回收时面临的并发问题。尽管只需加同步锁控便能解决，但是在高并发场景下的锁竞争会比较激烈，为了缓解这一状况。smart-socket内存池中引入了内存页BufferPage的概念。内存池中创建一组BufferPage，每个BufferPage各自封装一个大的DirectByteBuffer。再根据特定的分配策略将网络会话AIOSession与某个BufferPage关联起来，由此降低并发情况下的锁竞争压力。
 
-<img src="bufferpage_1.png" width="100%"/>
+<img src="docs/smart-socket/chapter-5/bufferpage_1.png" width="100%"/>
 
 ​	最终我们的smart-socket内存池实现如下所示。初始化内存池时需要指定内存页的个数，为每个内存页分配的空间大小，以及是否使用直接缓冲区。至于内存页的分配，采用的是轮训策略。
 

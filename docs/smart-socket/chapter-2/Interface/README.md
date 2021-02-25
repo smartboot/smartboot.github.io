@@ -10,7 +10,7 @@ smart-socket的学习成本主要集中在两个接口`Protocol`、`MessageProce
 这两个核心接口在通信流程中的职责如下： 
 - Protocol：负责解析网络中传输过来的字节流，将其转换成消息实体，并传递至 MessageProcessor 进行业务处理。
 - MessageProcessor：处理接受到的网络消息，并在必要时候输出消息至对端。
-![](core-api.png)
+![](docs/smart-socket/chapter-2/Interface/core-api.png)
 
 当然，你也可以在 Protocol 中一次性完成解析、业务处理；
 又或者将 Protocol 当个摆设，所有事情集中在 MessageProcessor 完成。
@@ -88,7 +88,7 @@ smart-socket 中引入了状态机的概念，状态机的存在不会决策 sma
 
 状态机贯穿了通信服务的整个生命周期，在这个过程中不同事件的发生会触发不同的状态机。通信事件与状态机的关系如下图所示。
 
-<img src='2.2.2_1.png' width='90%'/>
+<img src='docs/smart-socket/chapter-2/Interface/2.2.2_1.png' width='90%'/>
 
 <center>图2.2.2</center>
 

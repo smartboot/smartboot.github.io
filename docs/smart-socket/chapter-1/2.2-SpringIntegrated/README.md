@@ -29,7 +29,7 @@ smart-socket 就是一个普通的通信工具包，所以它跟 Spring 的结�
 
 ### 方式一：xml配置化启动服务
 
-在《[快速上手](/smart-socket/chapter-1/1.1-QuickStart/README.md)》章节我们接触到了smart-socket 通信开发的几个关联接口和类：  
+在《[快速上手](/docs/smart-socketocket/chapter-1/1.1-QuickStart/README.md)》章节我们接触到了smart-socket 通信开发的几个关联接口和类：  
 - Protocol
 - MessageProcessor
 - AioQuickServer

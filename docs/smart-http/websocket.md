@@ -1,4 +1,7 @@
-## WebSocket
+---
+title: Websocket
+---
+# WebSocket
 采用 smart-http 进行 websocket 开发与普通 http 请求差别不大，
 Http 开发涉及到的接口在 WebSocket 中都有与之相对应的实现，见下表。
 

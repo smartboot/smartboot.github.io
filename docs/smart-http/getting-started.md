@@ -1,3 +1,4 @@
+# 快速上手
 **快速上手**
 
 JDK1.7 是采用 smart-http 进行开发的最低版本要求，并且我们推荐采用 maven 方式将 smart-http 依赖引入您的工程中。
@@ -14,7 +15,7 @@ JDK1.7 是采用 smart-http 进行开发的最低版本要求，并且我们推�
 HttpRequest 和 HttpResponse 定义了 http 请求/响应的操作接口，HttpBootstrap 提供了配置、启动 http 服务的能力，
 而用户只需要在 HttpHandler 中实现自身业务逻辑，并将其注册至 HttpBootStrap 便可。
  
-![](smart-http.png)
+![](docs/smart-http/smart-http.png)
 
 
 用实际代码演示 http 服务的开发如下所示。

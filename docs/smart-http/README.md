@@ -1,3 +1,13 @@
+---
+sidebar: auto
+home: true
+heroImage: https://portrait.gitee.com/uploads/avatars/namespace/266/798143_smartboot_1578989513.png!avatar100
+heroText: smart-http
+actionText: 进入我的开源 →
+actionLink: /smart-http/getting-started
+tagline: 追求极致的轻量级可编程 http 服务器
+footer: Apache License 2.0 | Copyright © 2017-present 三刀
+---
 **关于smart-http**
 
 smart-http 是一款采用 Java 语言编写的 Http 服务器，有别于业界知名的 Web容器：Tomcat、Undertow，smart-http 并不支持 Servlet 规范，但对于处理 Http 请求所需的各项能力，它都具备。
