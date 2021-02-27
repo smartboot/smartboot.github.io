@@ -1,971 +1,197 @@
-
-<!DOCTYPE HTML>
-<html lang="en" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.2 服务端 · smartboot 中文指南</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.2">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../../../gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-plus/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-        
-    
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="../客户端/" />
-    
-    
-    <link rel="prev" href="../Interface/" />
-    
-
-    <style>
-    @media only screen and (max-width: 640px) {
-        .book-header .hidden-mobile {
-            display: none;
-        }
-    }
-    </style>
-    <script>
-        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"smartboot","repo":"smart-socket","type":"star","size":"small","count":true}]};
-    </script>
-
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
-            
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
-</div>
-
-            
-                <nav role="navigation">
-                
-
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../../../">
-            
-                <a href="../../../">
-            
-                    
-                    关于smartboot
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" >
-            
-                <span>
-            
-                    
-                    smart-socket 使用手册
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1" data-path="../../">
-            
-                <a href="../../">
-            
-                    
-                    前言
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2" >
-            
-                <span>
-            
-                    
-                    第一章 smart-socket开发指南
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.2.1" data-path="../../chapter-1/1.1-QuickStart/">
-            
-                <a href="../../chapter-1/1.1-QuickStart/">
-            
-                    
-                    1.1 快速上手
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2.2" data-path="../../chapter-1/2.2-SpringIntegrated/">
-            
-                <a href="../../chapter-1/2.2-SpringIntegrated/">
-            
-                    
-                    1.2 Spring集成smart-socket
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2.3" data-path="../../chapter-1/SUMMARY.html">
-            
-                <a href="../../chapter-1/SUMMARY.html">
-            
-                    
-                    小结
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.3" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    第二章 源码解析
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.3.1" data-path="../Interface/">
-            
-                <a href="../Interface/">
-            
-                    
-                    2.1 核心接口与状态机
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.2.3.2" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    2.2 服务端
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.3.3" data-path="../客户端/">
-            
-                <a href="../客户端/">
-            
-                    
-                    2.3 客户端
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.3.4" data-path="../AioSession/">
-            
-                <a href="../AioSession/">
-            
-                    
-                    2.4 会话AioSession
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.3.5" data-path="../SUMMARY.html">
-            
-                <a href="../SUMMARY.html">
-            
-                    
-                    2.5 小结
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.4" data-path="../../chapter-3/">
-            
-                <a href="../../chapter-3/">
-            
-                    
-                    第三章 通信协议
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.4.1" data-path="../../chapter-3/1-消息归类/">
-            
-                <a href="../../chapter-3/1-消息归类/">
-            
-                    
-                    3.1 消息归类
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.4.2" data-path="../../BLANK.html">
-            
-                <a href="../../BLANK.html">
-            
-                    
-                    3.2 半包/粘包
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.4.3" data-path="../../BLANK.html">
-            
-                <a href="../../BLANK.html">
-            
-                    
-                    3.3 Http消息解析
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.4.4" data-path="../../BLANK.html">
-            
-                <a href="../../BLANK.html">
-            
-                    
-                    3.4 RPC消息解析
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.5" data-path="../../chapter-5/">
-            
-                <a href="../../chapter-5/">
-            
-                    
-                    第四章 内存池
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.6" data-path="../../chapter-6/">
-            
-                <a href="../../chapter-6/">
-            
-                    
-                    第五章 未来规划
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" >
-            
-                <span>
-            
-                    
-                    smart-http 实战手册
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="../../../smart-http/">
-            
-                <a href="../../../smart-http/">
-            
-                    
-                    关于smart-http
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" >
-            
-                <span>
-            
-                    
-                    第一章 smart-http开发指南
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.2.1" data-path="../../../smart-http/chapter-1/">
-            
-                <a href="../../../smart-http/chapter-1/">
-            
-                    
-                    1.1 快速上手
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2.2" data-path="../../../smart-http/chapter-1/http_route.html">
-            
-                <a href="../../../smart-http/chapter-1/http_route.html">
-            
-                    
-                    1.2 请求路由
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2.3" data-path="../../../smart-http/chapter-1/file_upload.html">
-            
-                <a href="../../../smart-http/chapter-1/file_upload.html">
-            
-                    
-                    1.3 文件上传/下载
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2.4" data-path="../../../smart-http/chapter-1/websocket.html">
-            
-                <a href="../../../smart-http/chapter-1/websocket.html">
-            
-                    
-                    1.4 WebSocket
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" >
-            
-                <span>
-            
-                    
-                    smart-servlet 使用手册
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="../../../smart-servlet/">
-            
-                <a href="../../../smart-servlet/">
-            
-                    
-                    关于smart-servlet
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="../../../smart-servlet/use_guide.html">
-            
-                <a href="../../../smart-servlet/use_guide.html">
-            
-                    
-                    快速上手
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="../../../smart-servlet/plugins.html">
-            
-                <a href="../../../smart-servlet/plugins.html">
-            
-                    
-                    插件清单
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.4" data-path="../../../smart-servlet/performance/test-data.html">
-            
-                <a href="../../../smart-servlet/performance/test-data.html">
-            
-                    
-                    评测数据
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" >
-            
-                <span>
-            
-                    
-                    技术分享
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.5.1" data-path="../../../share/rpc/smart-socket-rpc.html">
-            
-                <a href="../../../share/rpc/smart-socket-rpc.html">
-            
-                    
-                    smart-socket实现RPC
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="../../../share/firstfit/readme.html">
-            
-                <a href="../../../share/firstfit/readme.html">
-            
-                    
-                    内存管理-首次适应算法
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.3" data-path="../../../share/thread/readme.html">
-            
-                <a href="../../../share/thread/readme.html">
-            
-                    
-                    Thread知多少
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="../../../donation.html">
-            
-                <a href="../../../donation.html">
-            
-                    
-                    关于捐赠
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
-</ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >2.2 服务端</a>
-    </h1>
-</div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div class="search-plus" id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h2 id="&#x670D;&#x52A1;&#x7AEF;aioquickserver">&#x670D;&#x52A1;&#x7AEF;AioQuickServer</h2>
-<p>&#x5F02;&#x6B65;&#x975E;&#x963B;&#x585E;&#x901A;&#x4FE1;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x5B9E;&#x73B0;&#x3002;&#x8FD9;&#x4E2A;&#x7C7B;&#x4E3B;&#x8981;&#x662F;&#x5BF9;JDK&#x63D0;&#x4F9B;&#x7684;AIO&#x901A;&#x4FE1;&#x7C7B;AsynchronousServerSocketChannel&#x3001;AsynchronousChannelGroup&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#x3002;AioQuickServer&#x662F;&#x670D;&#x52A1;&#x7AEF;&#x901A;&#x4FE1;&#x7684;&#x8C03;&#x5EA6;&#x4E2D;&#x5FC3;&#xFF0C;&#x5728;&#x5B8C;&#x6210;&#x534F;&#x8BAE;&#x3001;&#x6D88;&#x606F;&#x5904;&#x7406;&#x5668;&#x7684;&#x5B9A;&#x4E49;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7;AioQuickServer&#x6765;&#x542F;&#x52A8;&#x6211;&#x4EEC;&#x7684;&#x901A;&#x4FE1;&#x670D;&#x52A1;&#x3002;AioQuickServer&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x5FC5;&#x8981;&#x7684;&#x53C2;&#x6570;&#x914D;&#x7F6E;&#x63A5;&#x53E3;&#xFF0C;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x8FDB;&#x884C;&#x8D44;&#x6E90;&#x5206;&#x914D;&#x4EE5;&#x8FBE;&#x5230;&#x6700;&#x4F18;&#x6548;&#x679C;&#x3002;</p>
-<p>2.5.1 &#x6210;&#x5458;&#x5C5E;&#x6027;</p>
-<table>
-<thead>
-<tr>
-<th>&#x5C5E;&#x6027;&#x540D;</th>
-<th>&#x7C7B;&#x578B;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>serverSocketChannel</td>
-<td>AsynchronousServerSocketChannel</td>
-<td>JDK&#x63D0;&#x4F9B;&#x7684;AIO&#x670D;&#x52A1;&#x7AEF;&#x6838;&#x5FC3;&#x7C7B;</td>
-</tr>
-<tr>
-<td>asynchronousChannelGroup</td>
-<td>AsynchronousChannelGroup</td>
-<td>JDK&#x4E3A;AIO&#x63D0;&#x4F9B;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x670D;&#x52A1;</td>
-</tr>
-<tr>
-<td>config</td>
-<td>IoServerConfig</td>
-<td>&#x5B58;&#x50A8;AioQuickServer&#x670D;&#x52A1;&#x914D;&#x7F6E;&#x9879;</td>
-</tr>
-<tr>
-<td>aioReadCompletionHandler</td>
-<td>ReadCompletionHandler</td>
-<td>smart-socket&#x63D0;&#x4F9B;&#x7684;IO&#x8BFB;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x7C7B;</td>
-</tr>
-<tr>
-<td>aioWriteCompletionHandler</td>
-<td>WriteCompletionHandler</td>
-<td>smart-socket&#x63D0;&#x4F9B;&#x7684;IO&#x5199;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x7C7B;</td>
-</tr>
-<tr>
-<td>bufferPool</td>
-<td>BufferPagePool</td>
-<td>&#x5185;&#x5B58;&#x6C60;&#x5BF9;&#x8C61;</td>
-</tr>
-<tr>
-<td>workerExecutorService</td>
-<td>ThreadPoolExecutor</td>
-<td>Worker&#x7EBF;&#x7A0B;&#x6C60;</td>
-</tr>
-</tbody>
-</table>
-<p>2.5.2 &#x914D;&#x7F6E;&#x63A5;&#x53E3;</p>
-<table>
-<thead>
-<tr>
-<th>&#x65B9;&#x6CD5;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>public AioQuickServer setBannerEnabled(boolean bannerEnabled)</td>
-<td>&#x670D;&#x52A1;&#x542F;&#x52A8;&#x65F6;&#x662F;&#x5426;&#x6253;&#x5370;smart-socket banner</td>
-</tr>
-<tr>
-<td>public AioQuickServer setThreadNum(int num)</td>
-<td>Server&#x670D;&#x52A1;&#x7EBF;&#x7A0B;&#x6570;</td>
-</tr>
-<tr>
-<td>public AioQuickServer setReadBufferSize(int size)</td>
-<td>&#x8BBE;&#x7F6E;AioSession&#x8BFB;&#x7F13;&#x5B58;&#x533A;&#x957F;&#x5EA6;</td>
-</tr>
-<tr>
-<td>public AioQuickServer setOption(SocketOption socketOption, V value)</td>
-<td>&#x8BBE;&#x7F6E;Socket&#x7684;TCP&#x53C2;&#x6570;&#x914D;&#x7F6E;</td>
-</tr>
-</tbody>
-</table>
-<p>2.5.3 &#x6838;&#x5FC3;&#x65B9;&#x6CD5;</p>
-<p><strong>2.5.3.1 start&#xFF1A;&#x542F;&#x52A8;AIO&#x670D;&#x52A1;&#x7AEF;</strong></p>
-<ul>
-<li><p>&#x7247;&#x6BB5;&#x4E00;</p>
-<pre><code class="lang-java">asynchronousChannelGroup = AsynchronousChannelGroup.withFixedThreadPool(config.getThreadNum(), <span class="hljs-keyword">new</span> ThreadFactory() {
-    <span class="hljs-keyword">byte</span> index = <span class="hljs-number">0</span>;
-
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> Thread <span class="hljs-title">newThread</span><span class="hljs-params">(Runnable r)</span> </span>{
-         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Thread(r, <span class="hljs-string">&quot;smart-socket:AIO-&quot;</span> + (++index));
-    }
-});
-</code></pre>
-<p>&#x521D;&#x59CB;&#x5316;AIO&#x670D;&#x52A1;&#x7684;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x7EC4;&#x5E76;&#x8D4B;&#x503C;&#x4E8E;<code>AioQuickServer</code>&#x6210;&#x5458;&#x5C5E;&#x6027;<code>asynchronousChannelGroup</code></p>
-</li>
-<li><p>&#x7247;&#x6BB5;&#x4E8C;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">this</span>.serverSocketChannel = AsynchronousServerSocketChannel.open(asynchronousChannelGroup).bind(<span class="hljs-keyword">new</span> InetSocketAddress(config.getPort()), <span class="hljs-number">1000</span>);
-</code></pre>
-<p>&#x8FD9;&#x884C;&#x4EE3;&#x7801;&#x5F88;&#x76F4;&#x89C2;&#xFF0C;&#x6253;&#x5F00;AIO&#x670D;&#x52A1;&#x901A;&#x9053;&#x5E76;&#x7ED1;&#x5B9A;&#x7AEF;&#x53E3;&#x53F7;&#xFF0C;&#x4F46;&#x8981;&#x6CE8;&#x610F;bind&#x65B9;&#x6CD5;&#x3002;<code>AsynchronousServerSocketChannel</code>&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;bind&#x63A5;&#x53E3;&#xFF1A;bind(SocketAddress local)&#xFF0C;bind(SocketAddress local, int backlog)</p>
-<p>&#x5982;&#x679C;&#x8C03;&#x7528;bind(SocketAddress local)&#x65B9;&#x6CD5;&#xFF0C;AsynchronousServerSocketChannel&#x5185;&#x90E8;&#x5B9E;&#x9645;&#x4E0A;&#x6267;&#x884C;&#x7684;&#x662F;bind(SocketAddress local, 0)&#x3002;&#x7136;&#x800C;backlog&#x7684;&#x503C;&#x5C0F;&#x4E8E;1&#x65F6;&#xFF0C;JDK&#x4F1A;&#x5C06;&#x5176;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x4E3A;50&#x3002; backlog&#x7EF4;&#x62A4;&#x4E86;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x957F;&#x5EA6;&#xFF0C;&#x5982;&#x679C;&#x961F;&#x5217;&#x6EE1;&#x65F6;&#x6536;&#x5230;&#x8FDE;&#x63A5;&#x6307;&#x793A;&#xFF0C;&#x5219;&#x62D2;&#x7EDD;&#x8BE5;&#x8FDE;&#x63A5;&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;backlog&#x8BBE;&#x7F6E;&#x4E3A;50&#xFF0C;&#x5F53;&#x524D;&#x6709;50&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#x8FC7;&#x6765;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x8FD8;&#x672A;&#x6267;&#x884C;&#x8FD9;&#x4E9B;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#x7684;accept&#x65B9;&#x6CD5;&#x3002;&#x6B64;&#x65F6;&#x518D;&#x6709;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#x8FC7;&#x6765;&#xFF0C;&#x5219;&#x4F1A;&#x88AB;&#x62D2;&#x7EDD;&#x8FDE;&#x63A5;&#x3002;&#x9664;&#x975E;&#x8BF7;&#x6C42;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x8FDE;&#x63A5;&#x5B8C;&#x6210;accept&#x64CD;&#x4F5C;&#x5E76;&#x91CA;&#x653E;&#x51FA;&#x961F;&#x5217;&#x8D44;&#x6E90;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x624D;&#x53EF;&#x63A5;&#x53D7;&#x65B0;&#x7684;&#x8FDE;&#x63A5;&#x3002;</p>
-</li>
-<li><p>&#x7247;&#x6BB5;&#x4E09;</p>
-</li>
-</ul>
-<pre><code class="lang-java">acceptThread = <span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> Runnable() {
-    NetMonitor&lt;T&gt; monitor = config.getMonitor();
-
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
-        <span class="hljs-keyword">while</span> (running) {
-            Future&lt;AsynchronousSocketChannel&gt; future = serverSocketChannel.accept();
-            <span class="hljs-keyword">try</span> {
-                <span class="hljs-keyword">final</span> AsynchronousSocketChannel channel = future.get();
-                workerExecutorService.execute(<span class="hljs-keyword">new</span> Runnable() {
-                    <span class="hljs-meta">@Override</span>
-                    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
-                        <span class="hljs-keyword">if</span> (monitor == <span class="hljs-keyword">null</span> || monitor.acceptMonitor(channel)) {
-                            createSession(channel);
-                        } <span class="hljs-keyword">else</span> {
-                            config.getProcessor().stateEvent(<span class="hljs-keyword">null</span>, StateMachineEnum.REJECT_ACCEPT, <span class="hljs-keyword">null</span>);
-                            LOGGER.warn(<span class="hljs-string">&quot;reject accept channel:{}&quot;</span>, channel);
-                            closeChannel(channel);
-                        }
-                    }
-                });
-            } <span class="hljs-keyword">catch</span> (Exception e) {
-                LOGGER.error(<span class="hljs-string">&quot;AcceptThread Exception&quot;</span>, e);
-            }
-
-        }
-    }
-}, <span class="hljs-string">&quot;smart-socket:AcceptThread&quot;</span>);
-acceptThread.start();
-
-<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createSession</span><span class="hljs-params">(AsynchronousSocketChannel channel)</span> </span>{
-    <span class="hljs-comment">//&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x5219;&#x6784;&#x9020;AIOSession&#x5BF9;&#x8C61;</span>
-    AioSession&lt;T&gt; session = <span class="hljs-keyword">null</span>;
-    <span class="hljs-keyword">try</span> {
-        session = aioSessionFunction.apply(channel);
-        session.initSession();
-    } <span class="hljs-keyword">catch</span> (Exception e1) {
-        LOGGER.debug(e1.getMessage(), e1);
-        <span class="hljs-keyword">if</span> (session == <span class="hljs-keyword">null</span>) {
-            <span class="hljs-keyword">try</span> {
-                channel.shutdownInput();
-            } <span class="hljs-keyword">catch</span> (IOException e) {
-                LOGGER.debug(e.getMessage(), e);
-            }
-            <span class="hljs-keyword">try</span> {
-                channel.shutdownOutput();
-            } <span class="hljs-keyword">catch</span> (IOException e) {
-                LOGGER.debug(e.getMessage(), e);
-            }
-            <span class="hljs-keyword">try</span> {
-                channel.close();
-            } <span class="hljs-keyword">catch</span> (IOException e) {
-                LOGGER.debug(<span class="hljs-string">&quot;close channel exception&quot;</span>, e);
-            }
-        } <span class="hljs-keyword">else</span> {
-            session.close();
-        }
-    }
-}
-</code></pre>
-<p>smart-socket&#x901A;&#x8FC7;&#x542F;&#x52A8;AcceptThread&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x76D1;&#x542C;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#xFF0C;
-&#x4E00;&#x65E6;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x4E0A;&#x6765;&#x4FBF;&#x751F;&#x6210;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7531;WorkerThread&#x7EBF;&#x7A0B;&#x6C60;&#x6765;&#x521D;&#x59CB;&#x5316;AioSession&#x3002;
-&#x6240;&#x6709;&#x7684;AioSession&#x5171;&#x7528;aioReadCompletionHandler&#x3001;aioWriteCompletionHandler&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x670D;&#x52A1;&#x7AEF;&#x4EA7;&#x751F;&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x3002;</p>
-<p><strong>2.5.3.2 shutdown&#xFF1A;&#x505C;&#x6B62;AIO&#x670D;&#x52A1;&#x7AEF;</strong></p>
-<p>AIO&#x670D;&#x52A1;&#x505C;&#x6B62;&#x7684;&#x903B;&#x8F91;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5173;&#x95ED;Channel&#x901A;&#x9053;&#xFF0C;&#x505C;&#x6B62;&#x7EBF;&#x7A0B;&#x7EC4;&#x3002;</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">shutdown</span><span class="hljs-params">()</span> </span>{
-    running = <span class="hljs-keyword">false</span>;
-    <span class="hljs-keyword">try</span> {
-        <span class="hljs-keyword">if</span> (serverSocketChannel != <span class="hljs-keyword">null</span>) {
-            serverSocketChannel.close();
-            serverSocketChannel = <span class="hljs-keyword">null</span>;
-        }
-    } <span class="hljs-keyword">catch</span> (IOException e) {
-        LOGGER.warn(e.getMessage(), e);
-    }
-    <span class="hljs-keyword">if</span> (!workerExecutorService.isTerminated()) {
-        <span class="hljs-keyword">try</span> {
-            workerExecutorService.shutdownNow();
-        } <span class="hljs-keyword">catch</span> (Exception e) {
-            LOGGER.error(<span class="hljs-string">&quot;shutdown exception&quot;</span>, e);
-        }
-    }
-    <span class="hljs-keyword">if</span> (!asynchronousChannelGroup.isTerminated()) {
-        <span class="hljs-keyword">try</span> {
-            asynchronousChannelGroup.shutdownNow();
-        } <span class="hljs-keyword">catch</span> (IOException e) {
-            LOGGER.error(<span class="hljs-string">&quot;shutdown exception&quot;</span>, e);
-        }
-    }
-    <span class="hljs-keyword">try</span> {
-        asynchronousChannelGroup.awaitTermination(<span class="hljs-number">3</span>, TimeUnit.SECONDS);
-    } <span class="hljs-keyword">catch</span> (InterruptedException e) {
-        LOGGER.error(<span class="hljs-string">&quot;shutdown exception&quot;</span>, e);
-    }
-}
-</code></pre>
-<footer class="page-footer"><span class="copyright">Copyright &#xA9; smartboot.org 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-07-07 14:06:53
-</span></footer>
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
-</div>
-
-                        </div>
-                    </div>
-                
-            </div>
-
-            
-                
-                <a href="../Interface/" class="navigation navigation-prev " aria-label="Previous page: 2.1 核心接口与状态机">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="../客户端/" class="navigation navigation-next " aria-label="Next page: 2.3 客户端">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
-
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2 服务端","level":"1.2.3.2","depth":3,"next":{"title":"2.3 客户端","level":"1.2.3.3","depth":3,"path":"smart-socket/chapter-2/客户端/README.md","ref":"smart-socket/chapter-2/客户端/README.md","articles":[]},"previous":{"title":"2.1 核心接口与状态机","level":"1.2.3.1","depth":3,"path":"smart-socket/chapter-2/Interface/README.md","ref":"smart-socket/chapter-2/Interface/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","search-plus","expandable-chapters-interactive","tbfed-pagefooter","github","github-buttons","edit-link","advanced-emoji"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy smartboot.org 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/smartboot/smart-socket"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-interactive":{},"github-buttons":{"buttons":[{"user":"smartboot","repo":"smart-socket","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"edit-link":{"label":"Edit This Page","base":"https://gitee.com/smartboot/book/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"smartboot 中文指南","language":"en","gitbook":"*","description":"本文涵盖了smartboot下所有项目的技术手册"},"file":{"path":"smart-socket/chapter-2/服务端/README.md","mtime":"2019-07-07T06:06:53.509Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2021-01-25T09:39:59.666Z"},"basePath":"../../..","book":{"language":""}});
-        });
-    </script>
-</div>
-
-        
-    <script src="../../../gitbook/gitbook.js"></script>
-    <script src="../../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-search-plus/search.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-interactive/expandable-chapters.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
-
-    </body>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>服务端AioQuickServer | SmartBoot</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="manifest" href="/book/manifest.webmanifest" crossorigin="use-credentials">
+    <meta name="description" content="">
+    <meta property="og:url" content="/book/smart-socket/chapter-2/%E6%9C%8D%E5%8A%A1%E7%AB%AF/">
+    <meta property="og:site_name" content="SmartBoot">
+    <meta property="og:title" content="服务端AioQuickServer">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en-US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="SmartBoot">
+    <meta name="theme-color" content="#46bd87">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <link rel="preload" href="/book/assets/css/0.styles.b07082da.css" as="style"><link rel="preload" href="/book/assets/js/app.9d66c125.js" as="script"><link rel="preload" href="/book/assets/js/layout-Layout.6827866a.js" as="script"><link rel="preload" href="/book/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.ac8a61b1.js" as="script"><link rel="preload" href="/book/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound~layout-Slide.2a107b58.js" as="script"><link rel="preload" href="/book/assets/js/vendors~layout-Blog~layout-Layout.4f275bc9.js" as="script"><link rel="preload" href="/book/assets/js/page-服务端AioQuickServer.f6aebad4.js" as="script"><link rel="prefetch" href="/book/assets/js/35.dc053720.js"><link rel="prefetch" href="/book/assets/js/36.87a9911d.js"><link rel="prefetch" href="/book/assets/js/37.abc908ed.js"><link rel="prefetch" href="/book/assets/js/38.1ee90c2d.js"><link rel="prefetch" href="/book/assets/js/39.fa399e4d.js"><link rel="prefetch" href="/book/assets/js/layout-Blog.7bc98592.js"><link rel="prefetch" href="/book/assets/js/layout-NotFound.59f7bf9f.js"><link rel="prefetch" href="/book/assets/js/layout-Slide.c68131e8.js"><link rel="prefetch" href="/book/assets/js/page--48099f42.8abe9161.js"><link rel="prefetch" href="/book/assets/js/page--6e038b40.eb729b45.js"><link rel="prefetch" href="/book/assets/js/page-Home.c35fbd82.js"><link rel="prefetch" href="/book/assets/js/page-Spring集成smart-socket.f1f7f175.js"><link rel="prefetch" href="/book/assets/js/page-Summary.36d695d9.js"><link rel="prefetch" href="/book/assets/js/page-Websocket.d199cc3d.js"><link rel="prefetch" href="/book/assets/js/page-smart-socket.8dfe389f.js"><link rel="prefetch" href="/book/assets/js/page-smartboot.005efdd1.js"><link rel="prefetch" href="/book/assets/js/page-付费服务.38eac185.js"><link rel="prefetch" href="/book/assets/js/page-关于捐赠.1ff93dc9.js"><link rel="prefetch" href="/book/assets/js/page-客户端AioQuickClient.b14f9330.js"><link rel="prefetch" href="/book/assets/js/page-小结.e5b938b6.js"><link rel="prefetch" href="/book/assets/js/page-应用范围.a7c1759e.js"><link rel="prefetch" href="/book/assets/js/page-快速上手.7b8b083c.js"><link rel="prefetch" href="/book/assets/js/page-文件上传下载.985e9017.js"><link rel="prefetch" href="/book/assets/js/page-核心接口与状态机.bfbe4208.js"><link rel="prefetch" href="/book/assets/js/page-消息归类.00ecb954.js"><link rel="prefetch" href="/book/assets/js/page-第三章smart-socket源码解析.db549f88.js"><link rel="prefetch" href="/book/assets/js/page-第三章通信协议.df9fee9e.js"><link rel="prefetch" href="/book/assets/js/page-第四章内存池.4f602f0e.js"><link rel="prefetch" href="/book/assets/js/page-请求路由.ca38a294.js"><link rel="prefetch" href="/book/assets/js/page-通信会话AioSession.fecc958c.js"><link rel="prefetch" href="/book/assets/js/vendors~flowchart.0187c5e6.js"><link rel="prefetch" href="/book/assets/js/vendors~photo-swipe.7f2c8a6e.js"><link rel="prefetch" href="/book/assets/js/vendors~reveal.1c8d4140.js">
+    <link rel="stylesheet" href="/book/assets/css/0.styles.b07082da.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-sidebar has-anchor"><header class="navbar"><button class="sidebar-button"><span class="icon"></span></button> <a href="/book/" class="home-link router-link-active"><!----> <!----> <span class="site-name">SmartBoot</span></a> <div class="links"><button class="color-button"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="skin-icon"><path d="M224 800c0 9.6 3.2 44.8 6.4 54.4 6.4 48-48 76.8-48 76.8s80 41.6 147.2 0 134.4-134.4
+        38.4-195.2c-22.4-12.8-41.6-19.2-57.6-19.2C259.2 716.8 227.2 761.6 224 800zM560 675.2l-32
+        51.2c-51.2 51.2-83.2 32-83.2 32 25.6 67.2 0 112-12.8 128 25.6 6.4 51.2 9.6 80 9.6 54.4 0
+        102.4-9.6 150.4-32l0 0c3.2 0 3.2-3.2 3.2-3.2 22.4-16 12.8-35.2
+        6.4-44.8-9.6-12.8-12.8-25.6-12.8-41.6 0-54.4 60.8-99.2 137.6-99.2 6.4 0 12.8 0 22.4
+        0 12.8 0 38.4 9.6 48-25.6 0-3.2 0-3.2 3.2-6.4 0-3.2 3.2-6.4 3.2-6.4 6.4-16 6.4-16 6.4-19.2
+        9.6-35.2 16-73.6 16-115.2 0-105.6-41.6-198.4-108.8-268.8C704 396.8 560 675.2 560 675.2zM224
+        419.2c0-28.8 22.4-51.2 51.2-51.2 28.8 0 51.2 22.4 51.2 51.2 0 28.8-22.4 51.2-51.2 51.2C246.4
+        470.4 224 448 224 419.2zM320 284.8c0-22.4 19.2-41.6 41.6-41.6 22.4 0 41.6 19.2 41.6 41.6 0
+        22.4-19.2 41.6-41.6 41.6C339.2 326.4 320 307.2 320 284.8zM457.6 208c0-12.8 12.8-25.6 25.6-25.6
+        12.8 0 25.6 12.8 25.6 25.6 0 12.8-12.8 25.6-25.6 25.6C470.4 233.6 457.6 220.8 457.6 208zM128
+        505.6C128 592 153.6 672 201.6 736c28.8-60.8 112-60.8 124.8-60.8-16-51.2 16-99.2
+        16-99.2l316.8-422.4c-48-19.2-99.2-32-150.4-32C297.6 118.4 128 291.2 128 505.6zM764.8
+        86.4c-22.4 19.2-390.4 518.4-390.4 518.4-22.4 28.8-12.8 76.8 22.4 99.2l9.6 6.4c35.2 22.4
+        80 12.8 99.2-25.6 0 0 6.4-12.8 9.6-19.2 54.4-105.6 275.2-524.8 288-553.6
+        6.4-19.2-3.2-32-19.2-32C777.6 76.8 771.2 80 764.8 86.4z"></path></svg> <div class="color-picker-menu" style="display:none;"><div class="theme-options"><ul class="themecolor-select"><label for="themecolor-select">Theme Color:</label> <li><a href="#" class="default-theme"></a></li> </ul> <div class="darkmode-toggle"><label for="darkmode-toggle" class="desc">Theme Mode:</label> <div class="darkmode-switch"><div class="item day"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon light-icon"><path d="M512 256a42.667 42.667 0 0042.667-42.667V128a42.667 42.667 0 00-85.334 0v85.333A42.667 42.667 0 00512 256zm384 213.333h-85.333a42.667 42.667 0 000 85.334H896a42.667 42.667 0 000-85.334zM256 512a42.667 42.667 0 00-42.667-42.667H128a42.667 42.667 0 000 85.334h85.333A42.667 42.667 0 00256 512zm9.387-298.667a42.667 42.667 0 00-59.307 62.72l61.44 59.307a42.667 42.667 0 0031.147 11.947 42.667 42.667 0 0030.72-13.227 42.667 42.667 0 000-60.16zm459.946 133.974a42.667 42.667 0 0029.44-11.947l61.44-59.307a42.667 42.667 0 00-57.6-62.72l-61.44 60.587a42.667 42.667 0 000 60.16 42.667 42.667 0 0028.16 13.227zM512 768a42.667 42.667 0 00-42.667 42.667V896a42.667 42.667 0 0085.334 0v-85.333A42.667 42.667 0 00512 768zm244.48-79.36a42.667 42.667 0 00-59.307 61.44l61.44 60.587a42.667 42.667 0 0029.44 11.946 42.667 42.667 0 0030.72-12.8 42.667 42.667 0 000-60.586zm-488.96 0l-61.44 59.307a42.667 42.667 0 000 60.586 42.667 42.667 0 0030.72 12.8 42.667 42.667 0 0028.587-10.666l61.44-59.307a42.667 42.667 0 00-59.307-61.44zM512 341.333A170.667 170.667 0 10682.667 512 170.667 170.667 0 00512 341.333z" fill="currentColor"></path></svg></div> <div class="item auto active"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon auto-icon"><path d="M460.864 539.072H564.8L510.592 376l-49.728 163.072zM872 362.368V149.504H659.648L510.528 0l-149.12 149.504H149.12v212.928L0 511.872l149.12 149.504v212.928h212.352l149.12 149.504 149.12-149.504h212.352V661.376l149.12-149.504L872 362.368zM614.464 693.12l-31.616-90.624H438.272l-31.616 90.624h-85.888l144.576-407.68h90.368l144.576 407.68h-85.824zm0 0" fill="currentColor"></path></svg></div> <div class="item night"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon dark-icon"><path d="M935.539 630.402c-11.43-11.432-28.674-14.739-43.531-8.354-46.734 20.103-96.363 30.297-147.508 30.297-99.59 0-193.221-38.784-263.64-109.203-108.637-108.637-139.61-270.022-78.908-411.148a39.497 39.497 0 00-51.886-51.887c-52.637 22.64-100.017 54.81-140.826 95.616-85.346 85.346-132.346 198.821-132.346 319.52 0 120.7 47.001 234.172 132.347 319.519S408.063 947.11 528.76 947.11c120.7 0 234.172-47.003 319.52-132.351 40.809-40.81 72.978-88.19 95.616-140.826a39.497 39.497 0 00-8.356-43.532z" fill="currentColor"></path></svg></div></div> <!----></div></div></div></button> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/book/" class="nav-link router-link-active"><i class="iconfont icon-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title"><i class="iconfont icon-info"></i>
+      文档
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title"><i class="iconfont icon-info"></i>
+      文档
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/book/smart-socket/" class="nav-link router-link-active active"><!---->
+  smart-socket
+</a></li><li class="dropdown-item"><!----> <a href="/book/smart-http/" class="nav-link"><!---->
+  smart-http
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="了解更多" class="dropdown-title"><span class="title"><!---->
+      了解更多
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="了解更多" class="mobile-dropdown-title"><span class="title"><!---->
+      了解更多
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/book/donation.html" class="nav-link"><!---->
+  关于捐赠
+</a></li><li class="dropdown-item"><!----> <a href="/book/service.html" class="nav-link"><!---->
+  付费服务
+</a></li><li class="dropdown-item"><h4>开源仓库</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://gitee.com/smartboot" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://github.com/smartboot" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <nav class="nav-links"><div class="nav-item"><a href="/book/" class="nav-link router-link-active"><i class="iconfont icon-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title"><i class="iconfont icon-info"></i>
+      文档
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title"><i class="iconfont icon-info"></i>
+      文档
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/book/smart-socket/" class="nav-link router-link-active active"><!---->
+  smart-socket
+</a></li><li class="dropdown-item"><!----> <a href="/book/smart-http/" class="nav-link"><!---->
+  smart-http
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="了解更多" class="dropdown-title"><span class="title"><!---->
+      了解更多
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="了解更多" class="mobile-dropdown-title"><span class="title"><!---->
+      了解更多
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/book/donation.html" class="nav-link"><!---->
+  关于捐赠
+</a></li><li class="dropdown-item"><!----> <a href="/book/service.html" class="nav-link"><!---->
+  付费服务
+</a></li><li class="dropdown-item"><h4>开源仓库</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://gitee.com/smartboot" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://github.com/smartboot" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/book/smart-socket/" aria-current="page" class="sidebar-link">smart-socket</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><!----> <span>指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/book/smart-socket/getting-started/" class="sidebar-link">快速上手</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/book/smart-socket/getting-started/#项目概要" class="sidebar-link">项目概要</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/book/smart-socket/getting-started/#项目优势" class="sidebar-link">项目优势</a></li><li class="sidebar-sub-header"><a href="/book/smart-socket/getting-started/#工程结构" class="sidebar-link">工程结构</a></li></ul></li><li class="sidebar-sub-header"><a href="/book/smart-socket/getting-started/#🛠-安装" class="sidebar-link">🛠 安装</a></li><li class="sidebar-sub-header"><a href="/book/smart-socket/getting-started/#🚀-使用" class="sidebar-link">🚀 使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/book/smart-socket/getting-started/#通信协议" class="sidebar-link">通信协议</a></li><li class="sidebar-sub-header"><a href="/book/smart-socket/getting-started/#服务端开发" class="sidebar-link">服务端开发</a></li><li class="sidebar-sub-header"><a href="/book/smart-socket/getting-started/#客户端开发" class="sidebar-link">客户端开发</a></li><li class="sidebar-sub-header"><a href="/book/smart-socket/getting-started/#启动运行" class="sidebar-link">启动运行</a></li></ul></li><li class="sidebar-sub-header"><a href="/book/smart-socket/getting-started/#最后" class="sidebar-link">最后</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><!----> <span>深入</span> <!----></p> <!----></section></li></ul> </aside> <main class="page"><nav class="breadcrumb"><ul><li><a href="/book/smart-socket/" class="router-link-active"><!---->
+        smart-socket
+      </a></li><li><a href="/book/smart-socket/chapter-2/" class="router-link-active"><!---->
+        第三章 smart-socket源码解析
+      </a></li><li class="is-active"><a href="/book/smart-socket/chapter-2/%E6%9C%8D%E5%8A%A1%E7%AB%AF/" aria-current="page" class="router-link-exact-active router-link-active"><!---->
+        服务端AioQuickServer
+      </a></li></ul></nav>  <div class="page-title"><h1><!---->
+    服务端AioQuickServer
+  </h1> <div class="page-info"><!----> <!----><span aria-label="Page views🔢" data-balloon-pos="down" class="visitor-info"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon eye-icon"><path d="M992 512.096c0-5.76-.992-10.592-1.28-11.136-.192-2.88-1.152-8.064-2.08-10.816-.256-.672-.544-1.376-.832-2.08-.48-1.568-1.024-3.104-1.6-4.32C897.664 290.112 707.104 160 512 160c-195.072 0-385.632 130.016-473.76 322.592-1.056 2.112-1.792 4.096-2.272 5.856a55.512 55.512 0 00-.64 1.6c-1.76 5.088-1.792 8.64-1.632 7.744-.832 3.744-1.568 11.168-1.568 11.168-.224 2.272-.224 4.032.032 6.304 0 0 .736 6.464 1.088 7.808.128 1.824.576 4.512 1.12 6.976h-.032c.448 2.08 1.12 4.096 1.984 6.08.48 1.536.992 2.976 1.472 4.032C126.432 733.856 316.992 864 512 864c195.136 0 385.696-130.048 473.216-321.696 1.376-2.496 2.24-4.832 2.848-6.912.256-.608.48-1.184.672-1.728 1.536-4.48 1.856-8.32 1.728-8.32l-.032.032c.608-3.104 1.568-7.744 1.568-13.28zM512 672c-88.224 0-160-71.776-160-160s71.776-160 160-160 160 71.776 160 160-71.776 160-160 160z" fill="currentColor"></path></svg> <span id="/book/smart-socket/chapter-2/%E6%9C%8D%E5%8A%A1%E7%AB%AF/" data-flag-title="服务端AioQuickServer" class="leancloud_visitors"><span class="leancloud-visitors-count">...</span></span></span><!----><!----><!----><span aria-label="Reading Time⌛" data-balloon-pos="down" class="read-time-info"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon time-icon"><path d="M511.997 70.568c-243.797 0-441.429 197.633-441.429 441.435 0 243.797 197.632 441.429 441.43 441.429S953.431 755.8 953.431 512.002c0-243.796-197.637-441.434-441.435-441.434zm150.158 609.093l-15.605 15.61c-8.621 8.615-22.596 8.615-31.215 0L472.197 552.126c-4.95-4.944-4.34-14.888-4.34-24.677V247.14c0-12.19 9.882-22.07 22.07-22.07h22.07c12.19 0 22.07 9.882 22.07 22.07v273.218l128.088 128.088c8.62 8.62 8.62 22.595 0 31.215zm0 0" fill="currentColor"></path></svg> <span>About 3 min</span></span></div> <hr></div> <!----> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"></ul></div></aside></div> <div class="theme-default-content content__default"><h2 id="服务端aioquickserver"><a href="#服务端aioquickserver" class="header-anchor">#</a> 服务端AioQuickServer</h2> <p>异步非阻塞通信的服务端实现。这个类主要是对JDK提供的AIO通信类AsynchronousServerSocketChannel、AsynchronousChannelGroup进行封装。AioQuickServer是服务端通信的调度中心，在完成协议、消息处理器的定义后，需要通过AioQuickServer来启动我们的通信服务。AioQuickServer提供了一些必要的参数配置接口，方便开发人员进行资源分配以达到最优效果。</p> <p>2.5.1 成员属性</p> <table><thead><tr><th>属性名</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>serverSocketChannel</td> <td>AsynchronousServerSocketChannel</td> <td>JDK提供的AIO服务端核心类</td></tr> <tr><td>asynchronousChannelGroup</td> <td>AsynchronousChannelGroup</td> <td>JDK为AIO提供的线程池服务</td></tr> <tr><td>config</td> <td>IoServerConfig</td> <td>存储AioQuickServer服务配置项</td></tr> <tr><td>aioReadCompletionHandler</td> <td>ReadCompletionHandler</td> <td>smart-socket提供的IO读回调处理类</td></tr> <tr><td>aioWriteCompletionHandler</td> <td>WriteCompletionHandler</td> <td>smart-socket提供的IO写回调处理类</td></tr> <tr><td>bufferPool</td> <td>BufferPagePool</td> <td>内存池对象</td></tr> <tr><td>workerExecutorService</td> <td>ThreadPoolExecutor</td> <td>Worker线程池</td></tr></tbody></table> <p>2.5.2 配置接口</p> <table><thead><tr><th>方法</th> <th>说明</th></tr></thead> <tbody><tr><td>public AioQuickServer setBannerEnabled(boolean bannerEnabled)</td> <td>服务启动时是否打印smart-socket banner</td></tr> <tr><td>public AioQuickServer setThreadNum(int num)</td> <td>Server服务线程数</td></tr> <tr><td>public AioQuickServer setReadBufferSize(int size)</td> <td>设置AioSession读缓存区长度</td></tr> <tr><td>public AioQuickServer setOption(SocketOption socketOption, V value)</td> <td>设置Socket的TCP参数配置</td></tr></tbody></table> <p>2.5.3 核心方法</p> <p><strong>2.5.3.1 start：启动AIO服务端</strong></p> <ul><li><p>片段一</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code>asynchronousChannelGroup <span class="token operator">=</span> <span class="token class-name">AsynchronousChannelGroup</span><span class="token punctuation">.</span><span class="token function">withFixedThreadPool</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span><span class="token function">getThreadNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">ThreadFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">byte</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">Thread</span> <span class="token function">newThread</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> <span class="token string">&quot;smart-socket:AIO-&quot;</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">++</span>index<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>初始化AIO服务的工作线程组并赋值于<code>AioQuickServer</code>成员属性<code>asynchronousChannelGroup</code></p></li> <li><p>片段二</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">this</span><span class="token punctuation">.</span>serverSocketChannel <span class="token operator">=</span> <span class="token class-name">AsynchronousServerSocketChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span>asynchronousChannelGroup<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InetSocketAddress</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span><span class="token function">getPort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>这行代码很直观，打开AIO服务通道并绑定端口号，但要注意bind方法。<code>AsynchronousServerSocketChannel</code>提供了两个bind接口：bind(SocketAddress local)，bind(SocketAddress local, int backlog)</p> <p>如果调用bind(SocketAddress local)方法，AsynchronousServerSocketChannel内部实际上执行的是bind(SocketAddress local, 0)。然而backlog的值小于1时，JDK会将其默认设置为50。 backlog维护了连接请求队列长度，如果队列满时收到连接指示，则拒绝该连接。举个例子：backlog设置为50，当前有50连接请求过来，服务端还未执行这些连接请求的accept方法。此时再有一个连接请求过来，则会被拒绝连接。除非请求队列中的某个连接完成accept操作并释放出队列资源，服务器才可接受新的连接。</p></li> <li><p>片段三</p></li></ul> <div class="language-java line-numbers-mode"><pre class="language-java"><code>acceptThread <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">NetMonitor</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> monitor <span class="token operator">=</span> config<span class="token punctuation">.</span><span class="token function">getMonitor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>running<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Future</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">AsynchronousSocketChannel</span><span class="token punctuation">&gt;</span></span> future <span class="token operator">=</span> serverSocketChannel<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token keyword">final</span> <span class="token class-name">AsynchronousSocketChannel</span> channel <span class="token operator">=</span> future<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                workerExecutorService<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token annotation punctuation">@Override</span>
+                    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span>monitor <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> monitor<span class="token punctuation">.</span><span class="token function">acceptMonitor</span><span class="token punctuation">(</span>channel<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            <span class="token function">createSession</span><span class="token punctuation">(</span>channel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                            config<span class="token punctuation">.</span><span class="token function">getProcessor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">stateEvent</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token class-name">StateMachineEnum</span><span class="token punctuation">.</span>REJECT_ACCEPT<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            LOGGER<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token string">&quot;reject accept channel:{}&quot;</span><span class="token punctuation">,</span> channel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token function">closeChannel</span><span class="token punctuation">(</span>channel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                LOGGER<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">&quot;AcceptThread Exception&quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">&quot;smart-socket:AcceptThread&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+acceptThread<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">createSession</span><span class="token punctuation">(</span><span class="token class-name">AsynchronousSocketChannel</span> channel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//连接成功则构造AIOSession对象</span>
+    <span class="token class-name">AioSession</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> session <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    	session <span class="token operator">=</span> aioSessionFunction<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>channel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        session<span class="token punctuation">.</span><span class="token function">initSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	LOGGER<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span>e1<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> e1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>session <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        	<span class="token keyword">try</span> <span class="token punctuation">{</span>
+            	channel<span class="token punctuation">.</span><span class="token function">shutdownInput</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        	<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            	LOGGER<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            	channel<span class="token punctuation">.</span><span class="token function">shutdownOutput</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				LOGGER<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            	channel<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            	LOGGER<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">&quot;close channel exception&quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        	session<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br></div></div><p>smart-socket通过启动AcceptThread线程同步监听客户端连接请求，
+一旦客户端连接上来便生成异步任务由WorkerThread线程池来初始化AioSession。
+所有的AioSession共用aioReadCompletionHandler、aioWriteCompletionHandler对象，这样可以减少服务端产生的对象数。</p> <p><strong>2.5.3.2 shutdown：停止AIO服务端</strong></p> <p>AIO服务停止的逻辑很简单，关闭Channel通道，停止线程组。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">void</span> <span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    running <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>serverSocketChannel <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            serverSocketChannel<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            serverSocketChannel <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        LOGGER<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>workerExecutorService<span class="token punctuation">.</span><span class="token function">isTerminated</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            workerExecutorService<span class="token punctuation">.</span><span class="token function">shutdownNow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            LOGGER<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">&quot;shutdown exception&quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>asynchronousChannelGroup<span class="token punctuation">.</span><span class="token function">isTerminated</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            asynchronousChannelGroup<span class="token punctuation">.</span><span class="token function">shutdownNow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            LOGGER<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">&quot;shutdown exception&quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        asynchronousChannelGroup<span class="token punctuation">.</span><span class="token function">awaitTermination</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>SECONDS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        LOGGER<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">&quot;shutdown exception&quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last update:</span> <span class="time">February 25, 2021 12:31</span></div></footer> <!----> <!----> </main> <!----></div><div class="global-ui"><!----><!----><div id="pwa-install"><!----> <div id="install-modal-wrapper" style="display:none;"><div class="background"></div> <div class="install-modal"><div class="header"><button aria-label="Close" class="close-button"><svg width="23" height="22" xmlns="http://www.w3.org/2000/svg" class="icon close-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.12.358a1.224 1.224 0 011.729 0l8.92 8.914L20.686.358a1.224 1.224 0 011.73 1.728L13.497 11l8.92 8.913a1.222 1.222 0 11-1.73 1.729l-8.919-8.913-8.92 8.913a1.224 1.224 0 01-1.729-1.729L10.04 11l-8.92-8.914a1.222 1.222 0 010-1.728z" fill="currentColor"></path></svg></button> <div class="logo"><!----> <div class="title"><h1></h1> <p class="desc">This app can be installed on your PC or mobile device.  This will allow this web app to look and behave like any other installed app.  You will find it in your app lists and be able to pin it to your home screen, start menus or task bars.  This installed web app will also be able to safely interact with other apps and your operating system. </p></div></div></div> <div class="content"><div class="highlight"><!----> <!----></div> <div class="description"><h3>Description</h3> <p></p></div></div> <div class="button-wrapper"><button class="install-button">
+        Install <span></span></button> <button class="cancel-button">
+        Cancel
+      </button></div></div></div></div><div tabindex="-1" role="dialog" aria-hidden="true" class="pswp"><div class="pswp__bg"></div> <div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div> <div class="pswp__item"></div> <div class="pswp__item"></div></div> <div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div> <button title="Close (Esc)" class="pswp__button pswp__button--close"></button> <button title="Share" class="pswp__button pswp__button--share"></button> <button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button> <button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button> <div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div> <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div> <button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button> <button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button> <div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div></div></div>
+    <script src="/book/assets/js/app.9d66c125.js" defer></script><script src="/book/assets/js/layout-Layout.6827866a.js" defer></script><script src="/book/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.ac8a61b1.js" defer></script><script src="/book/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound~layout-Slide.2a107b58.js" defer></script><script src="/book/assets/js/vendors~layout-Blog~layout-Layout.4f275bc9.js" defer></script><script src="/book/assets/js/page-服务端AioQuickServer.f6aebad4.js" defer></script>
+  </body>
 </html>
-

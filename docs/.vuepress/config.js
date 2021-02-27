@@ -4,9 +4,13 @@ module.exports = config({
     author:'三刀',
     base:'/book/',
     title: 'SmartBoot',
+    dest:'./_book',
     plugins: [
         ['copyright'],
     ],
+    // mdEnhance: {
+    //     footnote: true,
+    // },
     themeConfig: {
         nav: [
             {text: '首页', link: '/',icon: "home"},
