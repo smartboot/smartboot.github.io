@@ -60,16 +60,16 @@ module.exports = config({
                         'websocket',
                     ]
                 },
-                {
-                    title: '深入',
-                    collapsable: false,
-                    children: [
-                        'getting-started',
-                        'http_route',
-                        'file_upload',
-                        'websocket',
-                    ]
-                }
+                // {
+                //     title: '深入',
+                //     collapsable: false,
+                //     children: [
+                //         'getting-started',
+                //         'http_route',
+                //         'file_upload',
+                //         'websocket',
+                //     ]
+                // }
             ],
             '/smart-socket/':[
                 {
