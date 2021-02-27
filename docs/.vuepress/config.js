@@ -1,42 +1,44 @@
-module.exports = {
+const { config } = require("vuepress-theme-hope");
+module.exports = config({
+    baseLang:'zh-CN',
+    author:'三刀',
     base:'/book/',
-    title: 'smartboot',
-    description: 'Just playing around',
-    // theme: '@vuepress/vue',
+    title: 'SmartBoot',
+    plugins: [
+        ['copyright'],
+    ],
     themeConfig: {
         nav: [
-            {text: '首页', link: '/'},
+            {text: '首页', link: '/',icon: "home"},
             {
                 text: '文档',
+                icon: "info",
                 items: [
                     {text: 'smart-socket', link: '/smart-socket/'},
                     {text: 'smart-http', link: '/smart-http/'}
                 ]
             },
-            {text: '捐赠', link: '/donation.md'},
-            {text: '仓库', link: 'https://gitee.com/smartboot'},
-        ],
-        plugins: [
-            ['@vuepress/back-to-top', true],
-            ['@vuepress/pwa', {
-                serviceWorker: true,
-                updatePopup: true
-            }],
-            ['@vuepress/medium-zoom', true],
-            ['@vuepress/google-analytics', {
-                ga: 'UA-128189152-1'
-            }],
-            ['container', {
-                type: 'vue',
-                before: '<pre class="vue-container"><code>',
-                after: '</code></pre>'
-            }],
-            ['container', {
-                type: 'upgrade',
-                before: info => `<UpgradePath title="${info}">`,
-                after: '</UpgradePath>'
-            }],
-            ['flowchart']
+            {
+                text: '了解更多',
+                ariaLabel: '了解更多',
+                items: [
+                    {text: '关于捐赠', link: '/donation'},
+                    {text: '付费服务', link: '/service'},
+                    {
+                        text: '开源仓库',
+                        items: [
+                            {
+                                text: 'Gitee',
+                                link: 'https://gitee.com/smartboot'
+                            },
+                            {
+                                text: 'Github',
+                                link: 'https://github.com/smartboot'
+                            }
+                        ]
+                    }
+                ]
+            },
         ],
         sidebar: {
             '/smart-http/': [
@@ -74,7 +76,7 @@ module.exports = {
                     title: '指南',
                     collapsable: false,
                     children: [
-                        '快速上手',
+                        'getting-started',
                     ]
                 },
                 {
@@ -89,4 +91,4 @@ module.exports = {
         displayAllHeaders: true,
         lastUpdated: 'Last Updated',
     }
-}
+});

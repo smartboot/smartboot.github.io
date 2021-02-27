@@ -3,23 +3,64 @@ sidebar: auto
 home: true
 heroImage: https://portrait.gitee.com/uploads/avatars/namespace/266/798143_smartboot_1578989513.png!avatar100
 heroText: smart-http
-actionText: 进入我的开源 →
-actionLink: /smart-http/getting-started
+action:
+  - text: 进入我的开源 → 💡
+    link: /smart-http/getting-started
 tagline: 追求极致的轻量级可编程 http 服务器
 footer: Apache License 2.0 | Copyright © 2017-present 三刀
 ---
-**关于smart-http**
 
-smart-http 是一款采用 Java 语言编写的 Http 服务器，有别于业界知名的 Web容器：Tomcat、Undertow，smart-http 并不支持 Servlet 规范，但对于处理 Http 请求所需的各项能力，它都具备。
+smart-http 是可编程的 Http 应用微内核。封装了标准的 Http、Websocket 协议，满足用户对于 Server 端和 Client 端的开发需求。
 
-smart-http 天生就是异步非阻塞的 I/O 模型，因为其通信内核采用了 smart-socket。所以无论是性能还是稳定性，都是非常出色的。
-在 4核 2.9GHz 的电脑下压测的 QPS 可达 73W，流量传输效率每秒突破百兆。
+这是目前市面上为数不多的做到严格准守 RFC2616 规范，又同时兼顾卓越性能的 Http 服务器，在三方评测 [TechEmpower](https://www.techempower.com/benchmarks/#section=data-r20&hw=ph&test=plaintext&l=zik0vz-sf)结果中有着极为亮眼的表现。
 
-smart-http 的诞生源于 smart-socket 的"野心"，一直以来 smart-socket 都是以业界优秀的通信框架为目标在不断的提升自己。
-并且有幸接触到 [TechEmpower](https://www.techempower.com/benchmarks/#section=data-r18&hw=ph&test=fortune)，一个标准性能测试平台。
-由于参与性能评测需要使用 Http 协议，而彼时 smart-socket 只完成基本通信功能，并未提供业界主流协议的适配。
-为了能够有个清晰的自我了解，才开启 smart-http 的漫漫研发路。
+<CodeGroup>
+<CodeGroupItem title="http server" active>
+```java
+public class SimpleSmartHttp {
+    public static void main(String[] args) {
+        HttpBootstrap bootstrap = new HttpBootstrap();
+        bootstrap.pipeline().next(new HttpHandle() {
+            @Override
+            public void doHandle(HttpRequest request, HttpResponse response) throws IOException {
+                response.write("hello world<br/>".getBytes());
+            }
+        });
+        bootstrap.setPort(8080).start();
+    }
+}
+```
+</CodeGroupItem>
+<CodeGroupItem title="websocket server">
 
-个人很欣赏一句话：一个人可以走的很快，但一群人可以走的很远。
-将 smart-http 开源出来，是期望这个项目能帮到一些人，同时吸收大家对它提出的发展建议，让 smart-http 和中意它的用户可以共同进步。
-对于技术，我们一直是敬畏的；而对于学习，要时刻保持谦卑。还是那句话：开源不易，前行且珍惜。
+```java
+public class SimpleSmartHttp {
+    public static void main(String[] args) {
+        HttpBootstrap bootstrap = new HttpBootstrap();
+        bootstrap.wsPipeline().next(new WebSocketDefaultHandle() {
+            @Override
+            public void handleTextMessage(WebSocketRequest request, WebSocketResponse response, String data) {
+                response.sendTextMessage("Hello World");
+            }
+        });
+        bootstrap.setPort(8080).start();
+    }
+}
+```
+</CodeGroupItem>
+<CodeGroupItem title="http client"> 
+
+```java
+public class HttpGetDemo {
+    public static void main(String[] args) {
+        HttpClient httpClient = new HttpClient("www.baidu.com", 80);
+        httpClient.connect();
+        httpClient.get("/")
+                .onSuccess(response -> System.out.println(response.body()))
+                .onFailure(Throwable::printStackTrace)
+                .send();
+    }
+}
+```
+</CodeGroupItem>
+</CodeGroup>

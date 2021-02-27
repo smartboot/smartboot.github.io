@@ -1,24 +1,60 @@
 # 快速上手
-smart-socket 对 JDK 版本要求是 1.8 及以上，如果你还在用低版本 JDK，请先升级。
+## 项目概要
+smart-socket 是基于 AIO 技术实现的异步非阻塞通信框架，个人更喜欢称之为「通信微内核」。
 
-若对源码研究感兴趣的朋友欢迎前往 smart-socket 的代码托管平台下载最新代码：
+框架，长久以来给人一种高级、复杂的感受；微内核,则显得相对小巧、精致，在使用体验上会更加人性化。
 
-- 码云：https://gitee.com/smartboot/smart-socket
+虽然程序员有能力（只要肯花时间的话）驾驭各种技术框架，创造出各种能为人类生活、工作带来便利性和愉悦感受的事物。
+但作为从业者，我深知「程序员」，是一个需要被关怀的群体。
+程序员需要不停的更新自己的知识储备，以应对快速变化的复杂世界。
+面对日益褪去的发际线，没有一项技术框架的无辜的。这些框架的学习、使用过程，对程序员造成的损伤是不可估量的。
 
-- GITHUB：https://github.com/smartboot/smart-socket
+我无力改变现状，所能做的只有在特定某些领域，为同行朋友提供一些更好的选择。
+smart-socket，本着「以人为本」的原则，是一款针对从事通信开发的程序员们倾心打造的「微内核」。
 
-推荐采用 maven 方式将 smart-socket 依赖至你的工程中，同时我们会尽力维持 smart-socket 新老版本的兼容性，以便用户的迭代升级。
+自此，smart-socket 将为你的通信开发带来一种与众不同的感受。
 
-  ```xml
-  <!-- 本书中的版本号可能不是最新的，以实际maven仓库中的版本号为准 -->
-  <dependency>
-      <groupId>org.smartboot.socket</groupId>
-      <artifactId>aio-core</artifactId>
-      <version>1.4.12</version>
-  </dependency>
-  ```
+### 项目优势
+- 通过阅读源码可以看到，smart-socket 没有高深的设计技巧，采用的是最朴实的表现手法。翻阅过 Netty 源码的读者可以相互比较一番。
+- smart-socket 的学习门槛相当低，以致于我期望仅通过这一页内容的篇幅，便完成使用教程的分享。
+- smart-socket 的性能表现非常出色，在三方评测[TechEmpower](https://www.techempower.com/benchmarks/#section=data-r20&hw=ph&test=plaintext&l=zik0vz-sf)中的 qps 甚至高出 netty 50% 以上。
 
-## 第一步：工程搭建
+### 工程结构
+smart-socket 项目工程内分为四个模块，下面为大家展示他们之间的关系，方便大家对照理解。
+
+- smart-socket：项目仓库主目录
+    - smart-socket-parent：项目主模块，通过 pom.xml 文件维护 Maven 依赖及发布信息。
+        - aio-core：项目基础子模块，仅包含 TCP 的 Server、Client 通信服务，以及内存池。
+        - aio-pro：项目高级子模块，提供便于开发所需的高级封装，同时附带 UDP 通信能力。（**推荐使用**）
+    - example：存放 smart-socket 的使用示例，学习过程中可供参考。
+
+## 🛠 安装
+:::: tip 提示
+依赖版本号以实际 maven 仓库中的最新版为准！
+::::
+
+<CodeGroup>
+<CodeGroupItem title="maven" active>
+```xml
+<dependency>
+  <groupId>org.smartboot.socket</groupId>
+  <artifactId>aio-pro</artifactId>
+  <version>1.5.5</version>
+</dependency>
+```
+</CodeGroupItem>
+<CodeGroupItem title="gradle">
+
+```gradle
+implementation group: 'org.smartboot.socket', name: 'aio-pro', version: '1.5.5'
+```
+</CodeGroupItem>
+</CodeGroup>
+
+## 🚀 使用
+:::: warning 注意
+通信开发的核心是：「**面向协议编程**」。敲黑板，这是知识点！
+::::
 本节以 Maven 工程为例为大家演示基于 smart-socket 实现 socket 开发，
 如果已经有现成的工程仅需引入 pom.xml 依赖即可，否则请先建立一个项目工程。
 
