@@ -1,3 +1,7 @@
+---
+author: 三刀
+time: 2022-02-27
+---
 # 快速上手
 ## :truck: 项目简介
 smart-socket 是基于 AIO 技术实现的异步非阻塞通信框架，个人更喜欢称之为「通信微内核」。
@@ -6,7 +10,7 @@ smart-socket 是基于 AIO 技术实现的异步非阻塞通信框架，个人�
 smart-socket 支持使用 TCP/UDP 进行服务端、客户端的开发，能够覆盖所有通信开发场景。
 ### 项目优势
 - 通过阅读源码可以看到，smart-socket 没有高深的设计技巧，采用的是最朴实的表现手法。翻阅过 Netty 源码的读者可以相互比较一番。
-- smart-socket 的学习门槛相当低，以致于我期望仅通过这一页内容的篇幅，便完成使用教程的分享。
+- smart-socket 的学习门槛相当低，以致于我期望仅通过本页篇幅，便完成使用教程的分享。
 - smart-socket 的性能表现非常出色，在三方评测[TechEmpower](https://www.techempower.com/benchmarks/#section=data-r20&hw=ph&test=plaintext&l=zik0vz-sf)中的 qps 甚至高出 netty 50% 以上。
 
 ### 工程结构
@@ -36,7 +40,7 @@ smart-socket 项目工程内分为四个模块，下面为大家展示他们之�
 ```xml
 <dependency>
   <groupId>org.smartboot.socket</groupId>
-  <artifactId>aio-pro</artifactId>
+  <artifactId>aio-core</artifactId>
   <version>1.5.5</version>
 </dependency>
 ```
@@ -44,16 +48,37 @@ smart-socket 项目工程内分为四个模块，下面为大家展示他们之�
 <CodeGroupItem title="gradle">
 
 ```gradle
-implementation group: 'org.smartboot.socket', name: 'aio-pro', version: '1.5.5'
+implementation group: 'org.smartboot.socket', name: 'aio-core', version: '1.5.5'
 ```
 </CodeGroupItem>
 </CodeGroup>
 
+> aio-core 仅提供最纯粹的 TCP 通信服务，
+>而 aio-pro 则包含了丰富的插件，包括：TLS/SSL、心跳、黑名单等，以及 UDP 通信和部分辅助开发的工具包。
+>你可在需要的时候选择性使用。
+
 ## 🚀 使用
 ### 通信协议
-:::: warning 注意
-通信开发的核心是：「**面向协议编程**」。敲黑板，这是知识点！
+通信协议约定了服务端与客户端之间交互数据的识别规则，是通信中非常重要的一部分。
+
+在短连接场景下，可以通过 EOF(即 readSize 等于 -1) 标志来定义完整数据包的内容。
+虽然这种方式不规范，也不推荐，但不可否则确实简单、有效。
+
+而在如今的万物互联时代下，长连接成了更为普遍的应用场景，链路复用是目前通信形式的主旋律。我们必须掌握正确的数据处理方式，以获得高效、准确的通信数据。
+
+基于协议实现的编解码算法，必须成为每个通信开发人员的必备能力。
+依照个人经验，判断一个程序员是否具备通信开发的能力，取决于他是否还会视半包、粘包为「问题」。
+此处先不过多展开，有机会在专门通过一篇文章来与大家作进一步交流。
+
+回到本节主题，我们设计了一个非常简单的协议用于演示 smart-socket 的使用方式。
+
+:::: tip 协议规则
+| |长度|说明|
+|--|--|--|
+|消息头|4字节|表示消息体长度|
+|消息体|N字节|N：消息头对应的int数值长度|
 ::::
+
 ```java
 public class StringProtocol implements Protocol<String> {
 
@@ -76,6 +101,10 @@ public class StringProtocol implements Protocol<String> {
     }
 }
 ```
+
+:::: warning 注意
+通信开发的核心是：「**面向协议编程**」。敲黑板，这是知识点！
+::::
 
 ### 服务端开发
 
