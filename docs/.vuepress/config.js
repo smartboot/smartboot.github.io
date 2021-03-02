@@ -22,7 +22,7 @@ module.exports = config({
                     {text: 'smart-http', link: '/smart-http/'}
                 ]
             },
-            {text: '开发团队', link: 'members',icon: "home"},
+            {text: '开发团队', link: '/members',icon: "home"},
             {
                 text: '了解更多',
                 ariaLabel: '了解更多',
