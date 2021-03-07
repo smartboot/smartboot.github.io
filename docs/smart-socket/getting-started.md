@@ -41,7 +41,7 @@ smart-socket 项目工程内分为四个模块，下面为大家展示他们之�
 <dependency>
   <groupId>org.smartboot.socket</groupId>
   <artifactId>aio-core</artifactId>
-  <version>1.5.5</version>
+  <version>1.5.6</version>
 </dependency>
 ```
 </CodeGroupItem>
@@ -106,91 +106,62 @@ public class StringProtocol implements Protocol<String> {
 通信开发的核心是：「**面向协议编程**」。敲黑板，这是知识点！
 ::::
 
-### 服务端开发
+### 服务端/客户端开发
+服务端与客户端的开发，主要是基于`MessageProcess#process`实现接收到的消息的处理逻辑。
+如果在此方法中调用了 session 的 `WriteBuffer#write`，将会在执行完毕后由 smart-socket 自动执行 flush。
+而如果你是在`MessageProcess#process`之外的其他线程中执行数据输出，记得在write之后一定要调用一下 flush。
 
-服务端开发主要分两步：  
-1. 构造服务端对象AioQuickServer。该类的构造方法有以下几个入参：
-   - port，服务端监听端口号；
-   - Protocol，协议解码类，正是上一步骤实现的解码算法类：StringProtocol；
-   - MessageProcessor，消息处理器，对Protocol解析出来的消息进行业务处理。
-   因为只是个简单示例，采用匿名内部类的形式做演示。实际业务场景中可能涉及到更复杂的逻辑，开发同学自行把控。
-2. 启动Server服务
-
+<CodeGroup>
+<CodeGroupItem title="StringServer" active>
 ```java
-public class Server {
-    public static void main(String[] args) throws IOException {
-        // 1
-        AioQuickServer<String> server = new AioQuickServer<String>(8080, new StringProtocol(), new MessageProcessor<String>() {
-            public void process(AioSession<String> session, String msg) {
-                System.out.println("接受到客户端消息:" + msg);
+public class StringServer {
 
-                byte[] response = "Hi Client!".getBytes();
-                byte[] head = {(byte) response.length};
+    public static void main(String[] args) throws IOException {
+        MessageProcessor<String> processor = new MessageProcessor<String>() {
+            @Override
+            public void process(AioSession session, String msg) {
+                System.out.println("receive from client: " + msg);
+                WriteBuffer outputStream = session.writeBuffer();
                 try {
-                    session.writeBuffer().write(head);
-                    session.writeBuffer().write(response);
+                    byte[] bytes = msg.getBytes();
+                    outputStream.writeInt(bytes.length);
+                    outputStream.write(bytes);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
+        };
 
-            public void stateEvent(AioSession<String> session, StateMachineEnum stateMachineEnum, Throwable throwable) {
-            }
-        });
-        //2
+        AioQuickServer server = new AioQuickServer(8888, new StringProtocol(), processor);
         server.start();
     }
 }
 ```
-
-上述代码中启动了端口号8080的服务端应用，当接收到客户端发送过来的数据时，服务端以StringProtocol进行协议解码，识别出客户端传递的字符串，随后将该消息转交给消息处理器MessageProcessor进行业务处理。
-
-### 客户端开发
-
-客户端的开发相较于服务端就简单很多，仅需操作一个连接会话（AioSession）即可，而服务端面向的是众多连接会话，在实际运用中还得具备并发思维与会话资源管理策略。客户端的开发步骤通常如下：
-
-1. 连接服务端，取得连接会话（AioSession）
-2. 发送请求消息
-3. 处理响应消息
-4. 关闭客户端，若是长连接场景无需关闭
+</CodeGroupItem>
+<CodeGroupItem title="StringClient">
 
 ```java
-public class Client {
-    public static void main(String[] args) throws InterruptedException, ExecutionException, IOException {
-        AioQuickClient<String> client = new AioQuickClient<String>("127.0.0.1", 8080, new StringProtocol(), new MessageProcessor<String>() {
-            public void process(AioSession<String> session, String msg) {
-                System.out.println(msg);
-            }
+public class StringClient {
 
-            public void stateEvent(AioSession<String> session, StateMachineEnum stateMachineEnum, Throwable throwable) {
+    public static void main(String[] args) throws IOException {
+        MessageProcessor<String> processor = new MessageProcessor<String>() {
+            @Override
+            public void process(AioSession session, String msg) {
+                System.out.println("receive from server: " + msg);
             }
-        });
-
-        AioSession<String> session = client.start();
-        byte[] msgBody = "Hello Server!".getBytes();
-        byte[] msgHead = {(byte) msgBody.length};
-        try {
-            session.writeBuffer().write(msgHead);
-            session.writeBuffer().write(msgBody);
-            session.writeBuffer().flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        };
+        AioQuickClient client = new AioQuickClient("localhost", 8888, new StringProtocol(), processor);
+        AioSession session = client.start();
+        WriteBuffer writeBuffer = session.writeBuffer();
+        byte[] data = "hello smart-socket".getBytes();
+        writeBuffer.writeInt(data.length);
+        writeBuffer.write(data);
+        writeBuffer.flush();
     }
 }
 ```
+</CodeGroupItem>
+</CodeGroup>
 
-### 启动运行
-先启动服务端程序，启动成功后会在控制台打印如下信息，如启动失败请检查是否存在端口被占用的情况。
-
-<img src='docs/smart-socket/chapter-1/1.1-QuickStart/1.1_3.png' width='80%'/>
-
-​接下来我们再启动客户端程序，客户端启动成功后会直接发送一个“Hello Server!”的消息给服务端，并通过消息处理器(MessageProcessor)打印所接受到的服务端响应消息“Hi Client!”。
-
-<img src='docs/smart-socket/chapter-1/1.1-QuickStart/1.1_4.png' width='80%'/>
-
-<img src='docs/smart-socket/chapter-1/1.1-QuickStart/1.1_5.png' width='80%'/>
-
-## 最后
-至此，我们已经完成了一个简易的通信服务。如果对本章节某个知识点还不甚清楚，建议反复阅读加深理解或者上网搜索同类信息。
-当然，跟着示例动手敲一遍代码也是个不错的学习方式。
+smart-socket 默认的配置就具备了较好的性能表现，因此在实例化 AioQuickServer/AioQuickClient 对象之后大可直接调用 start 方法。
+如果期望追究性能的最佳实践，我们会在之后的篇幅中作单独分享。
