@@ -23,6 +23,7 @@ module.exports = config({
                 ]
             },
             {text: '开发团队', link: '/members',icon: "home"},
+            {text: '开源众筹', link: '/crowdfunding',icon: "home"},
             {
                 text: '了解更多',
                 ariaLabel: '了解更多',
