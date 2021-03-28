@@ -3,53 +3,32 @@ home: true
 title: smart-im
 heroImage: https://portrait.gitee.com/uploads/avatars/namespace/266/798143_smartboot_1578989513.png!avatar100
 heroText: smart-im
-tagline: 开源，赋予未来更多的想象
-features:
-- title: smart-socket
-  details: 极简、易用、高性能的AIO通信框架，5G时代的通信微内核，适用于IM、RPC、IoT等诸多领域
-  link: /smart-socket/
-  
-- title: smart-http
-  details: 基于smart-socket实现的轻量级http服务器
-  link: /smart-http/
-  
-- title: smart-servlet
-  details: smart-servlet 是一款实现了Servlet 3.1规范，支持多应用隔离部署的的 Web 容器。
-- title: smart-license
-  details: 保护个人与企业的软件作品权益，降低盗版造成的损失。
-- title: aio-enhance
-  details: aio_enhance（音译：硬汉） 是一款无侵入式的 Java AIO 内核增强类库，解决原生 AIO 架构设计中存在的缺陷，提供更高效、更稳定的通信能力。
-- title: maven-mydalgen-plugin
-  details: maven-mydalgen-plugin是mybatis代码自动生成的Maven插件，简化sql书写，避免大量动态sql。    
-footer: Apache License 2.0 | Copyright © 2017-present 三刀
+tagline: 企业级即时通讯解决方案  
 ---
-:::: warning 注意
-所有项目皆采用 Java 1.8 进行开发，并使用 Maven 管理项目依赖包。
-::::
-## smartboot 是个啥？
-smartboot 是由「三刀」在 Gitee 上创建的开源组织，曾获获得 2020 年度 OSC 中国开源项目评选「[优秀 Gitee 组织](https://www.oschina.net/question/2918182_2320117)」。
-## smartboot 旗下开源项目的设计理念
-我在这个行业已经摸爬滚打了十个年头，接触过非常多的开源项目。发现存在一个普遍的现象，很多项目都在追求所谓的「设计感」。这种设计感将简单变成复杂，质朴变成浮华。如果没用上几种设计模式，再结合一些深度理论，都不好意思推向大众。
+## 产品说明
+smart-im 是一款面向企业提供的即时通讯产品。
+除了提供开箱即用的体验式服务，用户还可以基于已有架构作二次开发，满足个人、企业对 IM 的
 
-在我心中所有项目更应强调的是「**工具**」属性，解决问题才是它的首要职责。虽然好的设计，可以在解决问题的同时，为项目创造更高的附加值，这包括源码可读性、可扩展性、可维护性等。
-这确实是每个程序员理应去追求的境界。可现实情况是，在追求设计的同时，又有多少人关注过『**设计的尺度**』。
+**产品初衷**
 
-太多被过渡设计的项目，让程序员不得不熬夜学习如何使用。而若要深入掌握其原理，又得耗费更多的时间和精力。日渐褪去的发际线，见证了各位曾经的努力。
+目前市面上已经有很多 IM 产品，例如：钉钉、微信、云信等。
+依托这些云服务厂商提供的成熟解决方案，极大程度上提升了企业的沟通、管理效率。
+但是随着企业的日渐壮大、业务的快速发展，三方云服务的弊端开始显现。
+其中包括每年投入在云服务中的成本；企业内部数据的隐私安全；新业务模式对 IM 提出个性化需求等问题。
 
-我们的开源项目，将始终秉持「极简」、「易用」、「高性能」的设计理念。
-我们的每一个开源项目，都是为解决问题而生；写下的每一行代码，都为了能将其亲和力带给读者。
-即便当下做的还不够好，但这个方向始终不变。我们对待开源的态度，可以概括为九个字「开源不易，且行且珍惜」
-## 如何参与开源？
+当企业面临的困扰和诉求得不到解决的时候，这些云服务将开始制约企业的发展。
+这个时候，大部分企业都有意愿通过自建 IM 服务来解决问题，但是这个战略决策又面临着早期技术投入成功巨大，具备相关经验的人才储备匮乏的情况。
 
-如果你不曾有过参与开源的经历，不妨先从以下几种方式入手：
+为此，smart-im 从用户的实际痛点触发，帮助企业快速搭建低成本、高可用的私有化 IM 服务。
+### 云服务 VS smart-im
+|对比项| 云服务 | smart-im |
+|---|---|---|
+|IM 数据|存储于云厂商|企业私有|
+|成本|按规格收费|仅服务器的费用|
+|稳定性|高|高|
+|定制化|不一定支持|支持|
+## 众筹条件
 
-1. 以 issues 的形式反馈你的问题或者建议。提交入口>>[smart-socket](https://gitee.com/smartboot/smart-socket/issues)、[smart-http](https://gitee.com/smartboot/smart-http/issues)
-2. 协助处理他人提交的 issues。
-3. 如果你有更好的代码实践方式，请提交 Pull Request。提交入口>>[smart-socket](https://gitee.com/smartboot/smart-socket/pulls)、[smart-http](https://gitee.com/smartboot/smart-http/pulls)
-4. 以博文的形式分享你所掌握的关于开源项目的知识。当然也欢迎投稿至我们的「邮箱」或者「微信公众号」。
-5. [捐赠](donation.md)，可以有效激发作者的创作灵感，毕竟金钱的味道还是相当提神醒脑的。
-
-## 联系我们
-- 官方QQ群：172299083、830015805
-- 微信公众号：[「三刀」](https://mp.weixin.qq.com/s/tEoF_-jneCwh2of2r48FrQ)
-- 邮箱：zhengjunweimail@163.com
+|众筹项目|作者|众筹金额|众筹阶段|众筹进展|附加条件|
+|--|--|--|--|--|--|
+|smart-im|三刀| 5万 |众筹期|/|无|

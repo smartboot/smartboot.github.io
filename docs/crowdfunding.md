@@ -7,6 +7,7 @@ tagline: 众筹，是为了更好的开源
 features:
 - title: 明星产品：smart-im
   details: 支持私有化部署的企业级 IM 产品。 「众筹金额：5万」  
+  link: /smart-im/
   
 - title: 虚位以待...
 
@@ -30,8 +31,8 @@ footer: Apache License 2.0 | Copyright © 2017-present 三刀
     - 筹备期：可随时修改开源条件；
     - 众筹期：开源条件前后调整间隔不得低于 3 个月；
     - 已结束：修改开源条件视为无效。
-4. 项目作者有「义务」及时公开众筹进展及明细。    
-4. 项目相关的一切解释权归项目作者所有。
+4. 项目作者有「义务」及时公开众筹进展及明细。   
+5. 项目相关的一切解释权归项目作者所有。
 
 ## 众筹模板
 :::: warning 注意
@@ -40,9 +41,3 @@ footer: Apache License 2.0 | Copyright © 2017-present 三刀
 |众筹项目|作者|众筹金额|众筹阶段|众筹进展|附加条件|
 |--|--|--|--|--|--|
 |smart-im|三刀| 5万 |众筹期|1万|无|
-
-
-## 联系我们
-- 官方QQ群：172299083、830015805
-- 微信公众号：[「三刀」](https://mp.weixin.qq.com/s/tEoF_-jneCwh2of2r48FrQ)
-- 邮箱：zhengjunweimail@163.com
