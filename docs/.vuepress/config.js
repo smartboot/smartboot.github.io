@@ -5,6 +5,12 @@ module.exports = config({
     base:'/book/',
     title: 'SmartBoot',
     dest:'./_book',
+    head: [
+        [
+            'link', // 设置 favicon.ico，注意图片放在 public 文件夹下
+            { rel: 'icon', href: 'img.png' }
+        ]
+    ],
     plugins: [
         ['copyright'],
     ],

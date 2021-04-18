@@ -50,6 +50,7 @@ smartboot 是由「三刀」在 Gitee 上创建的开源组织，曾获获得 20
 5. [捐赠](donation.md)，可以有效激发作者的创作灵感，毕竟金钱的味道还是相当提神醒脑的。
 
 ## 联系我们
-- 官方QQ群：172299083、830015805
-- 微信公众号：[「三刀」](https://mp.weixin.qq.com/s/tEoF_-jneCwh2of2r48FrQ)
 - 邮箱：zhengjunweimail@163.com
+- 官方QQ群：172299083、830015805
+- 微信公众号：[「三刀」](https://mp.weixin.qq.com/s/tEoF_-jneCwh2of2r48FrQ)   
+    <img src="wx_dyh.png" height="25%" width="25%"/> 
