@@ -1,8 +1,11 @@
+---
+author: 三刀
+time: 2021-04-21
+---
+# Spring 集成
+smart-socket 就是一个普通的通信工具包，所以它跟 Spring 的结合就是个纯粹的 bean 实例托管过程。
 
-## Spring集成smart-socket
-smart-socket 就是一个普通的通信工具包，所以它跟 Spring 的结合就是个纯粹的 bean 示例托管过程。
-
-在确认 pom.xml 的依赖配置正确之后，我们通过 xml 配置和注解两种形式演示 smart-socket 与 spring 的集成方式。
+在确认 pom.xml 的依赖配置正确之后，我们分别通过 xml 配置和注解两种形式演示 smart-socket 与 spring 的集成方式。
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -20,16 +23,16 @@ smart-socket 就是一个普通的通信工具包，所以它跟 Spring 的结�
         <dependency>
             <groupId>org.smartboot.socket</groupId>
             <artifactId>aio-core</artifactId>
-            <version>1.4.12</version>
+            <version>1.5.6</version>
         </dependency>
     </dependencies>
 
 </project>
 ```
 
-### 方式一：xml配置化启动服务
+## 方式一：xml配置化启动服务
 
-在《[快速上手](/docs/smart-socketocket/chapter-1/1.1-QuickStart/README.md)》章节我们接触到了smart-socket 通信开发的几个关联接口和类：  
+在《[快速上手](getting-started.md)》章节我们接触到了smart-socket 通信开发所关联的接口和类：  
 - Protocol
 - MessageProcessor
 - AioQuickServer
@@ -73,7 +76,7 @@ public class SpringDemo {
 ```
 > 执行上述代码后控制台会打印服务的启动与关闭日志，如果出现异常，请检查端口号是否被占用。
 
-### 方式二：注解方式启动服务
+## 方式二：注解方式启动服务
 
 如果你所在的团队采用的是注解形式使用Spring，那我们需要对原有的代码稍加改动。Protocol和MessageProcessor实现类需要加上注解`@Component`。
 

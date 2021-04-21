@@ -89,6 +89,7 @@ module.exports = config({
                     collapsable: false,
                     children: [
                         'getting-started',
+                        'spring-integrated',
                     ]
                 },
                 {

@@ -5,7 +5,6 @@
     * [前言](docs/smart-socket/README.md)
     * 第一章 smart-socket开发指南
         * [1.1 快速上手](docs/smart-socket/chapter-1/1.1-QuickStart/README.md)
-        * [1.2 Spring集成smart-socket](docs/smart-socket/chapter-1/2.2-SpringIntegrated/README.md)
         * [小结](docs/smart-socket/chapter-1/SUMMARY.md)
     * [第二章 源码解析](docs/smart-socket/chapter-2/README.md)
         * [2.1 核心接口与状态机](docs/smart-socket/chapter-2/Interface/README.md)
