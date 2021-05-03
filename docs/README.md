@@ -15,6 +15,8 @@ features:
   
 - title: smart-servlet
   details: smart-servlet 是一款实现了Servlet 3.1规范，支持多应用隔离部署的的 Web 容器。
+  link: /smart-servlet/
+  
 - title: smart-license
   details: 保护个人与企业的软件作品权益，降低盗版造成的损失。
 - title: aio-enhance

@@ -28,10 +28,10 @@
         * [1.4 WebSocket](docs/smart-http/websocket.md)
         
 * smart-servlet 使用手册
-    * [关于smart-servlet](smart-servlet/README.md)
-    * [快速上手](smart-servlet/use_guide.md)
-    * [插件清单](smart-servlet/plugins.md)
-    * [评测数据](smart-servlet/performance/test-data.md)
+    * [关于smart-servlet](docs/smart-servlet/README.md)
+    * [快速上手](docs/smart-servlet/use_guide.md)
+    * [插件清单](docs/smart-servlet/plugins.md)
+    * [评测数据](docs/smart-servlet/performance/test-data.md)
 * 技术分享
     *   [smart-socket实现RPC](share/rpc/smart-socket-rpc.md)
     *   [内存管理-首次适应算法](share/firstfit/readme.md)

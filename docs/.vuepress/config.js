@@ -25,7 +25,8 @@ module.exports = config({
                 icon: "info",
                 items: [
                     {text: 'smart-socket', link: '/smart-socket/'},
-                    {text: 'smart-http', link: '/smart-http/'}
+                    {text: 'smart-http', link: '/smart-http/'},
+                    {text: 'smart-servlet', link: '/smart-servlet/'}
                 ]
             },
             {text: '开发团队', link: '/members',icon: "home"},
@@ -68,16 +69,6 @@ module.exports = config({
                         'websocket',
                     ]
                 },
-                // {
-                //     title: '深入',
-                //     collapsable: false,
-                //     children: [
-                //         'getting-started',
-                //         'http_route',
-                //         'file_upload',
-                //         'websocket',
-                //     ]
-                // }
             ],
             '/smart-socket/':[
                 {
@@ -90,6 +81,7 @@ module.exports = config({
                     children: [
                         'getting-started',
                         'spring-integrated',
+                        // 'about'
                     ]
                 },
                 {
@@ -99,6 +91,20 @@ module.exports = config({
 
                     ]
                 }
+            ],
+            '/smart-servlet/':[
+                {
+                    title: 'smart-servlet',
+                    path: '/smart-servlet/',
+                },
+                {
+                    title: '指南',
+                    collapsable: false,
+                    children: [
+                        // 'getting-started',
+                        // 'plugins',
+                    ]
+                },
             ]
         },
         displayAllHeaders: true,
