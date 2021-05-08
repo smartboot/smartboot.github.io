@@ -88,7 +88,8 @@ module.exports = config({
                     title: '深入',
                     collapsable: false,
                     children: [
-                        'java-aio-thread'
+                        'java-aio-thread',
+                        'smart-socket-plugin-design'
                     ]
                 }
             ],
