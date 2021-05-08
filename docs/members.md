@@ -19,11 +19,11 @@ pageInfo: false
 ## smart-http
 **开发者**
 
-[三刀](https://gitee.com/smartdms)、[胡强](https://gitee.com/yisshengyouni)
+[三刀](https://gitee.com/smartdms)
 
 **贡献者**
 
-无
+[胡强](https://gitee.com/yisshengyouni)、[wujiawei0926](https://gitee.com/wujiawei0926)
 
 ## smart-servlet
 **开发者**
