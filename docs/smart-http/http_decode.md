@@ -1,6 +1,6 @@
 
 # Http 解析原理
 ::: tip 友情提醒
-听说扫描下面二维码催更效率更高。
+听说扫描下面二维码催更效果更好。
 :::
-![](/qr_weixin.png)
+<img :src="$withBase('/qr_weixin.png')" alt="foo">
