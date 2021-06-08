@@ -65,7 +65,7 @@ module.exports = config({
                     children: [
                         'getting-started',
                         'http_route',
-                        'file_upload',
+                        'http_decode',
                         'websocket',
                     ]
                 },

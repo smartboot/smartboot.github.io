@@ -20,7 +20,7 @@ smart-http 是可编程的 Http 应用微内核。封装了标准的 Http、Webs
 public class SimpleSmartHttp {
     public static void main(String[] args) {
         HttpBootstrap bootstrap = new HttpBootstrap();
-        bootstrap.pipeline().next(new HttpHandle() {
+        bootstrap.pipeline().next(new HttpServerHandle() {
             @Override
             public void doHandle(HttpRequest request, HttpResponse response) throws IOException {
                 response.write("hello world<br/>".getBytes());
