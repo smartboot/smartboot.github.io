@@ -64,6 +64,7 @@ module.exports = config({
                     collapsable: false,
                     children: [
                         'getting-started',
+                        'unit_test',
                         'http_route',
                         'http_decode',
                         'websocket',

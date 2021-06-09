@@ -10,17 +10,17 @@ public class HttpRouteDemo {
         HttpRouteHandle routeHandle = new HttpRouteHandle();
 
         //2. 指定路由规则以及请求的处理实现
-        routeHandle.route("/", new HttpHandle() {
+        routeHandle.route("/", new HttpServerHandle() {
             @Override
             public void doHandle(HttpRequest request, HttpResponse response) throws IOException {
                 response.write("smart-http".getBytes());
             }
-        }).route("/test1", new HttpHandle() {
+        }).route("/test1", new HttpServerHandle() {
             @Override
             public void doHandle(HttpRequest request, HttpResponse response) throws IOException {
                 response.write(("test1").getBytes());
             }
-        }).route("/test2", new HttpHandle() {
+        }).route("/test2", new HttpServerHandle() {
             @Override
             public void doHandle(HttpRequest request, HttpResponse response) throws IOException {
                 response.write(("test2").getBytes());
@@ -36,4 +36,4 @@ public class HttpRouteDemo {
 ```
 
 
-当然，如果 smart-http 默认提供的路由组件满足不了你的需求，用户也可以通过继承`HttpHandle`自己实现一套请求路由算法。
+当然，如果 smart-http 默认提供的路由组件满足不了你的需求，用户也可以通过继承`HttpServerHandle`自己实现一套请求路由算法。
