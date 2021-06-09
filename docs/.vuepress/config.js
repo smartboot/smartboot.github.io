@@ -64,6 +64,7 @@ module.exports = config({
                     collapsable: false,
                     children: [
                         'getting-started',
+                        'case',
                         'unit_test',
                         'http_route',
                         'http_decode',
