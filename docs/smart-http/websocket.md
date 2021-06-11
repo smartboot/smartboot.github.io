@@ -35,3 +35,5 @@ public class WebSocketDemo {
 ```
 
 运行上述代码后，可以通过 websocket 客户端建立连接并调试接口。此处推荐：[在线测试](http://www.websocket-test.com/)
+
+<ArticleEndTemplate/>

@@ -1,9 +1,9 @@
-const { config } = require("vuepress-theme-hope");
-module.exports = config({
+// const { config } = require("vuepress-theme-hope");
+module.exports = {
     baseLang:'zh-CN',
     author:'三刀',
     base:'/book/',
-    title: 'SmartBoot',
+    title: 'smartboot 开源组织',
     dest:'./_book',
     head: [
         [
@@ -56,21 +56,30 @@ module.exports = config({
         sidebar: {
             '/smart-http/': [
                 {
-                    title: 'smart-http',
-                    path: '/smart-http/',
-                },
-                {
                     title: '指南',
                     collapsable: false,
                     children: [
-                        'getting-started',
-                        'case',
+                        'about',
                         'unit_test',
+                        'http_decode'
+                    ]
+                },
+                {
+                    title: '服务端开发',
+                    collapsable: false,
+                    children: [
+                        'getting-started-server',
                         'http_route',
-                        'http_decode',
                         'websocket',
                     ]
                 },
+                {
+                    title: '客户端开发',
+                    collapsable: false,
+                    children: [
+                        'getting-started-client',
+                    ]
+                }
             ],
             '/smart-socket/':[
                 {
@@ -113,4 +122,4 @@ module.exports = config({
         displayAllHeaders: true,
         lastUpdated: 'Last Updated',
     }
-});
+};

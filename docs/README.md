@@ -1,7 +1,7 @@
 ---
 home: true
 title: smartboot
-heroImage: https://portrait.gitee.com/uploads/avatars/namespace/266/798143_smartboot_1578989513.png!avatar100
+heroImage: /img.png
 heroText: smart boot
 tagline: 开源，赋予未来更多的想象
 features:
