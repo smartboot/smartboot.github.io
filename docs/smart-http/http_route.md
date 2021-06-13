@@ -41,4 +41,4 @@ public class HttpRouteDemo {
 
 当然，如果 smart-http 默认提供的路由组件满足不了你的需求，用户也可以通过继承`HttpServerHandler`自己实现一套请求路由算法。
 
-<ArticleEndTemplate/>
+ 

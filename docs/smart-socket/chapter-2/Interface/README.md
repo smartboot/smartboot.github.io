@@ -90,7 +90,7 @@ smart-socket 中引入了状态机的概念，状态机的存在不会决策 sma
 
 <img src='docs/smart-socket/chapter-2/Interface/2.2.2_1.png' width='90%'/>
 
-<center>图2.2.2</center>
+
 
 状态机相对于整个通信环境的各个节点只是一个旁观者，它见证了各个事件的发生，却无力扭转事件的发展方向。
 

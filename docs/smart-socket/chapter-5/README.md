@@ -57,7 +57,7 @@ smart-socket引入内存池设计，主要为了解决两个问题：零拷贝�
 
 <img src='docs/smart-socket/chapter-5/bufferpool_1.png' width='60%'/>
 
-<center>图4-1-1</center>
+
 
 接下来通过几张图示范一下内存池的运作流程。例如：
 
@@ -67,19 +67,19 @@ smart-socket引入内存池设计，主要为了解决两个问题：零拷贝�
 
    <img src='docs/smart-socket/chapter-5/bufferpool_2.png' width="60%"/>
 
-   <center>图4-1-2</center>
+  
 
 3. 当虚拟内存使用完毕后，要及时释放占用的堆外内存。
 
    <img src="docs/smart-socket/chapter-5/bufferpool_3.png" width="60%"/>
 
-   <center>图4-1-3</center>
+  
 
 4. 下一次再需要空间时继续从可用空间中申请。
 
    <img src="docs/smart-socket/chapter-5/bufferpool_4.png" width="60%"/>
 
-<center>图4-1-4</center>
+
 
 ​	通过不断的申请、释放，smart-socket内存池便运转起来了。需要注意的事，内存的申请是从头到尾进行扫描，而释放回收是无时序的，如图4-1-4。所以在实际运行中会产生一些不连续的小内存块，也就是内存碎片。内存碎片化是个必然存在的状况，假如这种小颗粒内存碎片占比增高，会降低虚拟内存申请的成功率。如果虚拟内存申请失败，smart-socket内存池会启用备用方案,采用申请堆内缓冲区的方式满足应用所需，此类缓冲区使用完毕后可由垃圾回收器释放。这样一种堆外为主，堆内为辅的设计方案，保障了smart-socket内存池的稳定、高效。
 

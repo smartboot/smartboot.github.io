@@ -20,4 +20,4 @@ Gitee：[https://gitee.com/smartboot/smart-http](https://gitee.com/smartboot/sma
 
 - [smart-servlet](https://gitee.com/smartboot/smart-servlet) 基于 smart-http 实现了Servlet 3.1规范，支持多应用隔离部署的的 Web 容器。
 
-<ArticleEndTemplate/>
+ 

@@ -1,110 +1,143 @@
 // const { config } = require("vuepress-theme-hope");
+// const { path } = require('@vuepress/utils')
 module.exports = {
-    baseLang:'zh-CN',
-    author:'三刀',
-    base:'/book/',
+    lang: 'zh-CN',
+    author: '三刀',
+    base: '/book/',
     title: 'smartboot 开源组织',
-    dest:'./_book',
+    description: 'smartboot 旗下开源项目文档',
+    dest: './_book',
     head: [
         [
             'link', // 设置 favicon.ico，注意图片放在 public 文件夹下
-            { rel: 'icon', href: 'img.png' }
+            {rel: 'icon', href: 'img.png'}
         ]
     ],
     plugins: [
-        ['copyright'],
+        // ['copyright'],
+        // [
+        //     '@vuepress/register-components',
+        //     {
+        //         componentsDir: path.resolve(__dirname, './components'),
+        //     },
+        // ],
     ],
     // mdEnhance: {
     //     footnote: true,
     // },
     themeConfig: {
-        nav: [
-            {text: '首页', link: '/',icon: "home"},
+        // Public 文件路径
+        logo: '/img.png',
+        docsRepo: 'https://gitee.com/smartboot/book',
+        docsBranch: 'master',
+        docsDir: 'docs',
+        editLinkPattern: ':repo/edit/:branch/:path',
+        navbar: [
+            {text: '首页', link: '/', icon: "home"},
             {
-                text: '文档',
+                text: '开源文档',
                 icon: "info",
-                items: [
+                children: [
                     {text: 'smart-socket', link: '/smart-socket/'},
                     {text: 'smart-http', link: '/smart-http/'},
                     {text: 'smart-servlet', link: '/smart-servlet/'}
                 ]
             },
-            {text: '开发团队', link: '/members',icon: "home"},
-            {text: '开源众筹', link: '/crowdfunding',icon: "home"},
+            {text: '开源捐赠', link: '/donation.md'},
+            {text: '付费服务', link: '/service.md'},
+            // {text: '开发团队', link: '/members.md', icon: "home"},
             {
-                text: '了解更多',
-                ariaLabel: '了解更多',
-                items: [
-                    {text: '关于捐赠', link: '/donation'},
-                    {text: '付费服务', link: '/service'},
+                text: '开源仓库',
+                children: [
                     {
-                        text: '开源仓库',
-                        items: [
-                            {
-                                text: 'Gitee',
-                                link: 'https://gitee.com/smartboot'
-                            },
-                            {
-                                text: 'Github',
-                                link: 'https://github.com/smartboot'
-                            }
-                        ]
+                        text: 'Gitee',
+                        link: 'https://gitee.com/smartboot'
+                    },
+                    {
+                        text: 'Github',
+                        link: 'https://github.com/smartboot'
                     }
                 ]
-            },
+            }
+            // {text: '开源众筹', link: '/crowdfunding.md', icon: "home"},
+            // {
+            //     text: '了解更多',
+            //     ariaLabel: '了解更多',
+            //     children: [
+            //         {text: '关于捐赠', link: '/donation.md'},
+            //         {text: '付费服务', link: '/service.md'},
+            //         {
+            //             text: '开源仓库',
+            //             children: [
+            //                 {
+            //                     text: 'Gitee',
+            //                     link: 'https://gitee.com/smartboot'
+            //                 },
+            //                 {
+            //                     text: 'Github',
+            //                     link: 'https://github.com/smartboot'
+            //                 }
+            //             ]
+            //         }
+            //     ]
+            // },
         ],
         sidebar: {
             '/smart-http/': [
                 {
-                    title: '指南',
+                    isGroup: true,
+                    text: '指南',
                     collapsable: false,
                     children: [
-                        'about',
-                        'unit_test',
-                        'http_decode'
+                        'about.md',
+                        'unit_test.md',
+                        'http_decode.md'
                     ]
                 },
                 {
-                    title: '服务端开发',
+                    isGroup: true,
+                    text: '服务端开发',
                     collapsable: false,
                     children: [
-                        'getting-started-server',
-                        'http_route',
-                        'websocket',
+                        'getting-started-server.md',
+                        'http_route.md',
+                        'websocket.md',
                     ]
                 },
                 {
-                    title: '客户端开发',
+                    text: '客户端开发',
                     collapsable: false,
                     children: [
-                        'getting-started-client',
+                        'getting-started-client.md',
                     ]
                 }
             ],
-            '/smart-socket/':[
+            '/smart-socket/': [
                 {
-                    title: 'smart-socket',
+                    text: 'smart-socket',
                     path: '/smart-socket/',
                 },
                 {
-                    title: '指南',
+                    isGroup: true,
+                    text: '指南',
                     collapsable: false,
                     children: [
-                        'getting-started',
-                        'spring-integrated',
+                        'getting-started.md',
+                        'spring-integrated.md',
                         // 'about'
                     ]
                 },
                 {
-                    title: '深入',
+                    isGroup: true,
+                    text: '深入',
                     collapsable: false,
                     children: [
-                        'java-aio-thread',
-                        'smart-socket-plugin-design'
+                        'java-aio-thread.md',
+                        'smart-socket-plugin-design.md'
                     ]
                 }
             ],
-            '/smart-servlet/':[
+            '/smart-servlet/': [
                 {
                     title: 'smart-servlet',
                     path: '/smart-servlet/',
@@ -120,6 +153,6 @@ module.exports = {
             ]
         },
         displayAllHeaders: true,
-        lastUpdated: 'Last Updated',
+        lastUpdatedText: '最近一次更新',
     }
 };

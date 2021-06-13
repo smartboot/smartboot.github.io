@@ -19,4 +19,4 @@ public class HttpGetDemo {
 我们推荐采用响应式编程范式进行客户端开发，比如注册 **onSuccess**、**onFailure** 等回调事件。
 当然，调用 **send** 方法返回的 **Future** 对象依旧能满足您对于同步调用的需求。
 
-<ArticleEndTemplate/>
+ 

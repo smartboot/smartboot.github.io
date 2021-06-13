@@ -51,4 +51,4 @@ public class MultiPipelineSmartHttp {
 从上一个 Handle 进入 下一个 Handle，必须显式的调用 **doNex(request,response)** 方法，否则请求将会止步于当前 Handle。
 ::::
 
-<ArticleEndTemplate/>
+ 
