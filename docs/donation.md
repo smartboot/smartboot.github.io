@@ -41,4 +41,5 @@ sidebar: auto
 
 ## 捐赠方式
 
-![](./images/qr_pay.png)
+<img :src="$withBase('/wx_pay.png')" height="400" width="300"> 
+<img :src="$withBase('/ali_pay.png')" height="400" width="300">
