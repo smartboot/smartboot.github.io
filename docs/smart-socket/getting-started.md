@@ -37,6 +37,7 @@ smart-socket 项目工程内分为四个模块，下面为大家展示他们之�
 
 <CodeGroup>
 <CodeGroupItem title="maven" active>
+
 ```xml
 <dependency>
   <groupId>org.smartboot.socket</groupId>
@@ -44,12 +45,14 @@ smart-socket 项目工程内分为四个模块，下面为大家展示他们之�
   <version>1.5.6</version>
 </dependency>
 ```
+
 </CodeGroupItem>
 <CodeGroupItem title="gradle">
 
 ```gradle
 implementation group: 'org.smartboot.socket', name: 'aio-core', version: '1.5.5'
 ```
+
 </CodeGroupItem>
 </CodeGroup>
 
@@ -113,6 +116,7 @@ public class StringProtocol implements Protocol<String> {
 
 <CodeGroup>
 <CodeGroupItem title="StringServer" active>
+
 ```java
 public class StringServer {
 
@@ -137,6 +141,7 @@ public class StringServer {
     }
 }
 ```
+
 </CodeGroupItem>
 <CodeGroupItem title="StringClient">
 
@@ -160,6 +165,7 @@ public class StringClient {
     }
 }
 ```
+
 </CodeGroupItem>
 </CodeGroup>
 

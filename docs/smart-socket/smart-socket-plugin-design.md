@@ -1,6 +1,7 @@
 ---
 title: smart-socket 插件化设计
 ---
+# smart-socket 插件化设计
 用过 smart-socket 的朋友应该都清楚，只要掌握 Protocol、MessageProcessor 两大核心接口便能顺利的进行通信开发。
 然而，事实上 smart-socket 的核心接口总共有三个，而那鲜为人知的第三个接口正是下图右侧的 NetMonitor。
 在 NetMonitor 中提供了一些高级用法，本文要分享的插件化设计便是基于此接口作了一些扩展。
