@@ -1,8 +1,9 @@
 ---
 home: true
 heroText: smart-http
-actionText: 进入我的开源 → 💡
-actionLink: /smart-http/about
+actions:
+    - text: 进入我的开源 → 💡
+      link: /smart-http/about.html
 tagline: 追求极致的轻量级可编程 http 服务器
 footer: Apache License 2.0 | Copyright © 2017-present 三刀
 ---

@@ -1,11 +1,10 @@
 ---
 title: smart-socket
 home: true
-heroImage: https://portrait.gitee.com/uploads/avatars/namespace/266/798143_smartboot_1578989513.png!avatar100
 heroText: smart-socket
-action:
+actions:
   - text: 进入我的开源 → 💡
-    link: /smart-socket/getting-started
+    link: /smart-socket/getting-started.html
     type: primary
 tagline: 从此，通信与众不同
 features:
@@ -21,6 +20,7 @@ footer: Apache License 2.0 | Copyright © 2017-present 三刀
 
 <CodeGroup>
 <CodeGroupItem title="StringServer" active>
+
 ```java
 public class StringServer {
 
@@ -45,6 +45,7 @@ public class StringServer {
     }
 }
 ```
+
 </CodeGroupItem>
 <CodeGroupItem title="StringClient">
 
@@ -68,6 +69,7 @@ public class StringClient {
     }
 }
 ```
+
 </CodeGroupItem>
 <CodeGroupItem title="StringProtocol"> 
 
@@ -93,5 +95,6 @@ public class StringProtocol implements Protocol<String> {
     }
 }
 ```
+
 </CodeGroupItem>
 </CodeGroup>

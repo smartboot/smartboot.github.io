@@ -27,6 +27,8 @@ footer: Apache License 2.0 | Copyright © 2017-present 三刀
 ---
 :::: warning 注意
 所有项目皆采用 Java 1.8 进行开发，并使用 Maven 管理项目依赖包。
+
+项目源码皆可从 Gitee 仓库：[https://gitee.com/smartboot](https://gitee.com/smartboot) 获取。
 ::::
 ## smartboot 是个啥？
 smartboot 是由「三刀」在 Gitee 上创建的开源组织，曾获获得 2020 年度 OSC 中国开源项目评选「[优秀 Gitee 组织](https://www.oschina.net/question/2918182_2320117)」。
@@ -51,6 +53,7 @@ smartboot 是由「三刀」在 Gitee 上创建的开源组织，曾获获得 20
 4. 以博文的形式分享你所掌握的关于开源项目的知识。当然也欢迎投稿至我们的「邮箱」或者「微信公众号」。
 5. [捐赠](donation.md)，可以有效激发作者的创作灵感，毕竟金钱的味道还是相当提神醒脑的。
 
+
 ## 联系我们
 :::: warning 注意
 因深受阿里云销售代理混入群内发广告的困扰，凡是申请入群者请先为本项目 [捐赠5元](donation/#捐赠方式)，并「**备注您的QQ号**」，我们将人工审核入群人员。在此，我们对该入群方式表示歉意，同时希望互联网大厂们还技术社区一片宁静，感恩！
@@ -58,4 +61,5 @@ smartboot 是由「三刀」在 Gitee 上创建的开源组织，曾获获得 20
 - 邮箱：zhengjunweimail@163.com
 - 官方QQ群：172299083、830015805
 - 微信公众号：[「三刀」](https://mp.weixin.qq.com/s/tEoF_-jneCwh2of2r48FrQ)   
-    <img src="wx_dyh.png" height="25%" width="25%"/> 
+  <img :src="$withBase('/wx_dyh.png')" height="200" width="200">
+

@@ -1,7 +1,6 @@
 ---
 sidebar: auto
 home: true
-heroImage: https://portrait.gitee.com/uploads/avatars/namespace/266/798143_smartboot_1578989513.png!avatar100
 heroText: smart-servlet
 
 tagline: 国产开源 Servlet3.1 服务器
