@@ -1,0 +1,133 @@
+# 服务配置
+Http 服务运行需要依赖较多的配置项，未来还会继续扩充。
+我们已为大部分配置项设定了默认值，基本达到了开箱即用的程度，如果您有个性化的需求，可以参考本文进行针对性调整。
+## 基础配置
+我们将定义在`HttpBootstrap`中的配置项视为「基础配置」。
+### setPort
+- 入参类型：`int`
+- 默认值： `8080`
+- 详情：   
+  设置 Http 服务的启动监听端口号。
+- 示例：
+    
+  ```java
+  public class HttpBootstrapDemo {
+  
+      public static void main(String[] args) {
+          new HttpBootstrap().setPort(8080).start();
+      }
+  }
+  ```
+### pipeline
+- 入参类型：`HttpServerHandler`
+- 详情：   
+  设置 Http 请求的处理 Handler。若未指定，则返回空响应。
+- 示例：
+  
+  ```java
+  public class HttpBootstrapDemo {
+  
+      public static void main(String[] args) {
+          new HttpBootstrap().pipeline(new HttpServerHandler() {
+              @Override
+              public void handle(HttpRequest request, HttpResponse response) throws IOException {
+                  response.write("hello world".getBytes());
+              }
+          }).start();
+      }
+  }
+  ``` 
+### pipeline
+- 入参类型：`无`
+- 详情：   
+  注册 Http 请求的处理 Handler，且支持链式调用。当注册了多个 Handler 时，需要通过执行 `doNext` 进入下一个 Handler。
+- 示例：
+
+  ```java
+  public class HttpBootstrapDemo {
+      public static void main(String[] args) {
+          HttpBootstrap bootstrap = new HttpBootstrap();
+          bootstrap.pipeline().next(new HttpServerHandler() {
+              @Override
+              public void handle(HttpRequest request, HttpResponse response) throws IOException {
+                  response.write("first handle<br/>".getBytes());
+                  doNext(request, response);
+              }
+          }).next(new HttpServerHandler() {
+              @Override
+              public void handle(HttpRequest request, HttpResponse response) throws IOException {
+                  response.write("second handle<br/>".getBytes());
+              }
+          });
+          bootstrap.start();
+      }
+  }
+  ```
+### wsPipeline
+- 入参类型：`无`
+- 详情：   
+  注册 Websocket 请求的处理 Handler，且支持链式调用。当注册了多个 Handler 时，需要通过执行 `doNext` 进入下一个 Handler。
+- 示例：
+
+  ```java
+  public class HttpBootstrapDemo {
+      public static void main(String[] args) {
+          HttpBootstrap bootstrap = new HttpBootstrap();
+          bootstrap.wsPipeline().next(new WebSocketDefaultHandler() {
+              @Override
+              public void handleTextMessage(WebSocketRequest request, WebSocketResponse response, String data) {
+                  response.sendTextMessage("Hello World");
+              }
+          });
+          bootstrap.start();
+      }
+  }
+  ```
+## 进阶配置
+该类型的配置项存放中`HttpServerConfiguration`中，可以通过`HttpBootstrap#configuration`获取引用对象。
+
+### bannerEnabled
+- 类型：`boolean`
+- 默认值：`true`
+- 详情：   
+  设置是否在控制台打印 smart-http 的启动 banner。
+  ```text
+                                 _       _      _    _          
+                                ( )_    ( )    ( )_ ( )_        
+    ___   ___ ___     _ _  _ __ | ,_)   | |__  | ,_)| ,_) _ _   
+  /',__)/' _ ` _ `\ /'_` )( '__)| |     |  _ `\| |  | |  ( '_`\
+  \__, \| ( ) ( ) |( (_| || |   | |_    | | | || |_ | |_ | (_) )
+  (____/(_) (_) (_)`\__,_)(_)   `\__)   (_) (_)`\__)`\__)| ,__/'
+                                                         | |    
+                                                         (_)
+  ```
+
+### readBufferSize
+- 类型：`int`
+- 默认值：`1024`
+- 详情：   
+  读缓冲区字节数。
+
+### writeBufferSize
+- 类型：`int`
+- 默认值：`1024`
+- 详情：   
+  写缓冲区字节数。
+
+### threadNum
+- 类型：`int`
+- 默认值：同 CPU 核数
+- 详情：   
+  Http 服务处理线程数。
+
+### host
+- 类型：`String`
+- 默认值：`null`
+- 详情：   
+  服务端绑定 host 地址。
+  
+### headerLimiter
+- 类型：`int`
+- 默认值：`100`
+- 详情：   
+  支持解析 Header 的最大个数，超过部分将被忽略。注意：若该配置项若设置太小，可能导致无法识别 websocket 请求。

@@ -32,6 +32,10 @@ module.exports = {
         docsBranch: 'master',
         docsDir: 'docs',
         editLinkPattern: ':repo/edit/:branch/:path',
+        displayAllHeaders: true,
+        lastUpdatedText: '最近一次更新',
+        contributors:false,
+        sidebarDepth:1,
         navbar: [
             {text: '首页', link: '/', icon: "home"},
             {
@@ -59,28 +63,6 @@ module.exports = {
                     }
                 ]
             }
-            // {text: '开源众筹', link: '/crowdfunding.md', icon: "home"},
-            // {
-            //     text: '了解更多',
-            //     ariaLabel: '了解更多',
-            //     children: [
-            //         {text: '关于捐赠', link: '/donation.md'},
-            //         {text: '付费服务', link: '/service.md'},
-            //         {
-            //             text: '开源仓库',
-            //             children: [
-            //                 {
-            //                     text: 'Gitee',
-            //                     link: 'https://gitee.com/smartboot'
-            //                 },
-            //                 {
-            //                     text: 'Github',
-            //                     link: 'https://github.com/smartboot'
-            //                 }
-            //             ]
-            //         }
-            //     ]
-            // },
         ],
         sidebar: {
             '/smart-http/': [
@@ -90,7 +72,7 @@ module.exports = {
                     collapsable: false,
                     children: [
                         'about.md',
-                        'unit_test.md',
+                        'security.md',
                         'http_decode.md'
                     ]
                 },
@@ -100,6 +82,7 @@ module.exports = {
                     collapsable: false,
                     children: [
                         'getting-started-server.md',
+                        'http-server-config.md',
                         'http_route.md',
                         'websocket.md',
                     ]
@@ -107,6 +90,7 @@ module.exports = {
                 {
                     text: '客户端开发',
                     collapsable: false,
+                    isGroup: true,
                     children: [
                         'getting-started-client.md',
                     ]
@@ -152,7 +136,5 @@ module.exports = {
                 },
             ]
         },
-        displayAllHeaders: true,
-        lastUpdatedText: '最近一次更新',
     }
 };

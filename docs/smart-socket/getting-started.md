@@ -8,12 +8,12 @@ smart-socket 是基于 AIO 技术实现的异步非阻塞通信框架，个人�
 因为，「框架」长久以来给人一种高级、复杂的感觉；而「微内核」则显得相对小巧、精致，在使用体验上会更加人性化。
 
 smart-socket 支持使用 TCP/UDP 进行服务端、客户端的开发，能够覆盖所有通信开发场景。
-### 项目优势
+#### 项目优势
 - 通过阅读源码可以看到，smart-socket 没有高深的设计技巧，采用的是最朴实的表现手法。翻阅过 Netty 源码的读者可以相互比较一番。
 - smart-socket 的学习门槛相当低，以致于我期望仅通过本页篇幅，便完成使用教程的分享。
 - smart-socket 的性能表现非常出色，在三方评测[TechEmpower](https://www.techempower.com/benchmarks/#section=data-r20&hw=ph&test=plaintext&l=zik0vz-sf)中的 qps 甚至高出 netty 50% 以上。
 
-### 工程结构
+#### 工程结构
 smart-socket 项目工程内分为四个模块，下面为大家展示他们之间的关系，方便大家对照理解。
 ```markdown
 . → 项目仓库主目录
@@ -61,7 +61,7 @@ implementation group: 'org.smartboot.socket', name: 'aio-core', version: '1.5.5'
 >你可在需要的时候选择性使用。
 
 ## 🚀 使用
-### 通信协议
+#### 通信协议
 通信协议约定了服务端与客户端之间交互数据的识别规则，是通信中非常重要的一部分。
 
 在短连接场景下，可以通过 EOF(即 readSize 等于 -1) 标志来定义完整数据包的内容。
@@ -109,7 +109,7 @@ public class StringProtocol implements Protocol<String> {
 通信开发的核心是：「**面向协议编程**」。敲黑板，这是知识点！
 ::::
 
-### 服务端/客户端开发
+#### 服务端/客户端开发
 服务端与客户端的开发，主要是基于`MessageProcess#process`实现接收到的消息的处理逻辑。
 如果在此方法中调用了 session 的 `WriteBuffer#write`，将会在执行完毕后由 smart-socket 自动执行 flush。
 而如果你是在`MessageProcess#process`之外的其他线程中执行数据输出，记得在write之后一定要调用一下 flush。
