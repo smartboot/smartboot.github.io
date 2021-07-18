@@ -48,6 +48,13 @@ module.exports = {
                 ]
             },
             {text: '开源捐赠', link: '/donation.md'},
+            {
+                text: '商业产品',
+                icon: "info",
+                children: [
+                    {text: 'Http 代理服务：Edge', link: '/smart-edge/'}
+                ]
+            },
             {text: '付费服务', link: '/service.md'},
             // {text: '开发团队', link: '/members.md', icon: "home"},
             {
