@@ -124,7 +124,8 @@ module.exports = {
                     collapsable: false,
                     children: [
                         'java-aio-thread.md',
-                        'smart-socket-plugin-design.md'
+                        'smart-socket-plugin-design.md',
+                        'smart-socket-plugin-stream-monitor.md'
                     ]
                 }
             ],
