@@ -42,7 +42,7 @@ smart-socket 项目工程内分为四个模块，下面为大家展示他们之�
 <dependency>
   <groupId>org.smartboot.socket</groupId>
   <artifactId>aio-core</artifactId>
-  <version>1.5.6</version>
+  <version>1.5.15</version>
 </dependency>
 ```
 
@@ -50,7 +50,7 @@ smart-socket 项目工程内分为四个模块，下面为大家展示他们之�
 <CodeGroupItem title="gradle">
 
 ```gradle
-implementation group: 'org.smartboot.socket', name: 'aio-core', version: '1.5.5'
+implementation group: 'org.smartboot.socket', name: 'aio-core', version: '1.5.15'
 ```
 
 </CodeGroupItem>
@@ -65,7 +65,7 @@ implementation group: 'org.smartboot.socket', name: 'aio-core', version: '1.5.5'
 通信协议约定了服务端与客户端之间交互数据的识别规则，是通信中非常重要的一部分。
 
 在短连接场景下，可以通过 EOF(即 readSize 等于 -1) 标志来定义完整数据包的内容。
-虽然这种方式不规范，也不推荐，但不可否则确实简单、有效。
+虽然这种方式不规范，也不推荐，但不可否认确实简单、有效。
 
 而在如今的万物互联时代下，长连接成了更为普遍的应用场景，链路复用是目前通信形式的主旋律。我们必须掌握正确的数据处理方式，以获得高效、准确的通信数据。
 

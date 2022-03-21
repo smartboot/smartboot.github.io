@@ -7,10 +7,10 @@ time: 2021-06-09
 Gitee：[https://gitee.com/smartboot/smart-http](https://gitee.com/smartboot/smart-http)
 
 ### 开发人员    
-![Giteye chart](https://chart.giteye.net/gitee/smartboot/smart-http/MLVYYYB5.png)
+[![contributors](https://whnb.wang/contributors/smartboot/smart-http)](https://www.whnb.wang/smartboot/smart-http)
 
 ### 关注趋势
-![Giteye chart](https://chart.giteye.net/gitee/smartboot/smart-http/6WPGC343.png)
+[![Stargazers over time](https://whnb.wang/stars/smartboot/smart-http)](https://www.whnb.wang/smartboot/smart-http)
 
 ## 案例长廊
 ::: tip 温馨提示

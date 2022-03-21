@@ -1,0 +1,1 @@
+const t={key:"v-035b6efc",path:"/smart-http/websocket.html",title:"Websocket",lang:"zh-CN",frontmatter:{title:"Websocket"},excerpt:"",headers:[{level:3,title:"\u793A\u4F8B",slug:"\u793A\u4F8B",children:[]}],git:{updatedTime:1623571657e3},filePathRelative:"smart-http/websocket.md"};export{t as data};

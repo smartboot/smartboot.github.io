@@ -1,0 +1,1 @@
+const t={key:"v-da5f03b8",path:"/smart-socket/BLANK.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1614227498e3},filePathRelative:"smart-socket/BLANK.md"};export{t as data};
