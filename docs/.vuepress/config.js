@@ -11,7 +11,16 @@ module.exports = {
         [
             'link', // 设置 favicon.ico，注意图片放在 public 文件夹下
             {rel: 'icon', href: 'img.png'}
-        ]
+        ],
+        ['script',{},`
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?ee8630857921d8030d612dbd7d751b55";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        `]
     ],
     plugins: [
         // ['copyright'],

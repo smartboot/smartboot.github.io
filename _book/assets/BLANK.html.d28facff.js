@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-da5f03b8","path":"/smart-socket/BLANK.html","title":"","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1614227498000,"contributors":[{"name":"\u4E09\u5200","email":"zhengjunweimail@163.com","commits":1}]},"filePathRelative":"smart-socket/BLANK.md"}');export{t as data};

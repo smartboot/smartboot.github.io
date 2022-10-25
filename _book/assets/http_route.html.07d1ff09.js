@@ -1,1 +1,0 @@
-const t={key:"v-3a2267fd",path:"/smart-http/http_route.html",title:"\u8BF7\u6C42\u8DEF\u7531",lang:"zh-CN",frontmatter:{author:"\u4E09\u5200"},excerpt:"",headers:[],git:{updatedTime:1623571657e3},filePathRelative:"smart-http/http_route.md"};export{t as data};
