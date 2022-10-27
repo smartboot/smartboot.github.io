@@ -1,10 +1,14 @@
 ---
-sidebar: auto
 home: true
 heroText: smart-servlet
-
 tagline: 国产开源 Servlet3.1 服务器
-footer: Apache License 2.0 | Copyright © 2017-present 三刀
+actionText: 进入我的开源 → 💡
+actionLink: /smart-servlet/about
+title: smart-servlet
+date: 2022-10-27 12:36:13
+permalink: /smart-servlet/
+postList: none
+bannerBg: none
 ---
 smart-servlet 是一款实现了 Servlet 3.1 规范，支持多应用隔离部署的的 Web 容器。与此同时，smart-servlet 还是一款插件化容器，基于内置的沙箱环境确保 smart-servlet 拥有最精简的运行能力，用户还可以通过自定义插件扩展容器的服务能力。
 

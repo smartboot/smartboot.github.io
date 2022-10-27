@@ -1,11 +1,14 @@
 ---
 home: true
 heroText: smart-http
-actions:
-    - text: 进入我的开源 → 💡
-      link: /smart-http/about.html
+bannerBg: none
+actionText: 进入我的开源 → 💡
+actionLink: /smart-http/about
 tagline: 追求极致的轻量级可编程 http 服务器
-footer: Apache License 2.0 | Copyright © 2017-present 三刀
+title: smart-http
+date: 2022-10-27 12:23:10
+permalink: /smart-http/
+postList: none
 ---
 
 smart-http 是可编程的 Http 应用微内核。封装了标准的 Http、Websocket 协议，满足用户对于 Server 端和 Client 端的开发需求。

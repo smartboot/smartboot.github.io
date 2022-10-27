@@ -1,28 +1,27 @@
 {
-  "name": "docs",
+  "name": "theme-vdoing-doc",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "dependencies": {
-    "vuepress-plugin-copyright": "^1.0.2"
-  },
-  "devDependencies": {
-    "@vue/component-compiler-utils": "^3.2.1",
-    "@vuepress/plugin-register-components": "^1.8.2",
-    "vuepress": "^2.0.0-beta.36"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "bash deploy.sh",
+    "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf node_modules && yarn && yarn add vuepress-theme-vdoing -D",
+    "editFm": "node utils/editFrontmatter.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://gitee.com/smartboot/book.git"
+  "license": "MIT",
+  "devDependencies": {
+    "dayjs": "^1.9.7",
+    "inquirer": "^7.1.0",
+    "json2yaml": "^1.1.0",
+    "vuepress": "1.9.2",
+    "vuepress-plugin-baidu-tongji": "^1.0.1",
+    "vuepress-plugin-demo-block": "^0.7.2",
+    "vuepress-plugin-fulltext-search": "^2.2.1",
+    "vuepress-plugin-one-click-copy": "^1.0.2",
+    "vuepress-plugin-thirdparty-search": "^1.0.2",
+    "vuepress-plugin-zooming": "^1.1.7",
+    "vuepress-theme-vdoing": "^1.12.3",
+    "yamljs": "^0.3.0"
   },
-  "author": "",
-  "license": "ISC"
+  "dependencies": {}
 }

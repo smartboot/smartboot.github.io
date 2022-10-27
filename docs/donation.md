@@ -8,6 +8,10 @@ sidebar: auto
 非常感谢每一位对开源项目作出捐赠的朋友。
 ::::
 
+## 捐赠方式
+
+<img :src="$withBase('/wx_pay.png')" height="400" width="300"> 
+<img :src="$withBase('/ali_pay.png')" height="400" width="300">
 
 ## 捐赠名单
 如果你希望在捐赠名单中加上个人站点的链接，请私信我。
@@ -39,7 +43,3 @@ sidebar: auto
 |刀锋剑雨|20|2018| |
 |小仙女 |10 | 2017 | ||
 
-## 捐赠方式
-
-<img :src="$withBase('/wx_pay.png')" height="400" width="300"> 
-<img :src="$withBase('/ali_pay.png')" height="400" width="300">

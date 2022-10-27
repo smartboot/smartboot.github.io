@@ -1,3 +1,8 @@
+---
+title: plugins
+date: 2022-10-27 12:36:13
+permalink: /pages/0eb447/
+---
 # 插件清单
 
 |  插件清单 | 订阅版 | 永久版  | 说明 |

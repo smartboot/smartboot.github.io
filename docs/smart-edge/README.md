@@ -4,6 +4,8 @@ title: smart-edge
 heroImage: https://portrait.gitee.com/uploads/avatars/namespace/266/798143_smartboot_1578989513.png!avatar100
 heroText: smart-edge
 tagline: 为企业、家庭打造安全的网络环境
+date: 2022-10-27 12:35:22
+permalink: /pages/dc4a92/
 ---
 
 [[toc]]

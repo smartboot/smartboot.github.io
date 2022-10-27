@@ -1,41 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="VuePress 2.0.0-beta.51">
-    <style>
-      :root {
-        --c-bg: #fff;
-      }
-      html.dark {
-        --c-bg: #22272e;
-      }
-      html, body {
-        background-color: var(--c-bg);
-      }
-    </style>
-    <script>
-      const userMode = localStorage.getItem('vuepress-color-scheme');
-			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
-				document.documentElement.classList.toggle('dark', true);
-			}
-    </script>
-    <link rel="icon" href="img.png"><script>
-            var _hmt = _hmt || [];
-            (function() {
-              var hm = document.createElement("script");
-              hm.src = "https://hm.baidu.com/hm.js?ee8630857921d8030d612dbd7d751b55";
-              var s = document.getElementsByTagName("script")[0]; 
-              s.parentNode.insertBefore(hm, s);
-            })();
-        </script><title>smartboot 开源组织</title><meta name="description" content="smartboot 旗下开源项目文档">
-    <link rel="modulepreload" href="/book/assets/app.125af0fe.js"><link rel="modulepreload" href="/book/assets/404.html.f13a9d24.js"><link rel="modulepreload" href="/book/assets/404.html.c3e557d0.js"><link rel="prefetch" href="/book/assets/index.html.c6cf87bd.js"><link rel="prefetch" href="/book/assets/SUMMARY.html.73d37211.js"><link rel="prefetch" href="/book/assets/crowdfunding.html.24cc185d.js"><link rel="prefetch" href="/book/assets/donation.html.f752c68e.js"><link rel="prefetch" href="/book/assets/members.html.58b178cd.js"><link rel="prefetch" href="/book/assets/service.html.38c76ed5.js"><link rel="prefetch" href="/book/assets/index.html.3d6e2c9b.js"><link rel="prefetch" href="/book/assets/index.html.e828fc89.js"><link rel="prefetch" href="/book/assets/index.html.137f5ca9.js"><link rel="prefetch" href="/book/assets/about.html.0db20189.js"><link rel="prefetch" href="/book/assets/getting-started-client.html.0c0456ec.js"><link rel="prefetch" href="/book/assets/getting-started-server.html.816f1f1e.js"><link rel="prefetch" href="/book/assets/http-server-config.html.aa677853.js"><link rel="prefetch" href="/book/assets/http_decode.html.b7a0d625.js"><link rel="prefetch" href="/book/assets/http_route.html.ef36b9a2.js"><link rel="prefetch" href="/book/assets/security.html.30597549.js"><link rel="prefetch" href="/book/assets/websocket.html.a62ddc73.js"><link rel="prefetch" href="/book/assets/index.html.ea1fffc3.js"><link rel="prefetch" href="/book/assets/plugins.html.417c71a1.js"><link rel="prefetch" href="/book/assets/use_guide.html.b2aa4a11.js"><link rel="prefetch" href="/book/assets/BLANK.html.d28facff.js"><link rel="prefetch" href="/book/assets/index.html.17635e8d.js"><link rel="prefetch" href="/book/assets/about.html.987947f6.js"><link rel="prefetch" href="/book/assets/getting-started.html.0a566902.js"><link rel="prefetch" href="/book/assets/java-aio-thread.html.f6d2a37b.js"><link rel="prefetch" href="/book/assets/smart-socket-io-thread-model.html.2a31d094.js"><link rel="prefetch" href="/book/assets/smart-socket-plugin-design.html.fb6c0ad1.js"><link rel="prefetch" href="/book/assets/smart-socket-plugin-stream-monitor.html.f8a8b647.js"><link rel="prefetch" href="/book/assets/spring-integrated.html.f89e6a1c.js"><link rel="prefetch" href="/book/assets/test-data.html.1b99080b.js"><link rel="prefetch" href="/book/assets/index.html.12b89b01.js"><link rel="prefetch" href="/book/assets/SUMMARY.html.59e9ca2e.js"><link rel="prefetch" href="/book/assets/crowdfunding.html.c28ed899.js"><link rel="prefetch" href="/book/assets/donation.html.b103a38e.js"><link rel="prefetch" href="/book/assets/members.html.1184499d.js"><link rel="prefetch" href="/book/assets/service.html.0e4c3ff9.js"><link rel="prefetch" href="/book/assets/index.html.c83f4cdd.js"><link rel="prefetch" href="/book/assets/index.html.74e19a19.js"><link rel="prefetch" href="/book/assets/index.html.8534e694.js"><link rel="prefetch" href="/book/assets/about.html.e450424d.js"><link rel="prefetch" href="/book/assets/getting-started-client.html.64f1564b.js"><link rel="prefetch" href="/book/assets/getting-started-server.html.2f098a38.js"><link rel="prefetch" href="/book/assets/http-server-config.html.e2d1073c.js"><link rel="prefetch" href="/book/assets/http_decode.html.e7f27394.js"><link rel="prefetch" href="/book/assets/http_route.html.b0893cd0.js"><link rel="prefetch" href="/book/assets/security.html.5c992e32.js"><link rel="prefetch" href="/book/assets/websocket.html.e1a5098c.js"><link rel="prefetch" href="/book/assets/index.html.82613e39.js"><link rel="prefetch" href="/book/assets/plugins.html.8f7eba7c.js"><link rel="prefetch" href="/book/assets/use_guide.html.f65dc80c.js"><link rel="prefetch" href="/book/assets/BLANK.html.4b84b4d4.js"><link rel="prefetch" href="/book/assets/index.html.74305e30.js"><link rel="prefetch" href="/book/assets/about.html.aa49cdc4.js"><link rel="prefetch" href="/book/assets/getting-started.html.73fc56c1.js"><link rel="prefetch" href="/book/assets/java-aio-thread.html.3fa17c4b.js"><link rel="prefetch" href="/book/assets/smart-socket-io-thread-model.html.ceccc94a.js"><link rel="prefetch" href="/book/assets/smart-socket-plugin-design.html.d16f3722.js"><link rel="prefetch" href="/book/assets/smart-socket-plugin-stream-monitor.html.e5453a46.js"><link rel="prefetch" href="/book/assets/spring-integrated.html.89d093f6.js"><link rel="prefetch" href="/book/assets/test-data.html.818a1810.js">
-    <link rel="stylesheet" href="/book/assets/style.bee0cde8.css">
+    <title>smartboot 开源组织</title>
+    <meta name="generator" content="VuePress 1.9.2">
+    <link rel="icon" href="/book/img/favicon.ico">
+    <meta name="description" content="smartboot 旗下开源项目文档">
+    <meta name="keywords" content="smartboot,smart-socket,smart-http,smart-servlet">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/book/assets/css/0.styles.8e6774e1.css" as="style"><link rel="preload" href="/book/assets/js/app.64f373d6.js" as="script"><link rel="preload" href="/book/assets/js/5.5a83773c.js" as="script"><link rel="prefetch" href="/book/assets/js/10.03ea28b7.js"><link rel="prefetch" href="/book/assets/js/11.9ed8a266.js"><link rel="prefetch" href="/book/assets/js/12.6a15b585.js"><link rel="prefetch" href="/book/assets/js/13.849121f2.js"><link rel="prefetch" href="/book/assets/js/14.445ed1f3.js"><link rel="prefetch" href="/book/assets/js/15.68f9d2fa.js"><link rel="prefetch" href="/book/assets/js/16.dad5116d.js"><link rel="prefetch" href="/book/assets/js/17.e01144a4.js"><link rel="prefetch" href="/book/assets/js/18.9a3391d3.js"><link rel="prefetch" href="/book/assets/js/19.29003459.js"><link rel="prefetch" href="/book/assets/js/2.bf94efa7.js"><link rel="prefetch" href="/book/assets/js/20.b3a2bf05.js"><link rel="prefetch" href="/book/assets/js/21.cede9f1b.js"><link rel="prefetch" href="/book/assets/js/22.7df316e9.js"><link rel="prefetch" href="/book/assets/js/23.d519f6ca.js"><link rel="prefetch" href="/book/assets/js/24.82784267.js"><link rel="prefetch" href="/book/assets/js/3.658393c1.js"><link rel="prefetch" href="/book/assets/js/4.2f00997e.js"><link rel="prefetch" href="/book/assets/js/6.bf087f03.js"><link rel="prefetch" href="/book/assets/js/7.3e0a2b0b.js"><link rel="prefetch" href="/book/assets/js/8.a5932db7.js"><link rel="prefetch" href="/book/assets/js/9.cb37a3cd.js">
+    <link rel="stylesheet" href="/book/assets/css/0.styles.8e6774e1.css">
   </head>
-  <body>
-    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>How did we get here?</blockquote><a href="/book/" class="">Take me home</a></div></main></div><!----><!--]--></div>
-    <script type="module" src="/book/assets/app.125af0fe.js" defer></script>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-439bb2a8><div class="theme-vdoing-content" data-v-439bb2a8><span data-v-439bb2a8>404</span> <blockquote data-v-439bb2a8>这是一个Four-Oh-Four.</blockquote> <a href="/book/" class="router-link-active" data-v-439bb2a8>返回首页</a></div></div><div class="global-ui"></div></div>
+    <script src="/book/assets/js/app.64f373d6.js" defer></script><script src="/book/assets/js/5.5a83773c.js" defer></script>
   </body>
 </html>
