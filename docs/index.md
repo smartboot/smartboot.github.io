@@ -19,7 +19,7 @@ features:
 postList: none
 ---
 <p align="center">
-  <a class="become-sponsor" href="/donation.html">支持smartboot</a>
+  <a class="become-sponsor" href="donation.html">支持smartboot</a>
 </p>
 
 <style>
