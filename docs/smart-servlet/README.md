@@ -3,7 +3,8 @@ home: true
 heroText: smart-servlet
 tagline: 国产开源 Servlet3.1 服务器
 actionText: 进入我的开源 → 💡
-actionLink: /smart-servlet/about
+
+[//]: # (actionLink: /smart-servlet/about)
 title: smart-servlet
 date: 2022-10-27 12:36:13
 permalink: /smart-servlet/
