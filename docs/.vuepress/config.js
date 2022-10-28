@@ -107,6 +107,11 @@ module.exports = {
           iconClass: 'icon-github',
           title: 'GitHub',
           link: 'https://github.com/smthing'
+        },
+        {
+          iconClass: 'icon-gitee',
+          title: 'GitHub',
+          link: 'https://gitee.com/smartdms'
         }
       ]
     },
