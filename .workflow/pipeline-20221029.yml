@@ -2,11 +2,13 @@ version: '1.0'
 name: pipeline-20221029
 displayName: pipeline-20221029
 triggers:
-  trigger: manual
+  trigger: auto
   push:
     branches:
       prefix:
         - ''
+  schedule:
+    - cron: '* * 7 * * ? *'
 stages:
   - name: stage-00d7ed4f
     displayName: 未命名
