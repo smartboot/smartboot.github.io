@@ -24,10 +24,6 @@ stages:
           - ''
           - '# 执行编译命令'
           - npm install && npm run baiduPush
-        artifacts:
-          - name: BUILD_ARTIFACT
-            path:
-              - ./dist
         caches:
           - ~/.npm
           - ~/.yarn
