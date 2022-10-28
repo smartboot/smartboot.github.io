@@ -8,7 +8,7 @@ triggers:
       prefix:
         - ''
   schedule:
-    - cron: '* * 7 * * ? *'
+    - cron: '* 0 7 * * ? *'
 stages:
   - name: stage-00d7ed4f
     displayName: 未命名
