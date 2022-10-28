@@ -39,17 +39,17 @@ postList: none
 #   textColor: '#2A3344'
 - name:  🔥 smart-socket
   desc: 支持百万级长连接的AIO通信框架
-  link: /smart-socket/
+  link: /smart-socket
   bgColor: '#2177b8'
   textColor: '#ffffff'
 - name: 🔥 smart-http
   desc: 基于smart-socket实现的轻量级http服务器
-  link: /smart-http/
+  link: /smart-http
   bgColor: '#5e7987'
   textColor: '#ffffff'
 - name: 🔥 smart-servlet
   desc:  一款实现了Servlet 3.1规范的 Web 容器。
-  link: /smart-servlet/
+  link: /smart-servlet
   bgColor: '#f28e16'
   textColor: '#ffffff'
 ```
