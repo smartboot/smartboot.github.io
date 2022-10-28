@@ -8,7 +8,7 @@ triggers:
       prefix:
         - ''
 stages:
-  - name: stage-7940bf6d
+  - name: stage-00d7ed4f
     displayName: 未命名
     strategy: naturally
     trigger: auto
@@ -23,7 +23,7 @@ stages:
           - npm config set registry https://registry.npmmirror.com
           - ''
           - '# 执行编译命令'
-          - npm install && npm run baiduPush
+          - npm install && npm run build
         artifacts:
           - name: BUILD_ARTIFACT
             path:
