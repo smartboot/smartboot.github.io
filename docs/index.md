@@ -7,29 +7,25 @@ tagline: 开源，赋予未来更多的想象
 # actionLink: /pages/a2f161/
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 
-features:
-- title: 极简
-  details: 正所谓「大道至简」，我们所追求的，便是用简单的方法解决各类复杂的难题。
-- title: 易用
-  details: 初级程序员 3 分钟上手；中级程序员 30 分钟精通；高级程序员秒懂。
-- title: 高性能
-  details: 重新定义硬件的性能极限，刷新你对高并发的认知。
-
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 ---
-<p align="center">
-  <a class="become-sponsor" href="donation.html">支持smartboot</a>
-</p>
+
+[//]: # (<p align="center">)
+
+[//]: # (  <a class="become-sponsor" href="donation.html">支持smartboot</a>)
+
+[//]: # (</p>)
 
 <style>
 .become-sponsor {
-  padding: 8px 20px;
+  padding: 20px 40px;
   display: inline-block;
-  color: #11a8cd;
-  border-radius: 30px;
+  color: #ffffff;
+  border-radius: 10px;
   box-sizing: border-box;
   border: 1px solid #11a8cd;
+  background-color: #2474b5;
 }
 </style>
 
@@ -44,18 +40,18 @@ postList: none
 - name:  🔥 smart-socket
   desc: 支持百万级长连接的AIO通信框架
   link: /smart-socket/
-  bgColor: '#f1f1f1'
-  textColor: '#2A3344'
+  bgColor: '#2177b8'
+  textColor: '#ffffff'
 - name: 🔥 smart-http
   desc: 基于smart-socket实现的轻量级http服务器
   link: /smart-http/
-  bgColor: '#f1f1f1'
-  textColor: '#2A3344'
+  bgColor: '#5e7987'
+  textColor: '#ffffff'
 - name: 🔥 smart-servlet
   desc:  一款实现了Servlet 3.1规范的 Web 容器。
   link: /smart-servlet/
-  bgColor: '#f1f1f1'
-  textColor: '#2A3344'
+  bgColor: '#f28e16'
+  textColor: '#ffffff'
 ```
 :::
 
@@ -84,7 +80,8 @@ smartboot 是由「三刀」在 Gitee 上创建的开源组织，曾获获得 20
 
 
 <!-- AD -->
-<div class="wwads-cn wwads-horizontal page-wwads" data-id="136"></div>
+
+[//]: # (<div class="wwads-cn wwads-horizontal page-wwads" data-id="136"></div>)
 <style>
   .page-wwads{
     width:100%!important;
