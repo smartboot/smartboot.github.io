@@ -2,13 +2,15 @@ version: '1.0'
 name: pipeline-20221029
 displayName: pipeline-20221029
 triggers:
-  trigger: manual
+  trigger: auto
   push:
     branches:
       prefix:
         - ''
+  schedule:
+    - cron: '0 0 7 * * ? *'
 stages:
-  - name: stage-7940bf6d
+  - name: stage-00d7ed4f
     displayName: 未命名
     strategy: naturally
     trigger: auto
@@ -24,10 +26,6 @@ stages:
           - ''
           - '# 执行编译命令'
           - npm install && npm run baiduPush
-        artifacts:
-          - name: BUILD_ARTIFACT
-            path:
-              - ./dist
         caches:
           - ~/.npm
           - ~/.yarn
