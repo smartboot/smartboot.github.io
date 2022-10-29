@@ -4,14 +4,14 @@ sidebar: auto
 # 开源捐赠
 
 :::: tip
-除了贡献代码，「[捐赠](#捐赠方式)」也是一种开源的参与形式。
+除了贡献代码，「捐赠]」也是一种开源的参与形式。
 非常感谢每一位对开源项目作出捐赠的朋友。
 ::::
 
 ## 捐赠方式
 
-<img :src="$withBase('/wx_pay.png')" height="400" width="300"> 
-<img :src="$withBase('/ali_pay.png')" height="400" width="300">
+<img :src="$withBase('/wx_pay.png')" height="320" width="240"> 
+<img :src="$withBase('/ali_pay.png')" height="320" width="240">
 
 ## 捐赠名单
 如果你希望在捐赠名单中加上个人站点的链接，请私信我。

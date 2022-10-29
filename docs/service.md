@@ -39,5 +39,6 @@ sidebar: auto
 
 ## 联系方式
 - E-mail: zhengjunweimail@163.com
-- QQ: 504166636
-- 公众号: smart_boot
+- QQ: 504166636（备注：付费业务咨询）
+- 添加个人微信号: `junweiis008`（备注：付费业务咨询）  
+<img :src="$withBase('/img/qrcode/personal_wx.png')" alt="个人微信: junweiis008" style="width:200px;margin: 10px;">
