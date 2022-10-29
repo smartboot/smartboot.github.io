@@ -2,7 +2,7 @@
 home: true
 heroImage: /img.png
 heroText: smartboot
-tagline: 开源，赋予未来更多的想象
+tagline: 你为开源写下的每一行代码，都有可能让未来的世界变得更美好
 # actionText: 开始使用 →
 # actionLink: /pages/a2f161/
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
@@ -56,9 +56,10 @@ postList: none
 :::
 
 
-## smartboot 是个啥？
+## 关于 smartboot 开源组织
 smartboot 是由「三刀」在 Gitee 上创建的开源组织，曾获获得 2020 年度 OSC 中国开源项目评选「[优秀 Gitee 组织](https://www.oschina.net/question/2918182_2320117)」。
-## smartboot 旗下开源项目的设计理念
+
+## 开源信仰
 我在这个行业已经摸爬滚打了十个年头，接触过非常多的开源项目。发现存在一个普遍的现象，很多项目都在追求所谓的「设计感」。这种设计感将简单变成复杂，质朴变成浮华。如果没用上几种设计模式，再结合一些深度理论，都不好意思推向大众。
 
 在我心中所有项目更应强调的是「**工具**」属性，解决问题才是它的首要职责。虽然好的设计，可以在解决问题的同时，为项目创造更高的附加值，这包括源码可读性、可扩展性、可维护性等。
