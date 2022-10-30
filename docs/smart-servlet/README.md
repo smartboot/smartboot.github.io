@@ -3,8 +3,7 @@ home: true
 heroText: smart-servlet
 tagline: 国产开源 Servlet3.1 服务器
 actionText: 进入我的开源 → 💡
-
-[//]: # (actionLink: /smart-servlet/about)
+actionLink: /smart-servlet/quickstart
 title: smart-servlet
 date: 2022-10-27 12:36:13
 permalink: /smart-servlet/
@@ -14,7 +13,7 @@ bannerBg: none
 <p align="center">
   <a href='https://gitee.com/smartboot/smart-servlet' target="_blank"><img src='https://gitee.com/smartboot/smart-servlet/badge/star.svg?theme=gvp' alt='star' class="no-zoom"/></a>
   <a href='https://gitee.com/smartboot/smart-servlet' target="_blank"><img src='https://gitee.com/smartboot/smart-servlet/badge/fork.svg?theme=gvp' alt='fork' class="no-zoom"/></a>
-  <a href="https://www.murphysec.com/dr/FQ2J7DWicqkFcjzq6U" alt="OSCS Status"><img src="https://www.oscs1024.com/platform/badge/smartboot/smart-servlet.svg?size=small" class="no-zoom"/></a>
+  <a href="https://www.murphysec.com/dr/7sZdQKJ9CLbpVU2roi" alt="OSCS Status"><img src="https://www.oscs1024.com/platform/badge/smartboot/smart-servlet.svg?size=small" class="no-zoom"/></a>
   <a href="https://github.com/smartboot/smart-servlet" target="_blank"><img src='https://img.shields.io/github/stars/smartboot/smart-servlet' alt='GitHub stars' class="no-zoom"></a>
   <a href="https://github.com/smartboot/smart-servlet" target="_blank"><img src='https://img.shields.io/github/forks/smartboot/smart-servlet' alt='GitHub forks' class="no-zoom"></a>
 </p>

@@ -25,7 +25,7 @@ module.exports = {
     nav: [
       {text: '首页', link: '/', icon: "home"},
       {
-        text: '开源文档',
+        text: '📖开源文档',
         icon: "info",
         items: [
           {text: 'smart-socket', link: '/smart-socket/'},
@@ -33,7 +33,7 @@ module.exports = {
           {text: 'smart-servlet', link: '/smart-servlet/'}
         ]
       },
-      {text: '开源捐赠', link: '/donation.md'},
+      {text: '❤️开源捐赠', link: '/donation.md'},
       // {
       //     text: '商业产品',
       //     icon: "info",
@@ -41,7 +41,10 @@ module.exports = {
       //         {text: 'Http 代理服务：Edge', link: '/smart-edge/'}
       //     ]
       // },
-      {text: '付费服务', link: '/service.md'},
+      {text: '💰付费服务', link: '/service.md'},
+      {
+        "text":"🏠加入社区",link: "/join-us.md"
+      },
       // {text: '开发团队', link: '/members.md', icon: "home"},
       {
         text: '开源仓库',
@@ -55,9 +58,6 @@ module.exports = {
             link: 'https://github.com/smartboot'
           }
         ]
-      },
-      {
-        "text":"加入社区",link: "/join-us.md"
       }
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
