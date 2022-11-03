@@ -117,8 +117,8 @@ module.exports = {
       ]
     },
     footer: { // 页脚信息
-      createYear: 2022, // 博客创建年份
-      copyrightInfo: '三刀 | MIT License', // 博客版权信息，支持a标签
+      createYear: 2017, // 博客创建年份
+      copyrightInfo: '三刀', // 博客版权信息，支持a标签
     },
     htmlModules,
   },
