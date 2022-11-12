@@ -2,8 +2,8 @@
 home: true
 heroText: smart-mqtt
 tagline: 国产分布式 MQTT Broker 服务器
-actionText: 使用教程即将开放 → 💡
-actionLink: /smart-mqtt/
+actionText: 使用指南 → 💡
+actionLink: /smart-mqtt/quickstart.html
 title: smart-mqtt
 date: 2022-10-27 12:36:13
 permalink: /smart-mqtt/
