@@ -2,11 +2,58 @@
 home: true
 heroText: smart-mqtt
 tagline: 国产分布式 MQTT Broker 服务器
-actionText: 进入我的开源 → 💡
-actionLink: /smart-servlet/quickstart
+actionText: 使用教程即将开放 → 💡
+actionLink: /smart-mqtt/
 title: smart-mqtt
 date: 2022-10-27 12:36:13
 permalink: /smart-mqtt/
 postList: none
 bannerBg: none
 ---
+<p align="center">
+  <a href='https://gitee.com/smartboot/smart-mqtt/releases/tag/v0.7' target="_blank"><img src='https://img.shields.io/badge/smart_mqtt-v0.7-orange' alt="v0.7" class="no-zoom"/></a>
+  <a href='https://gitee.com/smartboot/smart-mqtt' target="_blank"><img src='https://gitee.com/smartboot/smart-mqtt/badge/star.svg?theme=gvp' alt='star' class="no-zoom"/></a>
+  <a href='https://gitee.com/smartboot/smart-mqtt' target="_blank"><img src='https://gitee.com/smartboot/smart-mqtt/badge/fork.svg?theme=gvp' alt='fork' class="no-zoom"/></a>
+  <a href="https://github.com/smartboot/smart-mqtt" target="_blank"><img src='https://img.shields.io/github/stars/smartboot/smart-mqtt' alt='GitHub stars' class="no-zoom"></a>
+  <a href="https://github.com/smartboot/smart-mqtt" target="_blank"><img src='https://img.shields.io/github/forks/smartboot/smart-mqtt' alt='GitHub forks' class="no-zoom"></a>
+</p>
+
+## 🎉 加入企业支持计划
+smart-mqtt 在开源的同时，还将提供一些列商业化服务。如果您所在的企业/组织有这类需求，请先联系我们获得商业授权，避免不必要的纠纷。
+
+**目前项目还处于公测阶段，暂未正式开放商业授权通道。**
+
+现阶段我们正在进行企业支持计划，参与该计划的企业/组织将有机会在未来享受商业版不同程度的福利，譬如：免费授权、折扣优惠。
+
+### 一、申请流程
+![](./img.png)
+1. 在企业中部署使用 [smart-mqtt服务](https://gitee.com/smartboot/smart-mqtt/releases) ，并完成[案例登记](https://gitee.com/smartboot/smart-mqtt/issues/I5ZOP0)。
+2. 发送邮件至：zhengjunweimail@163.com 申请加入《smart-mqtt企业支持计划》。邮件内容包括：
+   - 企业名
+   - 统一社会信用代码
+   - 应用场景描述
+   - 企业Logo
+3. 收到邮件颁发的授权证书视为申请通过。
+
+### 二、关于考核观察期
+- 考核期限：自申请通过之日起 1 年。
+- 考核项：
+  1. smart-mqtt 使用情况反馈。
+  2. 在企业产品宣传中露出 smart-mqtt（图片、文案、链接皆可）。
+  3. 协助推广 smart-mqtt 产品。
+- 后续补充...
+
+### 三、优质合作伙伴福利
+1. 至少3年的免费授权期。
+2. 企业品牌露出。
+
+### 四、案例登记
+::: cardList 3
+```yaml
+- name: 案例反馈
+  desc: "优质的案例值得被更多人看见"
+  link: https://gitee.com/smartboot/smart-mqtt/issues/I5ZOP0
+  avatar:  /img/png/add.png
+  bgColor: '#DFEEE7'
+```
+:::

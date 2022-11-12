@@ -30,7 +30,8 @@ module.exports = {
         items: [
           {text: 'smart-socket', link: '/smart-socket/'},
           {text: 'smart-http', link: '/smart-http/'},
-          {text: 'smart-servlet', link: '/smart-servlet/'}
+          {text: 'smart-servlet', link: '/smart-servlet/'},
+          {text: 'smart-mqtt', link: '/smart-mqtt/'}
         ]
       },
       {text: '❤️开源捐赠', link: '/donation.md'},
