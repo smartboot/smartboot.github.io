@@ -11,7 +11,7 @@ postList: none
 bannerBg: none
 ---
 <p align="center">
-  <a href='https://gitee.com/smartboot/smart-mqtt/releases/tag/v0.7' target="_blank"><img src='https://img.shields.io/badge/smart_mqtt-v0.7-orange' alt="v0.7" class="no-zoom"/></a>
+  <a href='https://gitee.com/smartboot/smart-mqtt/releases/tag/v0.8' target="_blank"><img src='https://img.shields.io/badge/smart_mqtt-v0.8-orange' alt="v0.8" class="no-zoom"/></a>
   <a href='https://gitee.com/smartboot/smart-mqtt' target="_blank"><img src='https://gitee.com/smartboot/smart-mqtt/badge/star.svg?theme=gvp' alt='star' class="no-zoom"/></a>
   <a href='https://gitee.com/smartboot/smart-mqtt' target="_blank"><img src='https://gitee.com/smartboot/smart-mqtt/badge/fork.svg?theme=gvp' alt='fork' class="no-zoom"/></a>
   <a href="https://github.com/smartboot/smart-mqtt" target="_blank"><img src='https://img.shields.io/github/stars/smartboot/smart-mqtt' alt='GitHub stars' class="no-zoom"></a>
@@ -26,7 +26,7 @@ smart-mqtt 在开源的同时，还将提供一些列商业化服务。如果您
 现阶段我们正在进行企业支持计划，参与该计划的企业/组织将有机会在未来享受商业版不同程度的福利，譬如：免费授权、折扣优惠。
 
 ### 一、申请流程
-![](./img.png)
+![](./img/img.png)
 1. 在企业中部署使用 [smart-mqtt服务](https://gitee.com/smartboot/smart-mqtt/releases) ，并完成[案例登记](https://gitee.com/smartboot/smart-mqtt/issues/I5ZOP0)。
 2. 发送邮件至：zhengjunweimail@163.com 申请加入《smart-mqtt企业支持计划》。邮件内容包括：
    - 企业名
@@ -57,5 +57,9 @@ smart-mqtt 在开源的同时，还将提供一些列商业化服务。如果您
   link: https://gitee.com/smartboot/smart-mqtt/issues/I5ZOP0
   avatar:  /img/png/add.png
   bgColor: '#DFEEE7'
+- name: 北京盈泽世纪科技有限公司
+  desc: "数据监控"
+  link: http://www.yingzeshiji.com.cn/
+  avatar:  ./img/user_yzsj.png
 ```
 :::
