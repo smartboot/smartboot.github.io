@@ -30,7 +30,7 @@ postList: none
 </style>
 
 ## 🎖明星项目
-::: cardList 3
+::: cardList 2
 ```yaml
 # - name: OpenHarmony
 #   desc: 开放原子开源基金会
@@ -51,6 +51,11 @@ postList: none
   desc:  一款实现了Servlet 3.1规范的 Web 容器。
   link: /smart-servlet
   bgColor: '#f28e16'
+  textColor: '#ffffff'
+- name: 🔥 smart-mqtt
+  desc:  分布式 MQTT Broker 服务器。
+  link: /smart-mqtt
+  bgColor: '#2177b8'
   textColor: '#ffffff'
 ```
 :::
