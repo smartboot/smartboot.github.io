@@ -30,7 +30,7 @@ postList: none
 </style>
 
 ## 🎖明星项目
-::: cardList 2
+::: cardList 3
 ```yaml
 # - name: OpenHarmony
 #   desc: 开放原子开源基金会
@@ -55,6 +55,16 @@ postList: none
 - name: 🔥 smart-mqtt
   desc:  分布式 MQTT Broker 服务器。
   link: /smart-mqtt
+  bgColor: '#5e7987'
+  textColor: '#ffffff'
+- name: smart-license
+  desc:  守护你的软件权益
+  link: /smart-license
+  bgColor: '#f28e16'
+  textColor: '#ffffff'
+- name:  smart-flow
+  desc: 一个轻量、灵活的业务流程编排框架
+  link: https://gitee.com/smartboot/smart-flow
   bgColor: '#2177b8'
   textColor: '#ffffff'
 ```
