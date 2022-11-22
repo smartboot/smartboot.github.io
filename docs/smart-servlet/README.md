@@ -21,7 +21,7 @@ smart-servlet 是一款实现了 Servlet 3.1 规范，支持多应用隔离部�
 
 ## 架构设计
 
-smart-servlet 在 smart-http 的架构之上，通过继承 HttpHandle 实现了 Servlet 规范。这意味着任何 smart-http 服务都可以通过单独引入 smart-servlet 核心包的方式，将普通的 http 应用改造成 servlet 应用，而且这个成本是极低的。
+smart-servlet 在 smart-http 的基础之上，通过继承 HttpHandle 实现了 Servlet 规范。这意味着任何 smart-http 服务都可以通过单独引入 smart-servlet 核心包的方式，将普通的 http 应用改造成 servlet 应用，而且这个成本是极低的。
 
 ![](https://oscimg.oschina.net/oscnet/up-3ffd644ea02c150e7ee44dab5a4fc065cff.png)
 
