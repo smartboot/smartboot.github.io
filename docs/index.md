@@ -40,32 +40,32 @@ postList: none
 - name:  🔥 smart-socket
   desc: 支持百万级长连接的AIO通信框架
   link: /smart-socket
-  bgColor: '#2177b8'
+  bgColor: '#3a9bb0'
   textColor: '#ffffff'
 - name: 🔥 smart-http
   desc: 基于smart-socket实现的轻量级http服务器
   link: /smart-http
-  bgColor: '#5e7987'
+  bgColor: '#2b9bb4'
   textColor: '#ffffff'
 - name: 🔥 smart-servlet
   desc:  一款实现了Servlet 3.1规范的 Web 容器。
   link: /smart-servlet
-  bgColor: '#f28e16'
+  bgColor: '#13a0c0'
   textColor: '#ffffff'
 - name: 🔥 smart-mqtt
   desc:  分布式 MQTT Broker 服务器。
   link: /smart-mqtt
-  bgColor: '#5e7987'
+  bgColor: '#3a9bb0'
   textColor: '#ffffff'
 - name: smart-license
   desc:  守护你的软件权益
   link: /smart-license
-  bgColor: '#f28e16'
+  bgColor: '#2b9bb4'
   textColor: '#ffffff'
 - name:  smart-flow
   desc: 一个轻量、灵活的业务流程编排框架
   link: https://gitee.com/smartboot/smart-flow
-  bgColor: '#2177b8'
+  bgColor: '#13a0c0'
   textColor: '#ffffff'
 ```
 :::
