@@ -31,7 +31,7 @@ smart-http，是一款体现了作为开源人的工匠精神的作品。
 <dependency>
     <groupId>org.smartboot.http</groupId>
     <artifactId>smart-http-server</artifactId>
-    <version>1.1.19</version>
+    <version>1.1.21</version>
 </dependency>
 ```
 ### Client 版
@@ -39,6 +39,6 @@ smart-http，是一款体现了作为开源人的工匠精神的作品。
 <dependency>
     <groupId>org.smartboot.http</groupId>
     <artifactId>smart-http-client</artifactId>
-    <version>1.1.19</version>
+    <version>1.1.21</version>
 </dependency>
 ```
