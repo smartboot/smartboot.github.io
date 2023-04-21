@@ -1,6 +1,6 @@
 {
   "name": "theme-vdoing-doc",
-  "version": "1.0.0",
+  "version": "1.12.8",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
