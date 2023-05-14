@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: smart-servlet
-tagline: 国产开源 Servlet3.1 服务器
+tagline: 国产开源 Servlet3.1/4.0 服务器
 actionText: 进入我的开源 → 💡
 actionLink: /smart-servlet/quickstart
 title: smart-servlet
@@ -17,7 +17,7 @@ bannerBg: none
   <a href="https://github.com/smartboot/smart-servlet" target="_blank"><img src='https://img.shields.io/github/stars/smartboot/smart-servlet' alt='GitHub stars' class="no-zoom"></a>
   <a href="https://github.com/smartboot/smart-servlet" target="_blank"><img src='https://img.shields.io/github/forks/smartboot/smart-servlet' alt='GitHub forks' class="no-zoom"></a>
 </p>
-smart-servlet 是一款实现了 Servlet 3.1 规范，支持多应用隔离部署的的 Web 容器。与此同时，smart-servlet 还是一款插件化容器，基于内置的沙箱环境确保 smart-servlet 拥有最精简的运行能力，用户还可以通过自定义插件扩展容器的服务能力。
+smart-servlet 是一款实现了 Servlet 3.1/4.0 规范，支持多应用隔离部署的的 Web 容器。与此同时，smart-servlet 还是一款插件化容器，基于内置的沙箱环境确保 smart-servlet 拥有最精简的运行能力，用户还可以通过自定义插件扩展容器的服务能力。
 
 ## 架构设计
 
