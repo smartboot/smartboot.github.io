@@ -11,7 +11,7 @@ postList: none
 bannerBg: none
 ---
 <p align="center">
-  <a href='https://gitee.com/smartboot/smart-mqtt/releases/tag/v0.19' target="_blank"><img src='https://img.shields.io/badge/smart_mqtt-v0.19-orange' alt="v0.19" class="no-zoom"/></a>
+  <a href='https://gitee.com/smartboot/smart-mqtt/releases/' target="_blank"><img src='https://img.shields.io/badge/smart_mqtt-v0.19-orange' alt="v0.19" class="no-zoom"/></a>
   <a href='https://gitee.com/smartboot/smart-mqtt' target="_blank"><img src='https://gitee.com/smartboot/smart-mqtt/badge/star.svg?theme=gvp' alt='star' class="no-zoom"/></a>
   <a href='https://gitee.com/smartboot/smart-mqtt' target="_blank"><img src='https://gitee.com/smartboot/smart-mqtt/badge/fork.svg?theme=gvp' alt='fork' class="no-zoom"/></a>
   <a href="https://github.com/smartboot/smart-mqtt" target="_blank"><img src='https://img.shields.io/github/stars/smartboot/smart-mqtt' alt='GitHub stars' class="no-zoom"></a>
