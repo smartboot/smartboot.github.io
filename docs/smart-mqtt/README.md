@@ -60,5 +60,9 @@ smart-mqtt 在开源的同时，还将提供一些列商业化服务。如果您
   desc: "数据监控"
   link: http://www.yingzeshiji.com.cn/
   avatar:  ./img/user_yzsj.png
+- name: 数研院（云南）信息产业发展有限公司
+  desc: "企业支持计划至 2024-06-01"
+#  link: http://www.yingzeshiji.com.cn/
+  avatar:  ./img/user_cyjk.png
 ```
 :::
