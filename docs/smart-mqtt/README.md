@@ -69,5 +69,8 @@ smart-mqtt 在开源的同时，还将提供一些列商业化服务。如果您
   desc: "企业支持计划至 2024-06-01"
 #  link: http://www.yingzeshiji.com.cn/
   avatar:  ./img/user_cyjk.png
+- name: 宿迁市裕百信养殖服务有限公司
+  desc: "企业支持计划至 2024-12-07"
+  avatar:  ./img/user_ybx.jpg
 ```
 :::
