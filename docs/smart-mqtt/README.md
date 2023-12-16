@@ -61,6 +61,12 @@ smart-mqtt 在开源的同时，还将提供一些列商业化服务。如果您
   link: https://gitee.com/smartboot/smart-mqtt/issues/I5ZOP0
   avatar:  /img/png/add.png
   bgColor: '#DFEEE7'
+- name: 上海极锐星瀚传感技术有限公司
+  desc: "企业支持计划至 2024-12-16"
+  avatar:  https://foruda.gitee.com/images/1702712973986107309/d850d72d_5608665.png
+- name: 宿迁市裕百信养殖服务有限公司
+  desc: "企业支持计划至 2024-12-07"
+  avatar:  ./img/user_ybx.jpg
 - name: 北京盈泽世纪科技有限公司
   desc: "数据监控"
   link: http://www.yingzeshiji.com.cn/
@@ -69,8 +75,6 @@ smart-mqtt 在开源的同时，还将提供一些列商业化服务。如果您
   desc: "企业支持计划至 2024-06-01"
 #  link: http://www.yingzeshiji.com.cn/
   avatar:  ./img/user_cyjk.png
-- name: 宿迁市裕百信养殖服务有限公司
-  desc: "企业支持计划至 2024-12-07"
-  avatar:  ./img/user_ybx.jpg
+
 ```
 :::
