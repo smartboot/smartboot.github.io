@@ -49,7 +49,7 @@ postList: none
   textColor: '#ffffff'
 - name: 🔥 smart-servlet
   desc:  一款实现了Servlet 3.1规范的 Web 容器。
-  link: /smart-servlet
+  link: /smart-servlet/reference
   bgColor: '#13a0c0'
   textColor: '#ffffff'
 - name: 🔥 smart-mqtt
