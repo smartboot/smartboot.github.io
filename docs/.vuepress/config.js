@@ -31,7 +31,7 @@ module.exports = {
           {text: 'smart-socket', link: '/smart-socket/'},
           {text: 'smart-http', link: '/smart-http/'},
           {text: 'smart-servlet', link: '/smart-servlet/'},
-          {text: 'smart-mqtt', link: '/smart-mqtt/'},
+          {text: 'smart-mqtt', link: '/smart-mqtt/enterprise'},
           {text: 'smart-license', link: '/smart-license/'}
         ]
       },

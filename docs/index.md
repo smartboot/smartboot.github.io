@@ -54,7 +54,7 @@ postList: none
   textColor: '#ffffff'
 - name: 🔥 smart-mqtt
   desc:  分布式 MQTT Broker 服务器。
-  link: /smart-mqtt
+  link: /smart-mqtt/enterprise.html
   bgColor: '#3a9bb0'
   textColor: '#ffffff'
 - name: smart-license
