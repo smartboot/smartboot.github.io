@@ -11,7 +11,5 @@ jobs:
         uses: IT4Change/vuepress-build-and-deploy@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TARGET_REPO: smartboot/smartboot.github.io
-          TARGET_BRANCH: gitbook
           BUILD_SCRIPT: yarn && yarn build
           BUILD_DIR: _book
