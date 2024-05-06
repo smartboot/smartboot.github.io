@@ -10,7 +10,7 @@ jobs:
       - name: vuepress-deploy
         uses: jenkey2011/vuepress-deploy@master
         env:
-          ACCESS_TOKEN: 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
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           TARGET_REPO: smartboot/smartboot.github.io
           TARGET_BRANCH: gitbook
           BUILD_SCRIPT: yarn && yarn build
