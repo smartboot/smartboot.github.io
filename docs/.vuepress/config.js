@@ -33,7 +33,6 @@ module.exports = {
           {text: 'smart-servlet', link: '/smart-servlet/'},
           {text: 'smart-mqtt', link: '/smart-mqtt/enterprise'},
           {text: 'smart-license', link: '/smart-license/'},
-          {text: 'driver-box', link: '/driver-box/'}
         ]
       },
       {text: '❤️开源捐赠', link: '/donation.md'},
