@@ -48,7 +48,7 @@ postList: none
   bgColor: '#2b9bb4'
   textColor: '#ffffff'
 - name: 🔥 smart-servlet
-  desc:  一款实现了Servlet 4.0规范的 Web 容器。
+  desc:  一款实现了Servlet 6.0规范的 Web 容器。
   link: /smart-servlet/
   bgColor: '#13a0c0'
   textColor: '#ffffff'
