@@ -4,7 +4,7 @@ client_secret="a12f46c9eb633ad46b1f3bf845e2c6017705b62e16258f3ca05f51e4a03a9945"
 owner="smartboot"
 repo="smart-socket"
 // 获取url，不包含参数
-const href = new URL(location.href);
+const href = new URL(window.location.href);
 const url = href.origin + href.pathname;
 
 //提取 cookie中存储的 access_token
@@ -27,14 +27,14 @@ if (access_token==null) {
                 if(resp.access_token != null){
                     access_token=resp.access_token
                     document.cookie = "access_token="+resp.access_token+"; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-                    location.href = url;
+                    window.location.href = url;
                 }else if("invalid_grant_accessibility"==resp.error){
-                    location.href = 'https://gitee.com/oauth/authorize?client_id='+client_id+'&redirect_uri='+url+'&response_type=code';
+                    window.location.href = 'https://gitee.com/oauth/authorize?client_id='+client_id+'&redirect_uri='+url+'&response_type=code';
                 }
             })
             .catch(error => console.error(error));
     }else{
-        location.href = 'https://gitee.com/oauth/authorize?client_id='+client_id+'&redirect_uri='+url+'&response_type=code';
+        window.location.href = 'https://gitee.com/oauth/authorize?client_id='+client_id+'&redirect_uri='+url+'&response_type=code';
     }
 }else{
     checkStar()
