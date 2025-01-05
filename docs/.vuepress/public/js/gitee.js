@@ -50,8 +50,8 @@ if (typeof window !== 'undefined') {
                         d = document.getElementsByTagName("body")[0]
                     }
                     d.innerHTML = `
-                                检测到您还未 Star 本项目，暂时无法访问本页面。
-                              请先前往：<a target="_blank" href="https://gitee.com/${owner}/${repo}">https://gitee.com/${owner}/${repo}</a> 完成操作
+                                检测到您还未 Star 本项目，暂时无法访问本页面。<br/>
+                              请先前往：<a target="_blank" href="https://gitee.com/${owner}/${repo}">https://gitee.com/${owner}/${repo}</a> 完成操作，再尝试刷新当前页面。
                                 </div>
                                 `
                 }
