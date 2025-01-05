@@ -71,7 +71,9 @@ postList: none
 :::
 
 <script>
- redirect();
+if(typeof redirect !== 'undefined'){
+    redirect();
+}
 </script>
 
 ## 关于 smartboot 开源组织
