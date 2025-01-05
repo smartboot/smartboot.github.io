@@ -1,13 +1,7 @@
-//检查cookie star是否存在
-if(typeof window !== 'undefined'){
-    client_id="df82f8c4251350869fff94fb5395c580fc518956165ee82ada04308c6ff16c23";
-    client_secret="a12f46c9eb633ad46b1f3bf845e2c6017705b62e16258f3ca05f51e4a03a9945";
+if (typeof window !== 'undefined') {
+    client_id = "df82f8c4251350869fff94fb5395c580fc518956165ee82ada04308c6ff16c23";
+    client_secret = "a12f46c9eb633ad46b1f3bf845e2c6017705b62e16258f3ca05f51e4a03a9945";
     const gitee_redirect_uri = location.origin;
-
-//提取 cookie中存储的 access_token
-    console.log("cookie",document.cookie);
-    access_token = document.cookie.split(';').find(row => row.trim().startsWith('access_token='))?.substring(14);
-    console.log("access_token",access_token);
 
     function redirect() {
         const queryString = window.location.search;
@@ -23,9 +17,8 @@ if(typeof window !== 'undefined'){
                     resp = JSON.parse(result)
                     console.log("result", resp);
                     if (resp.access_token != null) {
-                        access_token = resp.access_token
-                        document.cookie = "access_token=" + resp.access_token + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-                        window.location.href = state;
+                        localStorage.setItem('access_token', resp.access_token);
+                        window.location.href = state+"?timestamp="+Date.now();
                     } else if ("invalid_grant_accessibility" == resp.error) {
                         window.location.href = 'https://gitee.com/oauth/authorize?client_id=' + client_id + '&redirect_uri=' + gitee_redirect_uri + '&response_type=code';
                     }
@@ -33,24 +26,28 @@ if(typeof window !== 'undefined'){
                 .catch(error => console.error(error));
         }
     }
+
     function checkStar(owner, repo) {
-        if (access_token==null) {
+        access_token = localStorage.getItem('access_token')
+        console.log("access_token", access_token);
+        if (access_token == null) {
             window.location.href = 'https://gitee.com/oauth/authorize?client_id=' + client_id + '&redirect_uri=' + gitee_redirect_uri + '&response_type=code&state=' + location.href;
             return
         }
-        fetch("https://gitee.com/api/v5/user/starred/"+owner+"/"+repo+"?access_token="+access_token, {
+        fetch("https://gitee.com/api/v5/user/starred/" + owner + "/" + repo + "?access_token=" + access_token, {
             method: "GET"
         })
             .then(response => {
-                console.log("check result",response);
-                if(response.status==204){
-                }else if(response.status==404){
-                    //移除cookie
-                    // alert("还未Star")
+                console.log("check result", response);
+                if (response.status == 204) {
+                } else if (response.status == 401) {
+                    localStorage.removeItem("access_token")
+                    checkStar(owner, repo)
+                } else if (response.status == 404) {
                     //替换 html body中 class为 content-wrapper 中的内容
-                    d=document.querySelector(".content-wrapper")
-                    if(d==null){
-                        d=document.getElementsByTagName("body")[0]
+                    d = document.querySelector(".content-wrapper")
+                    if (d == null) {
+                        d = document.getElementsByTagName("body")[0]
                     }
                     d.innerHTML = `
                                 检测到您还未 Star 本项目，暂时无法访问本页面。
