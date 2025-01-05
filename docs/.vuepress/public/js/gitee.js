@@ -18,7 +18,7 @@ if (typeof window !== 'undefined') {
                     console.log("result", resp);
                     if (resp.access_token != null) {
                         localStorage.setItem('access_token', resp.access_token);
-                        window.location.href = state+"?timestamp="+Date.now();
+                        window.location.href = state + "?timestamp=" + Date.now();
                     } else if ("invalid_grant_accessibility" == resp.error) {
                         window.location.href = 'https://gitee.com/oauth/authorize?client_id=' + client_id + '&redirect_uri=' + gitee_redirect_uri + '&response_type=code';
                     }
@@ -44,8 +44,12 @@ if (typeof window !== 'undefined') {
                     localStorage.removeItem("access_token")
                     checkStar(owner, repo)
                 } else if (response.status == 404) {
-                    //替换 html body中 class为 content-wrapper 中的内容
+                    //替换 html body中 class为 content-wrapper 中的内容,适配vuepress
                     d = document.querySelector(".content-wrapper")
+                    if (d == null) {
+                        //适配 astro
+                        d = document.querySelector(".main-pane")
+                    }
                     if (d == null) {
                         d = document.getElementsByTagName("body")[0]
                     }
@@ -58,6 +62,7 @@ if (typeof window !== 'undefined') {
             })
             .catch(error => console.error(error));
     }
-    window.checkStar=checkStar;
-    window.redirect=redirect;
+
+    window.checkStar = checkStar;
+    window.redirect = redirect;
 }
