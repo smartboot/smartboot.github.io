@@ -70,6 +70,9 @@ postList: none
 ```
 :::
 
+<script>
+ redirect();
+</script>
 
 ## 关于 smartboot 开源组织
 smartboot 是由「三刀」在 Gitee 上创建的开源组织，曾获获得 2020 年度 OSC 中国开源项目评选「[优秀 Gitee 组织](https://www.oschina.net/question/2918182_2320117)」。
