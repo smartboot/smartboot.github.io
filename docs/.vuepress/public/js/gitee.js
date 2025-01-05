@@ -28,6 +28,10 @@ if (typeof window !== 'undefined') {
     }
 
     function checkStar(owner, repo) {
+        //文档首页不校验
+        if (location.pathname === repo || location.pathname === repo + '/') {
+            return;
+        }
         access_token = localStorage.getItem('access_token')
         console.log("access_token", access_token);
         if (access_token == null) {
