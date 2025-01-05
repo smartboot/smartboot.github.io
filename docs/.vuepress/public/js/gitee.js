@@ -58,4 +58,6 @@ if (typeof window !== 'undefined') {
             })
             .catch(error => console.error(error));
     }
+    window.checkStar=checkStar;
+    window.redirect=redirect;
 }
