@@ -42,9 +42,9 @@ postList: none
   link: /smart-socket
   bgColor: '#3a9bb0'
   textColor: '#ffffff'
-- name: 🔥 smart-http
-  desc: 基于smart-socket实现的轻量级http服务器
-  link: /smart-http
+- name: 🔥 feat
+  desc: 一款即像 Vert.x，又像 SpringBoot 的 Java Web 容器。
+  link: /feat
   bgColor: '#2b9bb4'
   textColor: '#ffffff'
 - name: 🔥 smart-servlet
