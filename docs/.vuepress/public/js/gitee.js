@@ -61,7 +61,7 @@ if (typeof window !== 'undefined') {
         }
     }
 
-    function checkStar(owner, repo) {
+    function checkStar(owner, repo,failCallback) {
         //文档首页不校验
         if (location.pathname === repo || location.pathname === repo + '/') {
             return;
@@ -80,19 +80,23 @@ if (typeof window !== 'undefined') {
                     localStorage.removeItem("access_token")
                     checkStar(owner, repo)
                 } else if (response.status == 404) {
-                    //替换 html body中 class为 content-wrapper 中的内容,适配vuepress
-                    replaceHtml(`
+                    if(failCallback!= null){
+                        failCallback()
+                    }else {
+                        //替换 html body中 class为 content-wrapper 中的内容,适配vuepress
+                        replaceHtml(`
                                 <div>
                                 检测到您还未 Star 本项目，暂时无法访问本页面。<br/>
                               请先前往：<a target="_blank" href="https://gitee.com/${owner}/${repo}">https://gitee.com/${owner}/${repo}</a> 完成操作，再尝试刷新当前页面。
                                 </div>
                                 `)
+                    }
                 }
             })
             .catch(error => console.error(error));
     }
 
-    function checkAuthorize(owner, repo, file) {
+    function checkAuthorize(owner, repo, file,failCallback) {
         let access_token = checkAccessToken()
         if (access_token == null) {
             return
@@ -118,10 +122,14 @@ if (typeof window !== 'undefined') {
                         if (json[user?.login] != null) {
                             console.log("check result", "ok");
                         } else {
-                            replaceHtml(`<div>
+                            if(failCallback!= null){
+                                failCallback()
+                            }else{
+                                replaceHtml(`<div>
                               未经授权暂时无法访问该页面。<br/>
                                </div>
                                 `)
+                            }
                         }
                     });
                 } else {
