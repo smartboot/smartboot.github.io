@@ -102,6 +102,36 @@ if (typeof window !== 'undefined') {
             return
         }
         let user = getUserInfo()
+
+        //浮层遮挡，提示授权检测中
+        // 创建一个遮罩层元素
+        const mask = document.createElement('div');
+        mask.style.position = 'fixed';
+        mask.style.top = '0';
+        mask.style.left = '0';
+        mask.style.width = '100%';
+        mask.style.height = '100%';
+        mask.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // 半透明黑色背景
+        mask.style.zIndex = '9999'; // 确保遮罩层在最上层
+
+// 创建一个提示框元素
+        const promptBox = document.createElement('div');
+        promptBox.style.position = 'fixed';
+        promptBox.style.top = '50%';
+        promptBox.style.left = '50%';
+        promptBox.style.transform = 'translate(-50%, -50%)';
+        promptBox.style.padding = '20px';
+        promptBox.style.backgroundColor = '#fff';
+        promptBox.style.borderRadius = '5px';
+        promptBox.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.3)';
+        promptBox.style.zIndex = '10000'; // 确保提示框在遮罩层之上
+
+        // 设置提示框内容
+        promptBox.innerHTML = '<p>授权检测中，请稍候...</p>';
+        // 将遮罩层和提示框添加到页面中
+        document.body.appendChild(mask);
+        document.body.appendChild(promptBox);
+
         fetch("https://gitee.com/api/v5/repos/" + owner + "/" + repo + "/contents/" + file + "?access_token=" + access_token, {
             method: "GET"
         })
@@ -121,6 +151,9 @@ if (typeof window !== 'undefined') {
                         let json = JSON.parse(content)
                         if (json[user?.login] != null) {
                             console.log("check result", "ok");
+                            // 授权检测完成后，移除遮罩层和提示框
+                            document.body.removeChild(mask);
+                            document.body.removeChild(promptBox);
                         } else {
                             if(failCallback!= null){
                                 failCallback()
