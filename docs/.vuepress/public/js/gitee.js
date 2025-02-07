@@ -111,7 +111,8 @@ if (typeof window !== 'undefined') {
         mask.style.left = '0';
         mask.style.width = '100%';
         mask.style.height = '100%';
-        mask.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // 半透明黑色背景
+        mask.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'; // 不透明白色背景
+        mask.style.backdropFilter = 'blur(10px)'; // 添加玻璃效果
         mask.style.zIndex = '9999'; // 确保遮罩层在最上层
 
 // 创建一个提示框元素
