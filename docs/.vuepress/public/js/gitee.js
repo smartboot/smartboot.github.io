@@ -150,7 +150,7 @@ if (typeof window !== 'undefined') {
                         console.log("check result", content);
                         //解析json
                         let json = JSON.parse(content)
-                        localStorage.setItem('userCount', json.length);
+                        localStorage.setItem('userCount', Object.keys(json).length);
                         if (json[user?.login] != null) {
                             console.log("check result", "ok");
                             // 授权检测完成后，移除遮罩层和提示框
