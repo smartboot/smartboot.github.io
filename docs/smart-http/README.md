@@ -11,7 +11,10 @@ permalink: /smart-http/
 postList: none
 ---
 <script>
-location.href="https://smartboot.tech/feat/"
+if(typeof location!== 'undefined'){
+    location.href="https://smartboot.tech/feat/"
+}
+
 </script>
 <p align="center">
   <a href='https://gitee.com/smartboot/smart-http' target="_blank"><img src='https://gitee.com/smartboot/smart-http/badge/star.svg?theme=gvp' alt='star' class="no-zoom"/></a>
