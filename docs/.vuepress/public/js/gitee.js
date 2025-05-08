@@ -151,9 +151,9 @@ if (typeof window !== "undefined") {
             //解析json
             let json = JSON.parse(content);
             localStorage.setItem("userCount", Object.keys(json).length);
-            let user = json[user?.login];
+            let userConfig = json[user?.login];
             //用户未授权
-            if (!user) {
+            if (!userConfig) {
               if (failCallback != null) {
                 failCallback("unauthorized");
               } else {
@@ -166,7 +166,7 @@ if (typeof window !== "undefined") {
             }
 
             //判断是否过期，expireTime为字符串，例如"2025-03-04"
-            if (user?.expireTime && new Date(user.expireTime).getTime() < Date.now()) {
+            if (userConfig?.expireTime && new Date(userConfig.expireTime).getTime() < Date.now()) {
               if (failCallback != null) {
                 failCallback("expired");
               } else {
